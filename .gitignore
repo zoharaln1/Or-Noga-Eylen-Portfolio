@@ -19,3 +19,26 @@ Thumbs.db
 *.zip
 *.skill
 node_modules/
+
+# Large design files
+*.fig
+*.sketch
+or-portfolio-skill-update.md
+
+# Large design files + Desktop clutter
+*.fig
+*.sketch
+Icon/
+Icon_Mozo.png
+Icon_Mozo.svg
+"New pres"/
+"untitled folder"/
+Screenshot*/
+LWScreenShot*
+Frame_*.svg
+Frame_*.png
+"App For tiktok dark.png"
+assets_task_*/
+new.svg
+.localized
+or-portfolio-skill-update.md

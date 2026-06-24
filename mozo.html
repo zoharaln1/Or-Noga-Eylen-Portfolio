@@ -457,7 +457,7 @@
       <h4>All active risks, categorized by type</h4>
       <p>Before entering the guided flow, users land on a fraud protection overview showing all four active risk types. Each card names the specific exposed data points, SSN, Address, Full Name, Birth Date, that enable that particular fraud type.</p>
       <div class="decision"><strong>Design decision:</strong> Showing the exact data fields that make each fraud possible makes the risk feel concrete and personal rather than abstract. It closes the gap between "Mozo says there's a risk" and "I understand why I need to act right now." A small copy and IA decision with a measurable effect on motivation to proceed.</div>
-      <img src="2.png" alt="Fraud Protection Overview - 4 risk type cards" class="full-img" />
+      <img src="mozo/2.png" alt="Fraud Protection Overview - 4 risk type cards" class="full-img" />
     </div>
 
     <div class="flow-item">
@@ -465,7 +465,7 @@
       <h4>Setting expectations before Step 1 begins</h4>
       <p>When a user taps "Secure my credit," they don't go straight into the first step. They land on an intro screen that previews all three steps, states the estimated time (15-20 minutes), and, critically, tells them they can pause and return anytime. This screen is not a formality. It is probably the single highest-leverage design decision for completion rate in the entire flow.</p>
       <div class="decision"><strong>Design decision:</strong> Multi-step processes are most often abandoned before they start, not midway through. Users who don't know how long something takes will defer indefinitely. "You can pause and come back" removes the all-or-nothing commitment barrier that causes this user group to decide "I'll do this later", and never return.</div>
-      <img src="mozo-flow-intro.png" alt="Flow Intro - Let's protect your credit, 3-step preview" class="full-img" />
+      <img src="mozo/mozo-flow-intro.png.png" alt="Flow Intro - Let's protect your credit, 3-step preview" class="full-img" />
     </div>
 
     <div class="flow-item">
@@ -473,7 +473,7 @@
       <h4>The Equifax credit report, rendered inside Mozo</h4>
       <p>The actual report data is pulled via the Equifax API and displayed in a structured layout: credit score, personal details, accounts, and credit inquiries. The information is intentionally detailed, users need to identify unauthorized activity, which means seeing real data clearly. The bottom strip asks "Does everything look familiar?" with two paths: confirm, or contact Mozo for support.</p>
       <div class="decision"><strong>Design decision:</strong> Integrating the Equifax pull directly into the app was the most technically complex part of this flow, and the most important UX decision. Sending users to AnnualCreditReport.com to fetch their own report would have caused most of this user group to abandon immediately. Keeping everything inside Mozo removes one of the most common drop-off points in comparable financial security products. This required close collaboration with engineering to map the API response into a layout a non-technical user could parse and act on.</div>
-      <img src="mozo-step1-report.png" alt="Step 1 - Equifax credit report: score, accounts, inquiries" class="full-img" />
+      <img src="mozo/mozo-step1-report.png.png" alt="Step 1 - Equifax credit report: score, accounts, inquiries" class="full-img" />
     </div>
 
     <div class="flow-item">
@@ -481,7 +481,7 @@
       <h4>Place a fraud alert: one key piece of copy</h4>
       <p>Step 2 guides users through placing a free one-year fraud alert. The screen shows all three credit bureaus with two contact methods each: apply online or call. A "Get a call script" link supports users who prefer the phone. The most important element on this screen is not the layout. It is a single callout at the top.</p>
       <div class="decision"><strong>Design decision:</strong> The callout reads: "You only need to contact ONE credit bureau. They're required by law to notify the other two on your behalf." Without this, users consistently assumed they had to contact all three separately, tripling the perceived effort and causing drop-off at this step. This regulatory fact is accurate and changes the user's mental model from "three difficult tasks" to "one action." Of all the copy decisions in this flow, this single line had the most measurable impact on completion.</div>
-      <img src="mozo-step2-fraud-alert.png" alt="Step 2 - Set a fraud alert, Contact ONE bureau, 3 bureaus" class="full-img" />
+      <img src="mozo/mozo-step2-fraud-alert.png.png" alt="Step 2 - Set a fraud alert, Contact ONE bureau, 3 bureaus" class="full-img" />
     </div>
 
     <div class="flow-item">
@@ -489,14 +489,14 @@
       <h4>The strongest protection and the most feared step</h4>
       <p>A credit freeze prevents anyone from opening new accounts in the user's name. It is the most effective protection available, and the step most likely to cause abandonment. Users commonly believe it will lock them out of their own finances permanently. The screen leads with two reassurance callouts before presenting any action: "Your existing accounts are not affected" and "You can lift the freeze anytime."</p>
       <div class="decision"><strong>Design decision:</strong> Unlike fraud alert (where one bureau notifies the others), a credit freeze must be applied with all three bureaus separately. The UI makes this clear without making it feel heavier than the previous step. The order of information was carefully considered: reassurance first, then action. This sequence was validated across all three usability testing rounds, users who saw reassurance before the bureau list were significantly more likely to complete the step.</div>
-      <img src="mozo-step3-freeze.png" alt="Step 3 - Freeze my credit: reassurance first, 3 bureaus" class="full-img" />
+      <img src="mozo/mozo-step3-freeze.png.png" alt="Step 3 - Freeze my credit: reassurance first, 3 bureaus" class="full-img" />
     </div>
 
     <div class="flow-item">
       <div class="flow-badge">Completion</div>
       <h4>Emotional payoff at the end of a stressful process</h4>
       <p>After completing all three steps, users reach a celebration screen: confetti, "Your credit is protected," and a summary of everything they completed. For a user who was anxious throughout the entire process, this moment of affirmation makes the experience feel resolved, not just finished. It closes the emotional loop that opened when the threat was first detected on the dashboard.</p>
-      <img src="mozo-completion.png" alt="Completion - Your credit is protected, confetti, 3 checked steps" class="full-img" />
+      <img src="mozo/mozo-completion.png.png" alt="Completion - Your credit is protected, confetti, 3 checked steps" class="full-img" />
     </div>
 
     <div class="flow-item">

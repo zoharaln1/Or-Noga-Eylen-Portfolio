@@ -3,130 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UI/UX Playground — Or Noga</title>
+  <title>UI/UX Playground | Or Noga Eylen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #6248FF;
-      --primary-light: #EEE9FF;
-      --secondary: #FF4D6D;
-      --secondary-light: #FFE9ED;
-      --bg: #F8F7FF;
+      --blue: #1A4FFF;
+      --blue-dark: #0E35CC;
+      --blue-light: #EBF0FF;
+      --slate: #4A6280;
+      --slate-light: #EEF2F7;
+      --bg: #F5F7FF;
       --card: #FFFFFF;
-      --ink: #0F0E1A;
-      --muted: #6B7180;
-      --border: #E8E4FF;
-      --radius: 20px;
+      --ink: #0C1A35;
+      --muted: #5B6E8A;
+      --border: #D8E0F5;
       --t: 0.35s cubic-bezier(.4,0,.2,1);
+      --radius: 16px;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 64px;
-      background: rgba(248,247,255,0.9); backdrop-filter: blur(16px);
+      background: rgba(245,247,255,0.92); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; color: var(--primary); }
-    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; font-size: 0.83rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; transition: color var(--t); }
-    .nav-links a:hover { color: var(--primary); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
     .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); transition: all var(--t); }
-    .nav-back:hover { color: var(--primary); transform: translateX(-3px); }
+    .nav-back:hover { color: var(--blue); transform: translateX(-3px); }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; transition: color var(--t); }
+    .nav-links a:hover { color: var(--blue); }
 
-    /* HERO — gradient using both brand colors */
+    /* HERO */
     .case-hero {
-      background: linear-gradient(135deg, #1A0A28 0%, #3D1A5A 40%, #5A1A40 70%, #2E0A1A 100%);
+      background: linear-gradient(135deg, #050D1E 0%, #081528 55%, #0D2040 100%);
       padding: 160px 64px 100px;
       position: relative; overflow: hidden;
     }
     .case-hero::before {
-      content: '';
-      position: absolute; top: -100px; right: 0;
-      width: 500px; height: 500px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(98,72,255,0.45) 0%, transparent 65%);
+      content: ''; position: absolute; top: -100px; right: -80px;
+      width: 640px; height: 640px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,79,255,0.18) 0%, transparent 68%);
+      pointer-events: none;
     }
     .case-hero::after {
-      content: '';
-      position: absolute; bottom: -100px; left: 10%;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,77,109,0.35) 0%, transparent 65%);
+      content: ''; position: absolute; bottom: -60px; left: 15%;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,98,128,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
     .case-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
     .case-chip {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8);
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px;
-      padding: 7px 18px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      display: inline-flex; align-items: center;
+      background: rgba(26,79,255,0.18); color: rgba(255,255,255,0.78);
+      border: 1px solid rgba(26,79,255,0.38); border-radius: 100px;
+      padding: 7px 18px; font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
       margin-bottom: 24px; width: fit-content;
     }
-    .case-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 1.05; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; }
-    .case-hero p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 620px; line-height: 1.85; }
-
-    .hero-preview {
-      margin-top: 60px;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    .case-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 1.05;
+      letter-spacing: -0.02em; color: #fff; margin-bottom: 20px;
     }
-    .hero-preview img {
-      width: 100%; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.1);
-      opacity: 0.7; transition: opacity var(--t);
+    .case-hero p { color: rgba(255,255,255,0.58); font-size: 1.03rem; max-width: 580px; line-height: 1.88; }
+    .case-meta {
+      display: flex; gap: 48px; margin-top: 52px;
+      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .hero-preview img:hover { opacity: 1; }
+    .case-meta-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 7px; }
+    .case-meta-item span { font-size: 0.87rem; color: rgba(255,255,255,0.78); font-weight: 500; }
 
     /* CONTENT */
-    .page-content { max-width: 1100px; margin: 0 auto; padding: 80px 64px 120px; }
-
-    .intro-text { max-width: 680px; margin-bottom: 64px; }
-    .intro-text .section-chip {
-      display: inline-block; background: var(--primary-light); color: var(--primary);
-      border-radius: 100px; padding: 6px 16px; font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
+    .case-content { max-width: 860px; margin: 0 auto; padding: 88px 40px; }
+    .cs-section { margin-bottom: 80px; }
+    .cs-label {
+      display: inline-block; background: var(--blue-light); color: var(--blue);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      margin-bottom: 10px;
     }
-    .intro-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 20px; }
-    .intro-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.9; }
+    .proj-info { display: flex; gap: 32px; margin-bottom: 28px; }
+    .proj-info-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
+    .proj-info-item span { font-size: 0.86rem; color: var(--muted); font-weight: 500; }
+    h2.cs-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 20px; color: var(--ink);
+    }
+    .cs-body { font-size: 0.96rem; color: var(--muted); line-height: 1.92; margin-bottom: 28px; }
 
-    /* PROJECT BLOCKS */
-    .project-block { margin-bottom: 100px; }
-    .project-block:last-child { margin-bottom: 0; }
+    .project-tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .ptag { padding: 5px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; background: var(--blue-light); color: var(--blue); }
+    .ptag-slate { background: var(--slate-light); color: var(--slate); }
 
-    .project-header { margin-bottom: 32px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-    .project-meta { }
-    .project-number { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; line-height: 1; color: var(--border); margin-bottom: 0; }
-    .project-title { font-family: 'Playfair Display', serif; font-size: 2rem; line-height: 1.1; margin-bottom: 8px; }
-    .project-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.8; max-width: 600px; }
-
-    .project-tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-    .ptag { padding: 5px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; }
-    .ptag-1 { background: var(--primary-light); color: var(--primary); }
-    .ptag-2 { background: var(--secondary-light); color: var(--secondary); }
-    .ptag-3 { background: #EDFBEE; color: #2E7D32; }
-    .ptag-4 { background: #FFF8E1; color: #9A6700; }
-
-    .screens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .screens-grid img { width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.07); display: block; transition: all var(--t); }
-    .screens-grid img:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(98,72,255,0.15); }
-
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0 0 100px 0; }
+    /* SLIDESHOW */
+    .img-slideshow { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .img-slideshow-track { display: grid; grid-template-areas: 'stack'; }
+    .slide-img { grid-area: stack; width: 100%; display: block; opacity: 0; transition: opacity 0.85s ease; }
+    .slide-img.active { opacity: 1; }
+    .slide-counter { position: absolute; top: 14px; right: 16px; background: rgba(12,26,53,0.55); color: white; font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.04em; pointer-events: none; }
+    .slide-dots { display: flex; gap: 7px; justify-content: center; margin-top: 14px; }
+    .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
+    .slide-dot.active { background: var(--blue); width: 20px; border-radius: 100px; }
 
     /* OUTRO */
-    .outro {
-      background: var(--card); border: 1.5px solid var(--border);
-      border-radius: 24px; padding: 64px; text-align: center; margin-top: 40px;
-    }
-    .outro h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 16px; }
-    .outro p { color: var(--muted); font-size: 0.97rem; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
+    .cs-outro { background: var(--card); border: 1.5px solid var(--border); border-radius: 20px; padding: 60px; text-align: center; margin-top: 40px; }
+    .cs-outro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 14px; }
+    .cs-outro p { color: var(--muted); font-size: 0.95rem; max-width: 460px; margin: 0 auto 32px; line-height: 1.8; }
     .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all var(--t); }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-primary:hover { background: #4e38e0; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(98,72,255,0.35); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 100px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all var(--t); }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(26,79,255,0.3); }
     .btn-outline { border: 1.5px solid var(--border); color: var(--ink); }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
     footer { text-align: center; padding: 28px; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); }
 
@@ -136,11 +131,9 @@
     @media (max-width: 900px) {
       nav { padding: 14px 20px; }
       .case-hero { padding: 120px 24px 60px; }
-      .hero-preview { grid-template-columns: 1fr 1fr; }
-      .page-content { padding: 48px 24px 80px; }
-      .screens-grid { grid-template-columns: 1fr; }
-      .project-header { flex-direction: column; align-items: flex-start; }
-      .outro { padding: 40px 24px; }
+      .case-meta { flex-wrap: wrap; gap: 24px; }
+      .case-content { padding: 48px 24px 80px; }
+      .cs-outro { padding: 40px 24px; }
     }
   </style>
 </head>
@@ -158,120 +151,128 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="case-hero">
   <div class="case-hero-inner">
     <div class="case-chip">UI Design · PitangoUX 2020–2024</div>
     <h1>UI/UX<br/>Playground</h1>
-    <p>Selected interface design work across four very different products — from workload automation to the Metaverse. Each project pushed the visual language in a new direction.</p>
-
-    <div class="hero-preview">
-      <img src="https://static.wixstatic.com/media/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png/v1/fit/w_400,h_225,q_90,enc_avif,quality_auto/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png" alt="Routines" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_c41c52d9767d4fa89880ec446e015d06~mv2.png/v1/fit/w_400,h_225,q_90,enc_avif,quality_auto/fcf1d9_c41c52d9767d4fa89880ec446e015d06~mv2.png" alt="EasyShul" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png/v1/fit/w_400,h_225,q_90,enc_avif,quality_auto/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png" alt="Tetavi" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png/v1/fit/w_400,h_225,q_90,enc_avif,quality_auto/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png" alt="SpringGames" />
+    <p>Selected interface work across four products — each with its own domain, users, and visual language. No full case studies here, just the screens.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><label>Projects</label><span>4</span></div>
+      <div class="case-meta-item"><label>Period</label><span>2020–2024</span></div>
+      <div class="case-meta-item"><label>Role</label><span>Senior Product Designer</span></div>
+      <div class="case-meta-item"><label>Agency</label><span>PitangoUX</span></div>
     </div>
   </div>
 </div>
 
-<div class="page-content">
+<div class="case-content">
 
-  <div class="intro-text fade-up">
-    <div class="section-chip">Selected Projects</div>
-    <h2>Four products.<br/>Four different worlds.</h2>
-    <p>Between 2020 and 2024 at PitangoUX, I designed interfaces for a wide range of products — each with its own users, constraints, and visual language. Here's a focused look at the UI side of that work.</p>
-  </div>
-
-  <!-- Routines -->
-  <div class="project-block fade-up">
-    <div class="project-header">
-      <div class="project-meta">
-        <div class="project-number">01</div>
-        <div class="project-title">Routines</div>
-        <p class="project-desc">A versatile Workload Automation and Job Scheduling platform designed to streamline and simplify complex business processes. With an agile marketplace of automation methods, Routines centralizes backend scheduling for multi-step tasks — available on both cloud and on-premise platforms.</p>
-        <div class="project-tag-row">
-          <span class="ptag ptag-1">B2B SaaS</span>
-          <span class="ptag ptag-1">Automation</span>
-          <span class="ptag ptag-1">Dashboard Design</span>
-        </div>
+  <!-- 01 EasyShul -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">01</div>
+    <h2 class="cs-heading">Synagogue management platform</h2>
+    <p class="cs-body">Led product design for a cloud-based SaaS platform serving synagogues across the US. Redesigned the admin dashboard, member portal, and education enrollment modules across a full product cycle.</p>
+    <div class="proj-info">
+      <div class="proj-info-item"><label>Year</label><span>2021–2022</span></div>
+      <div class="proj-info-item"><label>Role</label><span>Lead Product Designer</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>Web · SaaS</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>Non-profit Tech</span></div>
+    </div>
+    <div class="project-tag-row">
+      <span class="cs-label" style="margin-bottom:0">Cloud Platform</span>
+      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Admin UI</span>
+      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Design System</span>
+    </div>
+    <div class="img-slideshow" id="esSlider">
+      <div class="img-slideshow-track">
+        <img class="slide-img active" src="mozo/easyshul/1.jpeg" alt="easyshul.com screen 1" />
+        <img class="slide-img" src="mozo/easyshul/2.jpeg" alt="easyshul.com screen 2" />
+        <img class="slide-img" src="mozo/easyshul/3.jpeg" alt="easyshul.com screen 3" />
+        <img class="slide-img" src="mozo/easyshul/4.jpeg" alt="easyshul.com screen 4" />
       </div>
+      <div class="slide-counter" id="esCounter">1 / 4</div>
     </div>
-    <div class="screens-grid">
-      <img src="https://static.wixstatic.com/media/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png" alt="Routines screen 1" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png" alt="Routines screen 2" />
-    </div>
-  </div>
-
-  <hr class="divider" />
-
-  <!-- EasyShul -->
-  <div class="project-block fade-up">
-    <div class="project-header">
-      <div class="project-meta">
-        <div class="project-number">02</div>
-        <div class="project-title">EasyShul</div>
-        <p class="project-desc">A comprehensive cloud-based software platform for synagogue management. Features modules for accounting, fundraising, event management, education, and member self-service — combining administrative power with a clean, accessible interface.</p>
-        <div class="project-tag-row">
-          <span class="ptag ptag-2">Non-profit Tech</span>
-          <span class="ptag ptag-2">Cloud Platform</span>
-          <span class="ptag ptag-2">Admin UI</span>
-        </div>
-      </div>
-    </div>
-    <div class="screens-grid">
-      <img src="https://static.wixstatic.com/media/fcf1d9_c41c52d9767d4fa89880ec446e015d06~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_c41c52d9767d4fa89880ec446e015d06~mv2.png" alt="EasyShul screen 1" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_010a006d05234f94b12577980bdae92a~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_010a006d05234f94b12577980bdae92a~mv2.png" alt="EasyShul screen 2" />
+    <div class="slide-dots" id="esDots">
+      <button class="slide-dot active" aria-label="Slide 1"></button>
+      <button class="slide-dot" aria-label="Slide 2"></button>
+      <button class="slide-dot" aria-label="Slide 3"></button>
+      <button class="slide-dot" aria-label="Slide 4"></button>
     </div>
   </div>
 
-  <hr class="divider" />
-
-  <!-- Tetavi -->
-  <div class="project-block fade-up">
-    <div class="project-header">
-      <div class="project-meta">
-        <div class="project-number">03</div>
-        <div class="project-title">Tetavi</div>
-        <p class="project-desc">A startup specializing in photorealistic digital content and experiences for the Metaverse and Web3. Tetavi uses advanced volumetric technology to bring real humans into the digital world — enabling immersive content creation at the intersection of tech and art.</p>
-        <div class="project-tag-row">
-          <span class="ptag ptag-3">Metaverse</span>
-          <span class="ptag ptag-3">Web3</span>
-          <span class="ptag ptag-3">Creative Tech</span>
-        </div>
-      </div>
+  <!-- 02 Routines -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">02</div>
+    <h2 class="cs-heading">Workload automation platform</h2>
+    <p class="cs-body">Designed the core scheduling interface for a B2B automation platform handling multi-step background jobs. Focused on making complex pipeline logic readable and manageable for non-technical operators.</p>
+    <div class="project-tag-row">
+      <span class="ptag">B2B SaaS</span>
+      <span class="ptag">Automation</span>
+      <span class="ptag ptag-slate">Dashboard Design</span>
     </div>
-    <div class="screens-grid">
-      <img src="https://static.wixstatic.com/media/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png" alt="Tetavi screen 1" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png" alt="Tetavi screen 2" />
+    <div class="img-slideshow" id="rtSlider">
+      <div class="img-slideshow-track">
+        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png" alt="Routines screen 1" />
+        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png" alt="Routines screen 2" />
+      </div>
+      <div class="slide-counter" id="rtCounter">1 / 2</div>
+    </div>
+    <div class="slide-dots" id="rtDots">
+      <button class="slide-dot active" aria-label="Slide 1"></button>
+      <button class="slide-dot" aria-label="Slide 2"></button>
     </div>
   </div>
 
-  <hr class="divider" />
-
-  <!-- SpringGames -->
-  <div class="project-block fade-up">
-    <div class="project-header">
-      <div class="project-meta">
-        <div class="project-number">04</div>
-        <div class="project-title">SpringGames</div>
-        <p class="project-desc">A mobile game development company specializing in interactive multiplayer online games. SpringGames merges virtual adventures with real-life rewards — designing for high engagement, delight, and a uniquely gamified experience across platforms.</p>
-        <div class="project-tag-row">
-          <span class="ptag ptag-4">Mobile Gaming</span>
-          <span class="ptag ptag-4">Multiplayer</span>
-          <span class="ptag ptag-4">Gamification</span>
-        </div>
-      </div>
+  <!-- 03 Tetavi -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">03</div>
+    <h2 class="cs-heading">Volumetric video for the Metaverse</h2>
+    <p class="cs-body">Designed the creator platform interface for a startup bringing photorealistic humans into Web3 environments. The challenge was translating a highly technical volumetric capture workflow into a clean, creator-friendly UI.</p>
+    <div class="project-tag-row">
+      <span class="ptag">Metaverse</span>
+      <span class="ptag">Web3</span>
+      <span class="ptag ptag-slate">Creative Tech</span>
     </div>
-    <div class="screens-grid">
-      <img src="https://static.wixstatic.com/media/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png" alt="SpringGames screen 1" />
-      <img src="https://static.wixstatic.com/media/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png/v1/fit/w_871,h_489,q_90,enc_avif,quality_auto/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png" alt="SpringGames screen 2" />
+    <div class="img-slideshow" id="tvSlider">
+      <div class="img-slideshow-track">
+        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png" alt="Tetavi screen 1" />
+        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png" alt="Tetavi screen 2" />
+      </div>
+      <div class="slide-counter" id="tvCounter">1 / 2</div>
+    </div>
+    <div class="slide-dots" id="tvDots">
+      <button class="slide-dot active" aria-label="Slide 1"></button>
+      <button class="slide-dot" aria-label="Slide 2"></button>
+    </div>
+  </div>
+
+  <!-- 04 SpringGames -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">04</div>
+    <h2 class="cs-heading">Multiplayer mobile gaming</h2>
+    <p class="cs-body">Designed game UI and engagement flows for a mobile-first multiplayer platform. The focus was on reward loops, onboarding delight, and keeping players oriented across complex multiplayer states.</p>
+    <div class="project-tag-row">
+      <span class="ptag">Mobile Gaming</span>
+      <span class="ptag">Multiplayer</span>
+      <span class="ptag ptag-slate">Gamification</span>
+    </div>
+    <div class="img-slideshow" id="sgSlider">
+      <div class="img-slideshow-track">
+        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png" alt="SpringGames screen 1" />
+        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png" alt="SpringGames screen 2" />
+      </div>
+      <div class="slide-counter" id="sgCounter">1 / 2</div>
+    </div>
+    <div class="slide-dots" id="sgDots">
+      <button class="slide-dot active" aria-label="Slide 1"></button>
+      <button class="slide-dot" aria-label="Slide 2"></button>
     </div>
   </div>
 
   <!-- Outro -->
-  <div class="outro fade-up">
-    <h2>Want to see more?</h2>
-    <p>These are UI highlights — the full case studies live on my case study pages. Or just reach out, I'm always happy to walk through my work in more depth.</p>
+  <div class="cs-outro fade-up">
+    <h2>Want the full story?</h2>
+    <p>These are UI highlights. The full case studies with research, decisions, and outcomes live on the main portfolio.</p>
     <div class="cta-row">
       <a href="portfolio.html" class="btn btn-primary">Back to all projects</a>
       <a href="mailto:ornoga92@gmail.com?subject=Hey Or!" class="btn btn-outline">Get in touch</a>
@@ -281,7 +282,7 @@
 </div>
 
 <footer>
-  <p>© 2026 Or Noga · <a href="portfolio.html" style="color:var(--primary);text-decoration:none">Back to portfolio</a></p>
+  <p>2026 Or Noga · <a href="portfolio.html" style="color:var(--blue);text-decoration:none">Back to portfolio</a></p>
 </footer>
 
 <script>
@@ -289,6 +290,28 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function initSlideshow(sliderId, dotsId, counterId) {
+    const imgs = document.querySelectorAll('#' + sliderId + ' .slide-img');
+    const dots = document.querySelectorAll('#' + dotsId + ' .slide-dot');
+    const counter = document.getElementById(counterId);
+    let cur = 0;
+    function goTo(i) {
+      imgs[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = ((i % imgs.length) + imgs.length) % imgs.length;
+      imgs[cur].classList.add('active');
+      dots[cur].classList.add('active');
+      if (counter) counter.textContent = (cur + 1) + ' / ' + imgs.length;
+    }
+    dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); }); });
+    setInterval(function() { goTo(cur + 1); }, 3200);
+  }
+
+  initSlideshow('esSlider', 'esDots', 'esCounter');
+  initSlideshow('rtSlider', 'rtDots', 'rtCounter');
+  initSlideshow('tvSlider', 'tvDots', 'tvCounter');
+  initSlideshow('sgSlider', 'sgDots', 'sgCounter');
 </script>
 </body>
 </html>
