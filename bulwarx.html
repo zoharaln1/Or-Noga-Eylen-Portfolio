@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BulwarX Case Study | Or Noga Eylen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1A4FFF;
+      --blue-dark: #0E35CC;
+      --blue-light: #EBF0FF;
+      --slate: #4A6280;
+      --slate-light: #EEF2F7;
+      --bg: #F5F7FF;
+      --card: #FFFFFF;
+      --ink: #0C1A35;
+      --muted: #5B6E8A;
+      --border: #D8E0F5;
+      --t: 0.35s cubic-bezier(.4,0,.2,1);
+      --radius: 16px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 64px;
+      background: rgba(245,247,255,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
+    .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); transition: all var(--t); }
+    .nav-back:hover { color: var(--blue); transform: translateX(-3px); }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; transition: color var(--t); }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* HERO */
+    .case-hero {
+      background: linear-gradient(135deg, #050D1E 0%, #081528 55%, #0D2040 100%);
+      padding: 160px 64px 100px;
+      position: relative; overflow: hidden;
+    }
+    .case-hero::before {
+      content: ''; position: absolute; top: -100px; right: -80px;
+      width: 640px; height: 640px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,79,255,0.18) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .case-hero::after {
+      content: ''; position: absolute; bottom: -60px; left: 15%;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,98,128,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .case-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .case-chip {
+      display: inline-flex; align-items: center;
+      background: rgba(26,79,255,0.18); color: rgba(255,255,255,0.78);
+      border: 1px solid rgba(26,79,255,0.38); border-radius: 100px;
+      padding: 7px 18px; font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 24px; width: fit-content;
+    }
+    .case-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 1.05;
+      letter-spacing: -0.02em; color: #fff; margin-bottom: 20px;
+    }
+    .case-hero p { color: rgba(255,255,255,0.58); font-size: 1.03rem; max-width: 580px; line-height: 1.88; }
+    .case-meta {
+      display: flex; gap: 48px; margin-top: 52px;
+      padding-top: 40px;
+    }
+    .case-meta-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 7px; }
+    .case-meta-item span { font-size: 0.87rem; color: rgba(255,255,255,0.78); font-weight: 500; }
+
+    /* CONTENT */
+    .case-content { max-width: 860px; margin: 0 auto; padding: 88px 40px; }
+    .cs-section { margin-bottom: 88px; }
+
+    .cs-label {
+      display: inline-block; background: var(--blue-light); color: var(--blue);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cs-label.slate { background: var(--slate-light); color: var(--slate); }
+
+    h2.cs-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 24px; color: var(--ink);
+    }
+    .cs-body { font-size: 0.96rem; color: var(--muted); line-height: 1.92; }
+    .cs-body + .cs-body { margin-top: 16px; }
+    .cs-body strong { color: var(--ink); font-weight: 600; }
+
+    /* Info cards */
+    .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+    .info-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .info-card h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .info-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    /* Constraint callout */
+    .constraint-box {
+      background: #04091A; border: 1px solid rgba(26,79,255,0.28);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 30px 34px; margin: 32px 0;
+    }
+    .constraint-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+    .constraint-box p { color: rgba(255,255,255,0.68); font-size: 0.94rem; line-height: 1.92; }
+    .constraint-box strong { color: #fff; }
+
+    /* Screen placeholder */
+    .screen-ph {
+      width: 100%; aspect-ratio: 16 / 9;
+      background: var(--slate-light); border: 1.5px dashed var(--border);
+      border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
+      margin: 24px 0;
+    }
+    .screen-ph-inner { text-align: center; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .screen-ph-inner svg { opacity: 0.35; }
+    .screen-ph-inner span { font-size: 0.82rem; font-weight: 600; opacity: 0.7; }
+
+    /* Images */
+    .full-img {
+      width: 100%; border-radius: var(--radius); display: block;
+      margin: 28px 0; border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Persona */
+    .persona-card {
+      background: var(--card); border: 1.5px solid var(--border); border-radius: 20px;
+      padding: 38px; display: grid; grid-template-columns: 130px 1fr; gap: 32px; align-items: start;
+      margin: 32px 0;
+    }
+    .persona-img { width: 130px; height: 130px; border-radius: 14px; object-fit: cover; border: 1.5px solid var(--border); }
+    .persona-name { font-family: 'Playfair Display', serif; font-size: 1.35rem; margin-bottom: 4px; }
+    .persona-role { font-size: 0.8rem; color: var(--muted); margin-bottom: 14px; }
+    .persona-quote { font-style: italic; color: var(--blue); font-size: 0.94rem; line-height: 1.75; border-left: 3px solid var(--blue); padding-left: 16px; margin: 14px 0; }
+    .persona-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+    .persona-col h5 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate); margin-bottom: 8px; }
+    .persona-col p { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+
+    /* Competitor */
+    .comp-grid { display: grid; gap: 20px; margin: 32px 0; }
+    .comp-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .comp-body { padding: 22px; }
+    .comp-name { font-weight: 700; font-size: 1rem; margin-bottom: 7px; }
+    .comp-tag { display: inline-block; background: var(--slate-light); color: var(--slate); border-radius: 100px; padding: 3px 10px; font-size: 0.7rem; font-weight: 600; margin-bottom: 10px; }
+    .comp-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+    .comp-bullets { list-style: none; padding: 0; margin: 0; }
+    .comp-bullets li { font-size: 0.86rem; color: var(--muted); line-height: 1.75; padding: 4px 0 4px 18px; position: relative; }
+    .comp-bullets li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); opacity: 0.5; }
+
+    /* Competitor card image */
+    .comp-img { width: 100%; height: 210px; overflow: hidden; background: #0D1117; border-bottom: 1px solid var(--border); }
+    .comp-img svg { width: 100%; height: 100%; display: block; }
+
+    /* Design option image */
+    .option-img { width: 100%; height: 190px; overflow: hidden; border-bottom: 1px solid var(--border); background: #0D1117; }
+    .option-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+    .option-img svg { width: 100%; height: 100%; display: block; }
+    .option-img-light { background: #F3F6FC; }
+
+    /* Image tab switcher (matches lwf.html pattern) */
+    .img-tabs { margin: 28px 0; }
+    .img-tab-buttons { display: flex; gap: 8px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+    .img-tab-btn {
+      padding: 8px 20px; border-radius: 100px;
+      border: 1.5px solid var(--border); background: var(--card);
+      color: var(--muted); font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all var(--t); font-family: 'Inter', sans-serif;
+    }
+    .img-tab-btn.active { background: var(--blue-light); color: var(--blue); border-color: var(--blue); }
+    .img-tab-btn:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+    .img-tab-cycle-hint { font-size: 0.72rem; color: var(--muted); margin-left: 4px; opacity: 0.7; }
+    .img-tab-wrap { display: grid; grid-template-areas: 'stack'; border-radius: var(--radius); }
+    .img-tab-pane { grid-area: stack; opacity: 0; transition: opacity 0.9s ease; pointer-events: none; }
+    .img-tab-pane.active { opacity: 1; pointer-events: auto; }
+    .img-tab-pane img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(0,0,0,0.08); display: block; }
+
+    /* SWOT */
+    .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 32px 0; }
+    .swot-card { border-radius: var(--radius); padding: 22px; }
+    .swot-card.green { background: #E0E9FF; border: 1.5px solid #AABFFF; }
+    .swot-card.red { background: #F7F8FA; border: 1.5px solid #DDE3EE; }
+    .swot-card.blue { background: #C8D8FF; border: 1.5px solid #8FAAFF; }
+    .swot-card.yellow { background: #ECEEF2; border: 1.5px solid #C4CAD8; }
+    .swot-card h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .swot-card.green h4 { color: #1A4FFF; }
+    .swot-card.red h4 { color: #5B6E8A; }
+    .swot-card.blue h4 { color: #0E35CC; }
+    .swot-card.yellow h4 { color: #4A6280; }
+    .swot-card p { font-size: 0.85rem; line-height: 1.7; color: var(--ink); }
+
+    /* Design options */
+    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 32px 0; }
+    .option-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .option-card.selected { border-color: var(--blue); }
+    .option-header { padding: 13px 20px; font-weight: 700; font-size: 0.83rem; display: flex; align-items: center; gap: 10px; }
+    .option-card.selected .option-header { background: var(--blue-light); color: var(--blue); }
+    .option-card:not(.selected) .option-header { background: var(--slate-light); color: var(--muted); }
+    .badge { padding: 3px 10px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; margin-left: auto; white-space: nowrap; }
+    .badge-selected { background: var(--blue); color: #fff; }
+    .badge-rejected { background: #DDE2EE; color: var(--muted); }
+    .option-body { padding: 16px 20px; font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+
+    /* Flow */
+    .flow-item { margin-bottom: 64px; }
+    .flow-item:last-child { margin-bottom: 0; }
+    .flow-badge {
+      display: inline-flex; align-items: center;
+      background: var(--blue-light); color: var(--blue);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      margin-top: 36px; margin-bottom: 12px;
+    }
+    .flow-item h4 { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .flow-item > p { font-size: 0.94rem; color: var(--muted); line-height: 1.88; margin-bottom: 6px; }
+
+    /* Design decision callout */
+    .decision {
+      background: var(--blue-light); border-left: 3px solid var(--blue);
+      border-radius: 0 12px 12px 0; padding: 15px 20px; margin: 18px 0;
+      font-size: 0.87rem; color: var(--ink); line-height: 1.78;
+    }
+    .decision strong { color: var(--blue-dark); }
+
+    /* Outcomes */
+    .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0; }
+    .outcome-card {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 28px 22px; text-align: center;
+    }
+    .outcome-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--blue); line-height: 1;
+      margin-bottom: 10px;
+    }
+    .outcome-label { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+    blockquote.highlight {
+      background: linear-gradient(135deg, var(--blue-light), var(--slate-light));
+      border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 28px 32px; margin: 32px 0;
+      font-size: 1.03rem; font-style: italic; color: var(--ink); line-height: 1.88;
+    }
+
+    .next-project { background: var(--card); border: 1.5px solid var(--border); border-radius: 20px; padding: 48px; text-align: center; margin: 40px 0; }
+    .next-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 14px; }
+    .next-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; margin-bottom: 18px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 100px; font-size: 0.9rem; font-weight: 600; text-decoration: none; background: var(--blue); color: #fff; transition: all var(--t); }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(26,79,255,0.28); }
+
+    footer { text-align: center; padding: 28px; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); }
+
+    .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .case-hero { padding: 120px 24px 60px; }
+      .case-hero h1 { font-size: 2.8rem; }
+      .case-meta { flex-wrap: wrap; gap: 24px; }
+      .case-content { padding: 48px 20px; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .persona-card { grid-template-columns: 1fr; }
+      .persona-cols { grid-template-columns: 1fr; }
+      .option-grid { grid-template-columns: 1fr; }
+      .swot-grid { grid-template-columns: 1fr; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="portfolio.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to portfolio
+  </a>
+  <a href="portfolio.html" class="nav-logo">Or Noga Eylen</a>
+  <ul class="nav-links">
+    <li><a href="mozo.html">Mozo</a></li>
+    <li><a href="lwf.html">LWF</a></li>
+    <li><a href="playground.html">Playground</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-chip">Enterprise SaaS · Cybersecurity · Security Automation</div>
+    <h1>BulwarX<br/>Routines</h1>
+    <p>Designing a visual workflow builder that lets security analysts automate complex incident response, without writing a single line of code.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><label>My Role</label><span>Lead Product Designer</span></div>
+      <div class="case-meta-item"><label>Team</label><span>1 PM · 4 Engineers</span></div>
+      <div class="case-meta-item"><label>Tools</label><span>Figma · Miro</span></div>
+      <div class="case-meta-item"><label>Year</label><span>2023–2024</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="case-content">
+
+  <!-- Context -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Context</div>
+    <h2 class="cs-heading">The product and the problem</h2>
+    <p class="cs-body">BulwarX is an Israeli cybersecurity integration company headquartered in Ra'anana. Their business is implementing and managing enterprise security stacks for organizations across industries, working with partners including Palo Alto Networks, Microsoft, CyberArk, Broadcom, and Netskope. Routines is an in-house platform BulwarX built for their own operations and for their managed security clients: a visual automation engine that lets security teams respond to threats, run investigations, and manage remediation without manual intervention. A Routine chains together Tasks, each one performing a discrete action like downloading a file, scanning for malware, sending an alert, or quarantining a device, connected through branching logic that handles success, failure, and edge cases.</p>
+    <p class="cs-body">The problem BulwarX was solving is real and expensive. Enterprise SOC teams handle hundreds of alerts per day. Most of that work is repetitive: download a file, scan it, escalate if suspicious, notify someone, open a ticket. Done manually, each incident takes an analyst between 30 minutes and 2 hours. Done wrong, it creates liability. <strong>The bottleneck wasn't detection. It was response, and response was still manual.</strong></p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>My Role</h4>
+        <p>End-to-end design: research, flows, information architecture, UI, dashboard, workflow builder, task creation experience, and dev handoff</p>
+      </div>
+      <div class="info-card">
+        <h4>Users</h4>
+        <p>CISOs, SOC team leads, security analysts, and IT operations managers at enterprise organizations</p>
+      </div>
+      <div class="info-card">
+        <h4>Domain</h4>
+        <p>SOAR (Security Orchestration, Automation and Response). A category of tools used to coordinate and automate security operations</p>
+      </div>
+      <div class="info-card">
+        <h4>Challenge</h4>
+        <p>Design a workflow builder powerful enough for complex security logic, but accessible enough that analysts can build and own it without engineering support</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Constraint -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">The Key Constraint</div>
+    <h2 class="cs-heading">Automation that can't be a black box</h2>
+    <p class="cs-body">In security, trust is non-negotiable. An analyst who doesn't understand what a Routine does won't run it. A CISO who can't audit what ran during an incident has a compliance problem. Unlike most SaaS tools where "it just works" is a feature, in security operations, opacity is a liability.</p>
+    <p class="cs-body">That constraint shaped every design decision. Every Routine needed to be readable, not just functional.</p>
+
+    <div class="constraint-box">
+      <div class="constraint-label">What we couldn't compromise on</div>
+      <p>
+        <strong>Every Routine had to be fully auditable.</strong> Analysts needed to trace exactly what ran, what the output was, and where a failure occurred, without reading logs.<br/><br/>
+        <strong>Failure paths were as important as success paths.</strong> A silent failure in a security workflow is worse than no automation. Every branch, retry, and fallback had to be visible and intentional.<br/><br/>
+        <strong>Non-engineers had to be the primary builders.</strong> If Routine creation required engineering support, adoption would stall. The UI had to be powerful enough for complex logic, simple enough for an analyst who's never written code.<br/><br/>
+        <strong>The system had to handle real-time load.</strong> Running jobs, failed jobs, and scheduled jobs all needed to be visible simultaneously, without overwhelming the person monitoring them.
+      </p>
+    </div>
+
+    <p class="cs-body">This pushed me away from the standard SOAR approach of script-based configuration and toward a visual-first system where the logic of a Routine could be read at a glance, not decoded from a config file.</p>
+  </div>
+
+  <!-- User Research -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">User Research</div>
+    <h2 class="cs-heading">Who actually runs the security operations</h2>
+    <p class="cs-body">I ran research sessions with security professionals across three roles: CISOs responsible for strategy and compliance, SOC team leads managing daily operations, and frontline security analysts doing the actual triage and response work. The most revealing insight was a split that I didn't expect.</p>
+    <p class="cs-body">CISOs cared about visibility and reporting. Analysts cared about speed and clarity. But the people in between, the SOC team leads, were where the real pain lived. They were the ones context-switching between management dashboards, raw alert feeds, and makeshift scripts. They were the intended primary users of BulwarX, and they were being served poorly by every existing tool.</p>
+
+    <div class="persona-card">
+      <img
+        class="persona-img"
+        src="https://static.wixstatic.com/media/0b334736e9ac4a08b08f7d3ca455ec7d.jpg/v1/fill/w_387,h_361,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Middle-Aged%20Man%20Outdoors.jpg"
+        alt="David Chen persona"
+      />
+      <div>
+        <div class="persona-name">David Chen</div>
+        <div class="persona-role">Head of Security Operations, Fintech company, 2,400 employees</div>
+        <div class="persona-quote">"I know exactly what needs to be automated. I just can't build it without pulling an engineer off something more important."</div>
+        <div class="persona-cols">
+          <div class="persona-col">
+            <h5>Goals</h5>
+            <p>Reduce manual triage time. Build automated playbooks his team can run without him. Have clear visibility into what's running and what's failing, without digging into logs.</p>
+          </div>
+          <div class="persona-col">
+            <h5>Frustrations</h5>
+            <p>Existing SOAR tools require Python. His team is 6 analysts, not engineers. By the time a playbook is built, the threat landscape has changed. Failed automations are invisible until something breaks.</p>
+          </div>
+          <div class="persona-col">
+            <h5>Context</h5>
+            <p>Processes 300+ alerts per day. Spends roughly 40% of his time on manual triage that he knows could be automated. Reports directly to CISO, responsible for SOC performance metrics.</p>
+          </div>
+          <div class="persona-col">
+            <h5>Mental model</h5>
+            <p>Thinks in playbooks and decision trees, not code. If shown a visual flow with conditions and branches, he can read it instantly. If shown a YAML file, he needs an engineer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Competitive Analysis -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Competitive Analysis</div>
+    <h2 class="cs-heading">Why existing SOAR tools fail analysts</h2>
+    <p class="cs-body">The SOAR market is dominated by tools built by engineers, for engineers. The assumption baked into almost every competitor is that the person creating automations has a technical background. That assumption is wrong for most mid-market security teams, and it's where BulwarX had real room to differentiate.</p>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-img">
+          <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="800" height="210" fill="#1E1E2E"/>
+            <rect width="160" height="210" fill="#252526"/>
+            <text x="12" y="26" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.38)" font-weight="700" letter-spacing="0.07em">PLAYBOOKS</text>
+            <rect x="0" y="34" width="160" height="22" fill="rgba(86,156,214,0.18)"/>
+            <text x="18" y="49" font-family="monospace" font-size="9.5" fill="rgba(100,170,255,0.9)">incident_response.py</text>
+            <text x="18" y="72" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.35)">malware_triage.py</text>
+            <text x="18" y="91" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.35)">email_alert.py</text>
+            <text x="18" y="110" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.35)">escalation.py</text>
+            <text x="18" y="129" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.35)">close_ticket.py</text>
+            <rect x="160" y="0" width="640" height="28" fill="#1A1A28"/>
+            <rect x="160" y="25" width="186" height="3" fill="#569CD6"/>
+            <text x="172" y="18" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.75)">incident_response.py</text>
+            <text x="172" y="50" font-family="monospace" font-size="9.5" fill="#569CD6">import</text>
+            <text x="218" y="50" font-family="monospace" font-size="9.5" fill="#9CDCFE"> demistomock as demisto</text>
+            <text x="172" y="67" font-family="monospace" font-size="9.5" fill="#6A9955"># automated incident response playbook</text>
+            <text x="172" y="84" font-family="monospace" font-size="9.5" fill="#569CD6">def </text>
+            <text x="196" y="84" font-family="monospace" font-size="9.5" fill="#DCDCAA">handle_incident</text>
+            <text x="316" y="84" font-family="monospace" font-size="9.5" fill="#D4D4D4">(args: dict):</text>
+            <text x="184" y="101" font-family="monospace" font-size="9.5" fill="#9CDCFE">severity </text>
+            <text x="248" y="101" font-family="monospace" font-size="9.5" fill="#D4D4D4">= args.get(</text>
+            <text x="340" y="101" font-family="monospace" font-size="9.5" fill="#CE9178">'severity'</text>
+            <text x="412" y="101" font-family="monospace" font-size="9.5" fill="#D4D4D4">, 0)</text>
+            <text x="184" y="118" font-family="monospace" font-size="9.5" fill="#569CD6">if </text>
+            <text x="202" y="118" font-family="monospace" font-size="9.5" fill="#9CDCFE">severity </text>
+            <text x="256" y="118" font-family="monospace" font-size="9.5" fill="#D4D4D4">&gt;= 3:</text>
+            <text x="196" y="135" font-family="monospace" font-size="9.5" fill="#9CDCFE">demisto</text>
+            <text x="246" y="135" font-family="monospace" font-size="9.5" fill="#D4D4D4">.executeCommand(</text>
+            <text x="394" y="135" font-family="monospace" font-size="9.5" fill="#CE9178">'escalate_incident'</text>
+            <text x="526" y="135" font-family="monospace" font-size="9.5" fill="#D4D4D4">)</text>
+            <text x="184" y="152" font-family="monospace" font-size="9.5" fill="#569CD6">return </text>
+            <text x="222" y="152" font-family="monospace" font-size="9.5" fill="#4EC9B0">CommandResults</text>
+            <text x="336" y="152" font-family="monospace" font-size="9.5" fill="#D4D4D4">(outputs=result, readable_output=msg)</text>
+            <rect x="172" y="161" width="5" height="11" fill="#D4D4D4" opacity="0.65"/>
+            <rect x="160" y="196" width="640" height="14" fill="#007ACC"/>
+            <text x="172" y="207" font-family="monospace" font-size="8" fill="white" opacity="0.85">Python 3.10  UTF-8  XSOAR 8.2</text>
+          </svg>
+        </div>
+        <div class="comp-body">
+          <div class="comp-name">Palo Alto XSOAR</div>
+          <ul class="comp-bullets">
+            <li>Extremely powerful and deeply integrated across the security stack</li>
+            <li>Playbook creation is primarily Python-based, requiring engineering involvement</li>
+            <li>Visual canvas exists but is supplementary to code, not a replacement for it</li>
+            <li>Setup and onboarding typically takes weeks, with steep configuration overhead</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img">
+          <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="grid" x="0" y="36" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle cx="12" cy="12" r="0.9" fill="rgba(255,255,255,0.07)"/>
+              </pattern>
+            </defs>
+            <rect width="800" height="210" fill="#1C1C2A"/>
+            <rect width="800" height="36" fill="#141420"/>
+            <text x="16" y="23" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.65)" font-weight="600">Phantom Playbook Editor</text>
+            <text x="640" y="23" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,140,0,0.8)" font-weight="600">malware_triage · Draft</text>
+            <rect x="0" y="36" width="800" height="174" fill="url(#grid)"/>
+            <!-- connections -->
+            <path d="M 198 115 C 230 115 210 120 242 120" stroke="rgba(255,140,0,0.55)" stroke-width="2" fill="none"/>
+            <path d="M 390 120 C 422 120 402 115 434 115" stroke="rgba(255,140,0,0.55)" stroke-width="2" fill="none"/>
+            <path d="M 566 115 C 598 115 578 115 610 115" stroke="rgba(80,200,120,0.55)" stroke-width="2" fill="none"/>
+            <path d="M 316 140 Q 316 172 316 175" stroke="rgba(220,70,70,0.4)" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+            <path d="M 500 135 Q 500 172 500 175" stroke="rgba(220,70,70,0.4)" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+            <!-- Node 1: Start -->
+            <rect x="90" y="94" width="108" height="42" rx="7" fill="#252540" stroke="rgba(255,140,0,0.7)" stroke-width="1.5"/>
+            <text x="144" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">Start</text>
+            <text x="144" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,140,0,0.8)" text-anchor="middle">Trigger: new_alert</text>
+            <!-- Node 2 -->
+            <rect x="242" y="100" width="148" height="42" rx="7" fill="#252540" stroke="rgba(100,150,255,0.5)" stroke-width="1.5"/>
+            <text x="316" y="118" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">getsysteminfoV2</text>
+            <text x="316" y="133" font-family="Inter,sans-serif" font-size="8" fill="rgba(150,180,255,0.65)" text-anchor="middle">phantom.act()</text>
+            <!-- Node 3 -->
+            <rect x="434" y="94" width="132" height="42" rx="7" fill="#252540" stroke="rgba(100,150,255,0.5)" stroke-width="1.5"/>
+            <text x="500" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">file_reputation</text>
+            <text x="500" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(150,180,255,0.65)" text-anchor="middle">phantom.act()</text>
+            <!-- Node 4: End -->
+            <rect x="610" y="94" width="110" height="42" rx="7" fill="#252540" stroke="rgba(80,200,120,0.55)" stroke-width="1.5"/>
+            <text x="665" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">send_email</text>
+            <text x="665" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(80,200,120,0.7)" text-anchor="middle">phantom.act()</text>
+            <!-- Failure nodes (dashed) -->
+            <rect x="262" y="175" width="108" height="36" rx="6" fill="#1A1A2C" stroke="rgba(220,70,70,0.45)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="316" y="191" font-family="Inter,sans-serif" font-size="8" fill="rgba(220,100,100,0.85)" text-anchor="middle">failure_handler</text>
+            <text x="316" y="204" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle">configure manually</text>
+            <rect x="447" y="172" width="106" height="36" rx="6" fill="#1A1A2C" stroke="rgba(220,70,70,0.45)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="500" y="188" font-family="Inter,sans-serif" font-size="8" fill="rgba(220,100,100,0.85)" text-anchor="middle">failure_handler</text>
+            <text x="500" y="201" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle">configure manually</text>
+          </svg>
+        </div>
+        <div class="comp-body">
+          <div class="comp-name">Splunk SOAR</div>
+          <ul class="comp-bullets">
+            <li>More developed visual playbook builder than XSOAR, but still engineer-first</li>
+            <li>Interface is dense with a steep learning curve despite drag-and-drop</li>
+            <li>The distinction between Apps, Actions, and Playbooks causes onboarding confusion</li>
+            <li>Failure state visibility is limited — failed paths are not surfaced clearly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img" style="background:#F3F6FC;">
+          <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="800" height="210" fill="#F3F6FC"/>
+            <rect width="800" height="38" fill="#0078D4"/>
+            <text x="16" y="24" font-family="Inter,sans-serif" font-size="13" fill="white" font-weight="700">Microsoft Azure</text>
+            <text x="166" y="24" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.75)">  |  Logic Apps Designer · sentinel-automation-v2</text>
+            <!-- Left sidebar -->
+            <rect x="0" y="38" width="170" height="172" fill="white" opacity="0.6"/>
+            <text x="12" y="60" font-family="Inter,sans-serif" font-size="8.5" fill="#0078D4" font-weight="700">DESIGNER</text>
+            <rect x="12" y="68" width="146" height="22" rx="4" fill="#E6F2FB"/>
+            <text x="20" y="83" font-family="Inter,sans-serif" font-size="8.5" fill="#0078D4" font-weight="600">▶  Run Trigger</text>
+            <text x="12" y="104" font-family="Inter,sans-serif" font-size="8" fill="#605E5C">Resources</text>
+            <text x="12" y="120" font-family="Inter,sans-serif" font-size="8" fill="#323130">• microsoft-sentinel</text>
+            <text x="12" y="135" font-family="Inter,sans-serif" font-size="8" fill="#323130">• teams-connector</text>
+            <text x="12" y="150" font-family="Inter,sans-serif" font-size="8" fill="#323130">• azure-monitor</text>
+            <text x="12" y="165" font-family="Inter,sans-serif" font-size="8" fill="#323130">• logic-apps-runtime</text>
+            <!-- Flow area -->
+            <!-- Node 1 -->
+            <rect x="290" y="48" width="220" height="38" rx="4" fill="white" stroke="#D1D9E6" stroke-width="1.5"/>
+            <rect x="290" y="48" width="5" height="38" rx="2" fill="#0078D4"/>
+            <text x="306" y="63" font-family="Inter,sans-serif" font-size="8.5" fill="#323130" font-weight="600">When a Microsoft Sentinel alert fires</text>
+            <text x="306" y="77" font-family="Inter,sans-serif" font-size="7.5" fill="#605E5C">Trigger · Microsoft Sentinel</text>
+            <!-- Arrow -->
+            <line x1="400" y1="86" x2="400" y2="100" stroke="#8A8886" stroke-width="1.5"/>
+            <polygon points="395,98 405,98 400,106" fill="#8A8886"/>
+            <!-- Node 2 -->
+            <rect x="290" y="106" width="220" height="38" rx="4" fill="white" stroke="#D1D9E6" stroke-width="1.5"/>
+            <rect x="290" y="106" width="5" height="38" rx="2" fill="#40A9F3"/>
+            <text x="306" y="121" font-family="Inter,sans-serif" font-size="8.5" fill="#323130" font-weight="600">Get incident details</text>
+            <text x="306" y="135" font-family="Inter,sans-serif" font-size="7.5" fill="#605E5C">Action · Microsoft Sentinel · azure.microsoft.com</text>
+            <!-- Arrow -->
+            <line x1="400" y1="144" x2="400" y2="158" stroke="#8A8886" stroke-width="1.5"/>
+            <polygon points="395,156 405,156 400,163" fill="#8A8886"/>
+            <!-- Node 3: Condition diamond area -->
+            <rect x="278" y="163" width="244" height="38" rx="4" fill="white" stroke="#D1D9E6" stroke-width="1.5"/>
+            <rect x="278" y="163" width="5" height="38" rx="2" fill="#804B00"/>
+            <text x="294" y="178" font-family="Inter,sans-serif" font-size="8.5" fill="#323130" font-weight="600">Condition: Severity equals High</text>
+            <text x="294" y="192" font-family="Inter,sans-serif" font-size="7.5" fill="#605E5C">Built-in · Control · Separate Azure context needed</text>
+            <!-- Branch labels -->
+            <line x1="320" y1="201" x2="240" y2="201" stroke="#8A8886" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+            <text x="208" y="198" font-family="Inter,sans-serif" font-size="8" fill="#107C10" font-weight="600">True</text>
+            <line x1="480" y1="201" x2="560" y2="201" stroke="#8A8886" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+            <text x="564" y="198" font-family="Inter,sans-serif" font-size="8" fill="#A80000" font-weight="600">False</text>
+          </svg>
+        </div>
+        <div class="comp-body">
+          <div class="comp-name">Microsoft Sentinel</div>
+          <ul class="comp-bullets">
+            <li>Cloud-native SIEM with strong Azure ecosystem integration</li>
+            <li>Automation through Logic Apps feels bolted on, not purpose-built for security ops</li>
+            <li>Monitoring and failure tracing requires switching between multiple Azure interfaces</li>
+            <li>Not a dedicated SOAR tool — and the workflow experience reflects that clearly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="cs-body">The gap across all three: none of them treat the security analyst as the primary workflow builder. BulwarX's opportunity was to own that space.</p>
+
+    <div class="swot-grid">
+      <div class="swot-card green">
+        <h4>Strengths</h4>
+        <p>Visual-first workflow builder designed for analysts, not engineers. Step-by-step task creation reduces cognitive load. Real-time monitoring with clear failure states. Dark theme designed for extended SOC use.</p>
+      </div>
+      <div class="swot-card red">
+        <h4>Weaknesses</h4>
+        <p>Newer platform with fewer pre-built integrations than XSOAR or Splunk. No established customer base to draw social proof from. Enterprise sales cycle requires proven reliability.</p>
+      </div>
+      <div class="swot-card blue">
+        <h4>Opportunities</h4>
+        <p>Mid-market SOC teams underserved by enterprise-priced tools. Growing demand for no-code automation. Analyst-owned playbooks reduce dependency on stretched engineering teams.</p>
+      </div>
+      <div class="swot-card yellow">
+        <h4>Threats</h4>
+        <p>Palo Alto and Splunk continue to improve their visual builders. Enterprise lock-in through existing SIEM investments. Security buyers prefer established vendors for perceived reliability and compliance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Exploration -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Design Exploration</div>
+    <h2 class="cs-heading">How do analysts think about workflows?</h2>
+    <p class="cs-body">Before touching UI, I ran a card-sorting exercise with three analysts and two SOC team leads. I gave them a complex incident scenario, a malware investigation with multiple possible outcomes, and asked them to map the response flow on a whiteboard. Every person drew the same structure: a top-down decision tree with branching paths, clear labels on each outcome, and explicit "what happens if this fails" branches alongside the success path.</p>
+    <p class="cs-body">That told me everything I needed to know about the right interaction model. The question was how to translate that mental model into a builder that was both powerful and usable.</p>
+
+    <div class="option-grid">
+      <div class="option-card">
+        <div class="option-img">
+          <svg viewBox="0 0 400 190" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="190" fill="#0D1117"/>
+            <rect width="400" height="30" fill="#161B22"/>
+            <circle cx="14" cy="15" r="4.5" fill="#FF5F57"/>
+            <circle cx="27" cy="15" r="4.5" fill="#FEBC2E"/>
+            <circle cx="40" cy="15" r="4.5" fill="#28C840"/>
+            <text x="60" y="19" font-family="monospace" font-size="8.5" fill="rgba(255,255,255,0.45)">malware_triage.yml</text>
+            <text x="14" y="50" font-family="monospace" font-size="9" fill="#7EE787">routines</text>
+            <text x="76" y="50" font-family="monospace" font-size="9" fill="#E6EDF3">:</text>
+            <text x="20" y="66" font-family="monospace" font-size="9" fill="#E6EDF3">- </text>
+            <text x="32" y="66" font-family="monospace" font-size="9" fill="#79C0FF">name</text>
+            <text x="64" y="66" font-family="monospace" font-size="9" fill="#E6EDF3">: </text>
+            <text x="74" y="66" font-family="monospace" font-size="9" fill="#A5D6FF">malware_triage</text>
+            <text x="32" y="82" font-family="monospace" font-size="9" fill="#79C0FF">trigger</text>
+            <text x="82" y="82" font-family="monospace" font-size="9" fill="#E6EDF3">: </text>
+            <text x="92" y="82" font-family="monospace" font-size="9" fill="#A5D6FF">alert_received</text>
+            <text x="32" y="98" font-family="monospace" font-size="9" fill="#79C0FF">tasks</text>
+            <text x="66" y="98" font-family="monospace" font-size="9" fill="#E6EDF3">:</text>
+            <text x="40" y="114" font-family="monospace" font-size="9" fill="#E6EDF3">- </text>
+            <text x="52" y="114" font-family="monospace" font-size="9" fill="#79C0FF">action</text>
+            <text x="94" y="114" font-family="monospace" font-size="9" fill="#E6EDF3">: </text>
+            <text x="104" y="114" font-family="monospace" font-size="9" fill="#A5D6FF">download_file</text>
+            <text x="60" y="130" font-family="monospace" font-size="9" fill="#79C0FF">params</text>
+            <text x="104" y="130" font-family="monospace" font-size="9" fill="#E6EDF3">:</text>
+            <text x="68" y="146" font-family="monospace" font-size="9" fill="#79C0FF">url</text>
+            <text x="88" y="146" font-family="monospace" font-size="9" fill="#E6EDF3">: </text>
+            <text x="98" y="146" font-family="monospace" font-size="9" fill="#A5D6FF">"&#123;&#123; alert.file_url &#125;&#125;"</text>
+            <text x="60" y="162" font-family="monospace" font-size="9" fill="#79C0FF">on_success</text>
+            <text x="130" y="162" font-family="monospace" font-size="9" fill="#A5D6FF">: scan_file</text>
+            <text x="60" y="178" font-family="monospace" font-size="9" fill="#79C0FF">on_failure</text>
+            <text x="124" y="178" font-family="monospace" font-size="9" fill="#8B949E">: null</text>
+          </svg>
+        </div>
+        <div class="option-header">
+          Script-based configuration
+          <span class="badge badge-rejected">Not chosen</span>
+        </div>
+        <div class="option-body">Analysts define Routines using structured YAML or a Python SDK. Powerful and precise, but requires technical knowledge to create and maintain. Every change to a Routine requires either engineering time or a technically skilled analyst. Debugging means reading logs. Adopted by XSOAR and Splunk for their core experience. Fast to build for a technical user, inaccessible for everyone else.</div>
+      </div>
+      <div class="option-card selected">
+        <div class="option-img">
+          <img src="mozo/bulwarx/08.png" alt="Visual workflow builder canvas"/>
+        </div>
+        <div class="option-header">
+          Visual node-based builder
+          <span class="badge badge-selected">Chosen</span>
+        </div>
+        <div class="option-body">Analysts build Routines by connecting visual nodes on a canvas. Each node is a Task with clearly labeled inputs, outputs, and branch conditions. Logic is readable at a glance. Failure paths are first-class elements, not afterthoughts. Non-engineers can build, read, and modify complex workflows without help. The builder is the documentation. Chosen because it matches the mental model analysts already use when thinking through a response playbook.</div>
+      </div>
+    </div>
+
+    <div class="decision">
+      <strong>Design decision:</strong> I made failure paths visually identical in weight to success paths in the workflow builder. In all competitor tools, failure handling is a secondary concern in the UI. In BulwarX, every Task has an explicit Failure branch by default, making error handling a design requirement rather than an afterthought. This directly addressed the biggest operational risk: automations that fail silently.
+    </div>
+  </div>
+
+  <!-- The Solution -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">The Solution</div>
+    <h2 class="cs-heading">Four surfaces, one operational picture</h2>
+    <p class="cs-body">The BulwarX Routines experience follows a single creation journey across five surfaces — from situational awareness, to the Routine library, to creating and building out a Routine, to the completed visual workflow.</p>
+
+    <div class="flow-badge">Surface 01</div>
+    <div class="flow-item">
+      <h4>The Dashboard</h4>
+      <p>The first screen any analyst or CISO sees. Designed to answer one question immediately: what's happening right now and does anything need my attention? The dashboard surfaces Running Jobs, Failed Jobs, Scheduled Jobs, Engine health, and Package status in a single view.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> I used card-based layout rather than a table to allow scanning at different levels of urgency. Color was used sparingly, reserved only for failure states, so that red always means "act now." Jobs with no issues are intentionally low-visual-weight so that problems stand out without scanning every row.
+      </div>
+      <img class="full-img" src="mozo/bulwarx/07.png" alt="BulwarX Dashboard — running jobs, failed alerts, engine and package status"/>
+    </div>
+
+    <div class="flow-badge">Surface 02</div>
+    <div class="flow-item">
+      <h4>Routine Management</h4>
+      <p>The central library of all Routines in the organization. Analysts can search, filter by status, engine, or label, and understand the health of each automation at a glance without opening it. Card layout was chosen over a table to support scanning by status, not just by name.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> Labels and status indicators were surfaced directly on each Routine card, not hidden behind a hover or a click. In security operations, context-switching is expensive. An analyst should be able to triage the automation library in under 30 seconds.
+      </div>
+      <div class="img-tabs">
+        <div class="img-tab-buttons">
+          <button class="img-tab-btn active">Card view</button>
+          <button class="img-tab-btn">Filter panel</button>
+          <span class="img-tab-cycle-hint">Auto-cycling</span>
+        </div>
+        <div class="img-tab-wrap">
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Routines library — card view with status labels"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/02.png" alt="Routines library — filter panel open"/></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-badge">Surface 03</div>
+    <div class="flow-item">
+      <h4>Creating a New Routine</h4>
+      <p>From the library, analysts launch a new Routine through a minimal creation panel — name, trigger, dependencies, and labels. Keeping the entry form short was intentional: early testing showed analysts abandoned creation when asked too many questions upfront. Advanced configuration happens inside the Routine, not during creation.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> Separating "create" from "configure" reduced drop-off and let analysts reach the workflow canvas faster. The creation form is a gate, not a configurator. Everything else is deferred to where the real work happens.
+      </div>
+      <img class="full-img" src="mozo/bulwarx/09.png" alt="Add new routine — creation panel with name, trigger, and label fields"/>
+    </div>
+
+    <div class="flow-badge">Surface 04</div>
+    <div class="flow-item">
+      <h4>Task Creation Wizard</h4>
+      <p>Once inside a Routine, analysts add Tasks through a structured three-step wizard: Information (name, engine, description), Input (what data this Task needs), Output (what it returns and what each outcome triggers). Each step is a single concern — analysts never have to think about inputs and outputs at the same time.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> I introduced a side panel pattern for editing Tasks inside an open Routine, so analysts could make changes without losing their position in the workflow. In competitor tools, editing a node opens a new full-screen context, breaking the spatial awareness of the canvas. The side panel preserves that context and makes iteration significantly faster.
+      </div>
+      <div class="img-tabs">
+        <div class="img-tab-buttons">
+          <button class="img-tab-btn active">Empty state</button>
+          <button class="img-tab-btn">Task info</button>
+          <button class="img-tab-btn">Input config</button>
+          <button class="img-tab-btn">Output mapping</button>
+          <span class="img-tab-cycle-hint">Auto-cycling</span>
+        </div>
+        <div class="img-tab-wrap">
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Routine detail — empty tasks state, ready to build"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/04.png" alt="Add task — Step 1: Task Info"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/05.png" alt="Add task — Step 2: Input configuration"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/06.png" alt="Add task — Step 3: Output mapping"/></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-badge">Surface 05</div>
+    <div class="flow-item">
+      <h4>The Workflow Builder</h4>
+      <p>The completed Routine lives here: a visual canvas where every Task is a node, every connection is a decision, and every failure path is visible at full weight alongside the success path. This is the output of the entire creation journey — a Routine that reads like a flowchart, not a config file. Analysts can audit, modify, and share it without needing the person who built it in the room.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> I rejected the common pattern of collapsing failure branches by default. Every Task node shows both the success path and the failure path simultaneously. Analysts who build Routines also run incident reviews under pressure — they need to read the workflow instantly, not reconstruct it from memory. The builder is the documentation.
+      </div>
+      <img class="full-img" src="mozo/bulwarx/08.png" alt="BulwarX Workflow Builder — visual node canvas with connected task branches and failure paths"/>
+    </div>
+  </div>
+
+  <!-- Outcomes -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Outcomes</div>
+    <h2 class="cs-heading">Results from pilot deployments</h2>
+    <p class="cs-body">BulwarX was piloted with three enterprise security teams over a six-month period. Metrics were tracked across manual triage time, Routine adoption rate, and analyst satisfaction scores collected through structured usability sessions.</p>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">68%</div>
+        <div class="outcome-label">Reduction in manual triage time across pilot deployments</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">14 min</div>
+        <div class="outcome-label">Average time to create a new Routine, vs. 3+ hours for equivalent scripted automation</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">4.4 / 5</div>
+        <div class="outcome-label">Usability score from SOC analysts in beta testing across all three pilot organizations</div>
+      </div>
+    </div>
+
+    <blockquote class="highlight">
+      "This is the first automation tool I've used where I can actually read what a Routine does without asking the person who built it."<br/>
+      <span style="font-size:0.82rem; font-style:normal; color:var(--muted); display:block; margin-top:10px;">SOC Team Lead, pilot organization</span>
+    </blockquote>
+  </div>
+
+  <!-- Reflection -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Reflection</div>
+    <h2 class="cs-heading">What I'd do differently</h2>
+    <p class="cs-body">The hardest design problem on this project wasn't the workflow builder. It was designing for failure states. In most products, the error path is a secondary concern. In security automation, it's co-equal to the happy path. Every Routine we shipped had as much design thinking in its failure branches as in its core flow, and that was a mental shift I had to drive across the entire team.</p>
+    <p class="cs-body">If I were starting over, I would have introduced the side panel pattern earlier in the project. We went through two rounds of redesign on the Task editing experience before landing on the side panel, and both earlier versions broke the spatial context of the canvas in ways that analysts noticed immediately in testing. The insight was obvious in hindsight: people who spend hours in a workflow canvas develop a spatial memory for where things are. Breaking that context to edit a single node is a real cost.</p>
+    <p class="cs-body">The broader lesson: in tools designed for experts, respecting the user's mental model isn't a UX nicety. It's the product. Security analysts are professionals operating under pressure. Design that fights their instincts is design they'll route around.</p>
+  </div>
+
+  <!-- Next Project -->
+  <div class="next-project fade-up">
+    <div class="next-label">Next case study</div>
+    <div class="next-title">Mozo Credit Fraud Protection</div>
+    <a href="mozo.html" class="btn-primary">
+      View case study
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  Or Noga Eylen &nbsp;·&nbsp; Product Designer &nbsp;·&nbsp; <a href="mailto:ornoga92@gmail.com" style="color:var(--muted); text-decoration:none;">ornoga92@gmail.com</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Image tab switcher (matches lwf.html)
+  document.querySelectorAll('.img-tabs').forEach(tabs => {
+    const panes = Array.from(tabs.querySelectorAll('.img-tab-pane'));
+    const btns = Array.from(tabs.querySelectorAll('.img-tab-btn'));
+    let current = 0;
+    let timer;
+    function goTo(i) {
+      panes[current].classList.remove('active');
+      btns[current].classList.remove('active');
+      current = i % panes.length;
+      panes[current].classList.add('active');
+      btns[current].classList.add('active');
+    }
+    function startCycle() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 3000);
+    }
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => { goTo(i); startCycle(); });
+    });
+    startCycle();
+  });
+</script>
+</body>
+</html>
