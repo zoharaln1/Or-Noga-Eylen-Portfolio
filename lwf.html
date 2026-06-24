@@ -32,7 +32,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 64px;
       background: rgba(245,247,255,0.92); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid transparent;
     }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
     .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); transition: all var(--t); }
@@ -78,7 +78,7 @@
 
     .case-meta {
       display: flex; gap: 48px; margin-top: 52px;
-      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 40px;
     }
     .case-meta-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 7px; }
     .case-meta-item span { font-size: 0.87rem; color: rgba(255,255,255,0.78); font-weight: 500; }
@@ -171,8 +171,8 @@
     .swot-card p { font-size: 0.85rem; line-height: 1.7; color: var(--ink); }
 
     /* Flow */
-    .flow-item { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--border); }
-    .flow-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .flow-item { margin-bottom: 64px; }
+    .flow-item:last-child { margin-bottom: 0; }
     .flow-badge {
       display: inline-flex; align-items: center;
       background: var(--blue-light); color: var(--blue);

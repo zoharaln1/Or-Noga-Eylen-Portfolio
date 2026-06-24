@@ -32,7 +32,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 64px;
       background: rgba(245,247,255,0.92); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid transparent;
     }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
     .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); transition: all var(--t); }
@@ -75,7 +75,7 @@
     .case-hero p { color: rgba(255,255,255,0.58); font-size: 1.03rem; max-width: 580px; line-height: 1.88; }
     .case-meta {
       display: flex; gap: 48px; margin-top: 52px;
-      padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 40px;
     }
     .case-meta-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); margin-bottom: 7px; }
     .case-meta-item span { font-size: 0.87rem; color: rgba(255,255,255,0.78); font-weight: 500; }
@@ -89,9 +89,10 @@
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
       margin-bottom: 10px;
     }
-    .proj-info { display: flex; gap: 32px; margin-bottom: 28px; }
-    .proj-info-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
-    .proj-info-item span { font-size: 0.86rem; color: var(--muted); font-weight: 500; }
+    .proj-info { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .proj-info-item { border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; background: var(--card); }
+    .proj-info-item label { display: block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .proj-info-item span { font-size: 0.84rem; color: var(--ink); font-weight: 500; white-space: nowrap; }
     h2.cs-heading {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.75rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 20px; color: var(--ink);
@@ -102,13 +103,19 @@
     .ptag { padding: 5px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; background: var(--blue-light); color: var(--blue); }
     .ptag-slate { background: var(--slate-light); color: var(--slate); }
 
+    /* MOBILE SLIDESHOW */
+    .mobile-slideshow-wrap { width: 276px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 40px rgba(0,0,0,0.08); overflow: hidden; }
+    .mobile-slideshow-wrap .img-slideshow { height: 596px; }
+    .mobile-slideshow-wrap .slide-img { width: 100%; height: 596px; object-fit: cover; }
+
     /* SLIDESHOW */
-    .img-slideshow { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
-    .img-slideshow-track { display: grid; grid-template-areas: 'stack'; }
-    .slide-img { grid-area: stack; width: 100%; display: block; opacity: 0; transition: opacity 0.85s ease; }
+    .slideshow-block { border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 40px rgba(0,0,0,0.08); overflow: hidden; }
+    .img-slideshow { position: relative; overflow: hidden; }
+    .img-slideshow-track { display: grid; grid-template-areas: 'stack'; grid-template-columns: 1fr; }
+    .slide-img { grid-area: stack; width: 100%; max-width: 100%; display: block; opacity: 0; transition: opacity 0.85s ease; }
     .slide-img.active { opacity: 1; }
     .slide-counter { position: absolute; top: 14px; right: 16px; background: rgba(12,26,53,0.55); color: white; font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.04em; pointer-events: none; }
-    .slide-dots { display: flex; gap: 7px; justify-content: center; margin-top: 14px; }
+    .slide-dots { display: flex; gap: 7px; justify-content: center; padding: 14px 0; background: var(--card); }
     .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
     .slide-dot.active { background: var(--blue); width: 20px; border-radius: 100px; }
 
@@ -155,13 +162,7 @@
   <div class="case-hero-inner">
     <div class="case-chip">UI Design · PitangoUX 2020–2024</div>
     <h1>UI/UX<br/>Playground</h1>
-    <p>Selected interface work across four products — each with its own domain, users, and visual language. No full case studies here, just the screens.</p>
-    <div class="case-meta">
-      <div class="case-meta-item"><label>Projects</label><span>5</span></div>
-      <div class="case-meta-item"><label>Period</label><span>2020–2024</span></div>
-      <div class="case-meta-item"><label>Role</label><span>Senior Product Designer</span></div>
-      <div class="case-meta-item"><label>Agency</label><span>PitangoUX</span></div>
-    </div>
+    <p>Selected interface work across four products : each with its own domain, users, and visual language. No full case studies here, just the screens.</p>
   </div>
 </div>
 
@@ -171,18 +172,19 @@
   <div class="cs-section fade-up">
     <div class="cs-label">01</div>
     <h2 class="cs-heading">Synagogue management platform</h2>
-    <p class="cs-body">Led product design for a cloud-based SaaS platform serving synagogues across the US. Redesigned the admin dashboard, member portal, and education enrollment modules across a full product cycle.</p>
     <div class="proj-info">
       <div class="proj-info-item"><label>Year</label><span>2021–2022</span></div>
       <div class="proj-info-item"><label>Role</label><span>Lead Product Designer</span></div>
       <div class="proj-info-item"><label>Platform</label><span>Web · SaaS</span></div>
       <div class="proj-info-item"><label>Industry</label><span>Non-profit Tech</span></div>
     </div>
+    <p class="cs-body">Led product design for a cloud-based SaaS platform serving synagogues across the US. Redesigned the admin dashboard, member portal, and education enrollment modules across a full product cycle.</p>
     <div class="project-tag-row">
-      <span class="cs-label" style="margin-bottom:0">Cloud Platform</span>
-      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Admin UI</span>
-      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Design System</span>
+      <span class="ptag ptag-slate">Cloud Platform</span>
+      <span class="ptag ptag-slate">Admin UI</span>
+      <span class="ptag ptag-slate">Design System</span>
     </div>
+    <div class="slideshow-block">
     <div class="img-slideshow" id="esSlider">
       <div class="img-slideshow-track">
         <img class="slide-img active" src="mozo/easyshul/1.jpeg" alt="easyshul.com screen 1" />
@@ -198,24 +200,26 @@
       <button class="slide-dot" aria-label="Slide 3"></button>
       <button class="slide-dot" aria-label="Slide 4"></button>
     </div>
+    </div>
   </div>
 
   <!-- 02 Sighfull -->
   <div class="cs-section fade-up">
     <div class="cs-label">02</div>
-    <h2 class="cs-heading">Mindful breathing and wellness app</h2>
-    <p class="cs-body">Designed the end-to-end mobile experience for a wellness app centered around guided breathing and daily emotional check-ins. The challenge was making a deeply personal practice feel approachable and habit-forming without being preachy.</p>
+    <h2 class="cs-heading">Revenue analytics for B2B sales teams</h2>
     <div class="proj-info">
-      <div class="proj-info-item"><label>Year</label><span>2022–2023</span></div>
+      <div class="proj-info-item"><label>Year</label><span>2023–2024</span></div>
       <div class="proj-info-item"><label>Role</label><span>Lead Product Designer</span></div>
-      <div class="proj-info-item"><label>Platform</label><span>iOS · Mobile</span></div>
-      <div class="proj-info-item"><label>Industry</label><span>Health &amp; Wellness</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>Web · SaaS</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>Revenue Operations</span></div>
     </div>
+    <p class="cs-body">Designed the core product experience for a SaaS revenue intelligence platform that helps sales teams track ARR trends, identify pipeline risks, and act on AI-generated insights. The challenge was turning dense financial data into something a non-analyst sales rep could actually use daily.</p>
     <div class="project-tag-row">
-      <span class="cs-label" style="margin-bottom:0">Mobile App</span>
-      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Wellness</span>
-      <span class="cs-label" style="margin-bottom:0;background:var(--slate-light);color:var(--slate)">Motion Design</span>
+      <span class="ptag ptag-slate">B2B SaaS</span>
+      <span class="ptag ptag-slate">Data Visualization</span>
+      <span class="ptag ptag-slate">Onboarding</span>
     </div>
+    <div class="slideshow-block">
     <div class="img-slideshow" id="sfSlider">
       <div class="img-slideshow-track">
         <img class="slide-img active" src="mozo/Sighfull/1.jpeg" alt="Sighfull screen 1" />
@@ -225,8 +229,9 @@
         <img class="slide-img" src="mozo/Sighfull/5.jpeg" alt="Sighfull screen 5" />
         <img class="slide-img" src="mozo/Sighfull/6.jpeg" alt="Sighfull screen 6" />
         <img class="slide-img" src="mozo/Sighfull/7.jpeg" alt="Sighfull screen 7" />
+        <img class="slide-img" src="mozo/Sighfull/8.jpeg" alt="Sighfull screen 8" />
       </div>
-      <div class="slide-counter" id="sfCounter">1 / 7</div>
+      <div class="slide-counter" id="sfCounter">1 / 8</div>
     </div>
     <div class="slide-dots" id="sfDots">
       <button class="slide-dot active" aria-label="Slide 1"></button>
@@ -236,75 +241,166 @@
       <button class="slide-dot" aria-label="Slide 5"></button>
       <button class="slide-dot" aria-label="Slide 6"></button>
       <button class="slide-dot" aria-label="Slide 7"></button>
+      <button class="slide-dot" aria-label="Slide 8"></button>
+    </div>
     </div>
   </div>
 
-  <!-- 03 Routines -->
+  <!-- 03 DataRails -->
   <div class="cs-section fade-up">
     <div class="cs-label">03</div>
-    <h2 class="cs-heading">Workload automation platform</h2>
-    <p class="cs-body">Designed the core scheduling interface for a B2B automation platform handling multi-step background jobs. Focused on making complex pipeline logic readable and manageable for non-technical operators.</p>
+    <div class="cs-label" style="margin-left:8px;background:var(--slate-light);color:var(--slate);margin-bottom:10px;">Home Assignment</div>
+    <h2 class="cs-heading">Travel budget tracker</h2>
+    <div class="proj-info">
+      <div class="proj-info-item"><label>Year</label><span>2024</span></div>
+      <div class="proj-info-item"><label>Role</label><span>Product Designer</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>Web · Mobile</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>FinTech · Travel</span></div>
+    </div>
+    <p class="cs-body">Home assignment for DataRails : designed a travel expense dashboard that gives users full visibility over trip spending across categories like flights, accommodation, food, and transport. The design challenge: make budget health immediately scannable without stripping out financial nuance.</p>
     <div class="project-tag-row">
-      <span class="ptag">B2B SaaS</span>
-      <span class="ptag">Automation</span>
+      <span class="ptag ptag-slate">Home Assignment</span>
       <span class="ptag ptag-slate">Dashboard Design</span>
+      <span class="ptag ptag-slate">FinTech</span>
     </div>
-    <div class="img-slideshow" id="rtSlider">
+    <div class="slideshow-block">
+    <div class="img-slideshow" id="drSlider">
       <div class="img-slideshow-track">
-        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_aae4c4404f0f4bb8be546cc9c431c985~mv2.png" alt="Routines screen 1" />
-        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_cfb6e10a1774414a87d9f26e371c758e~mv2.png" alt="Routines screen 2" />
+        <img class="slide-img active" src="mozo/datarails/1.png" alt="DataRails screen 1" />
+        <img class="slide-img" src="mozo/datarails/2.png" alt="DataRails screen 2" />
+        <img class="slide-img" src="mozo/datarails/3.png" alt="DataRails screen 3" />
+        <img class="slide-img" src="mozo/datarails/4.png" alt="DataRails screen 4" />
+        <img class="slide-img" src="mozo/datarails/6.png" alt="DataRails screen 5" />
+        <img class="slide-img" src="mozo/datarails/7.png" alt="DataRails screen 6" />
       </div>
-      <div class="slide-counter" id="rtCounter">1 / 2</div>
+      <div class="slide-counter" id="drCounter">1 / 6</div>
     </div>
-    <div class="slide-dots" id="rtDots">
+    <div class="slide-dots" id="drDots">
       <button class="slide-dot active" aria-label="Slide 1"></button>
       <button class="slide-dot" aria-label="Slide 2"></button>
+      <button class="slide-dot" aria-label="Slide 3"></button>
+      <button class="slide-dot" aria-label="Slide 4"></button>
+      <button class="slide-dot" aria-label="Slide 5"></button>
+      <button class="slide-dot" aria-label="Slide 6"></button>
+    </div>
     </div>
   </div>
 
-  <!-- 04 Tetavi -->
+  <!-- 04 Kaltura -->
   <div class="cs-section fade-up">
     <div class="cs-label">04</div>
-    <h2 class="cs-heading">Volumetric video for the Metaverse</h2>
-    <p class="cs-body">Designed the creator platform interface for a startup bringing photorealistic humans into Web3 environments. The challenge was translating a highly technical volumetric capture workflow into a clean, creator-friendly UI.</p>
+    <div class="cs-label" style="margin-left:8px;background:var(--slate-light);color:var(--slate);margin-bottom:10px;">Home Assignment</div>
+    <h2 class="cs-heading">Webinar platform for organizers</h2>
+    <div class="proj-info">
+      <div class="proj-info-item"><label>Year</label><span>2024</span></div>
+      <div class="proj-info-item"><label>Role</label><span>Product Designer</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>Web</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>Video · EdTech</span></div>
+    </div>
+    <p class="cs-body">Home assignment for Kaltura : redesigned the webinar organizer experience to drive audience engagement and measurable ROI. Covered streamlined event setup, new monetization touchpoints, live interaction tools, and post-event analytics that help organizers understand and improve future events.</p>
     <div class="project-tag-row">
-      <span class="ptag">Metaverse</span>
-      <span class="ptag">Web3</span>
-      <span class="ptag ptag-slate">Creative Tech</span>
+      <span class="ptag ptag-slate">Home Assignment</span>
+      <span class="ptag ptag-slate">Video Platform</span>
+      <span class="ptag ptag-slate">Analytics</span>
     </div>
-    <div class="img-slideshow" id="tvSlider">
+    <div class="slideshow-block">
+    <div class="img-slideshow" id="klSlider">
       <div class="img-slideshow-track">
-        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_3ae5e4ccc99342c1920ec7f724a2b330~mv2.png" alt="Tetavi screen 1" />
-        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_56e615e329924d40875c77223f9e1a93~mv2.png" alt="Tetavi screen 2" />
+        <img class="slide-img active" src="mozo/kaltura/1.png" alt="Kaltura screen 1" />
+        <img class="slide-img" src="mozo/kaltura/2.png" alt="Kaltura screen 2" />
+        <img class="slide-img" src="mozo/kaltura/3.png" alt="Kaltura screen 3" />
+        <img class="slide-img" src="mozo/kaltura/4.png" alt="Kaltura screen 4" />
       </div>
-      <div class="slide-counter" id="tvCounter">1 / 2</div>
+      <div class="slide-counter" id="klCounter">1 / 4</div>
     </div>
-    <div class="slide-dots" id="tvDots">
+    <div class="slide-dots" id="klDots">
       <button class="slide-dot active" aria-label="Slide 1"></button>
       <button class="slide-dot" aria-label="Slide 2"></button>
+      <button class="slide-dot" aria-label="Slide 3"></button>
+      <button class="slide-dot" aria-label="Slide 4"></button>
+    </div>
     </div>
   </div>
 
-  <!-- 05 SpringGames -->
+  <!-- 05 Loom x Tetavi -->
   <div class="cs-section fade-up">
     <div class="cs-label">05</div>
-    <h2 class="cs-heading">Multiplayer mobile gaming</h2>
-    <p class="cs-body">Designed game UI and engagement flows for a mobile-first multiplayer platform. The focus was on reward loops, onboarding delight, and keeping players oriented across complex multiplayer states.</p>
+    <h2 class="cs-heading">Creator profile for volumetric video sharing</h2>
+    <div class="proj-info">
+      <div class="proj-info-item"><label>Year</label><span>2023</span></div>
+      <div class="proj-info-item"><label>Role</label><span>Product Designer</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>iOS · Mobile</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>Creator Economy</span></div>
+    </div>
+    <p class="cs-body">Designed a mobile creator profile experience at the intersection of Loom's async video messaging and Tetavi's volumetric capture technology. The challenge was building a familiar social profile pattern that still communicated the novelty of 3D video content : approachable enough for creators, distinctive enough to stand out.</p>
     <div class="project-tag-row">
-      <span class="ptag">Mobile Gaming</span>
-      <span class="ptag">Multiplayer</span>
-      <span class="ptag ptag-slate">Gamification</span>
+      <span class="ptag ptag-slate">Mobile App</span>
+      <span class="ptag ptag-slate">Creator Tools</span>
+      <span class="ptag ptag-slate">3D Video</span>
     </div>
-    <div class="img-slideshow" id="sgSlider">
+    <div class="mobile-slideshow-wrap">
+    <div class="img-slideshow" id="lvSlider">
       <div class="img-slideshow-track">
-        <img class="slide-img active" src="https://static.wixstatic.com/media/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_fb5a19cc87fc4f09a87cf979caeb7b3e~mv2.png" alt="SpringGames screen 1" />
-        <img class="slide-img" src="https://static.wixstatic.com/media/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png/v1/fill/w_1800,q_95,enc_avif,quality_auto/fcf1d9_9b56f99a78474e2e849e1aa0cb7c237f~mv2.png" alt="SpringGames screen 2" />
+        <img class="slide-img active" src="mozo/tetavi/1.png" alt="Loom x Tetavi screen 1" />
+        <img class="slide-img" src="mozo/tetavi/2.png" alt="Loom x Tetavi screen 2" />
+        <img class="slide-img" src="mozo/tetavi/3.png" alt="Loom x Tetavi screen 3" />
+        <img class="slide-img" src="mozo/tetavi/4.png" alt="Loom x Tetavi screen 4" />
+        <img class="slide-img" src="mozo/tetavi/5.png" alt="Loom x Tetavi screen 5" />
+        <img class="slide-img" src="mozo/tetavi/6.png" alt="Loom x Tetavi screen 6" />
+        <img class="slide-img" src="mozo/tetavi/7.png" alt="Loom x Tetavi screen 7" />
+        <img class="slide-img" src="mozo/tetavi/8.png" alt="Loom x Tetavi screen 8" />
+        <img class="slide-img" src="mozo/tetavi/9.png" alt="Loom x Tetavi screen 9" />
       </div>
-      <div class="slide-counter" id="sgCounter">1 / 2</div>
+      <div class="slide-counter" id="lvCounter">1 / 9</div>
     </div>
-    <div class="slide-dots" id="sgDots">
+    <div class="slide-dots" id="lvDots">
       <button class="slide-dot active" aria-label="Slide 1"></button>
       <button class="slide-dot" aria-label="Slide 2"></button>
+      <button class="slide-dot" aria-label="Slide 3"></button>
+      <button class="slide-dot" aria-label="Slide 4"></button>
+      <button class="slide-dot" aria-label="Slide 5"></button>
+      <button class="slide-dot" aria-label="Slide 6"></button>
+      <button class="slide-dot" aria-label="Slide 7"></button>
+      <button class="slide-dot" aria-label="Slide 8"></button>
+      <button class="slide-dot" aria-label="Slide 9"></button>
+    </div>
+    </div>
+  </div>
+
+  <!-- 06 IRUE Intelligence -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">06</div>
+    <h2 class="cs-heading">Financial intelligence and due diligence</h2>
+    <div class="proj-info">
+      <div class="proj-info-item"><label>Year</label><span>2023–2024</span></div>
+      <div class="proj-info-item"><label>Role</label><span>Lead Product Designer</span></div>
+      <div class="proj-info-item"><label>Platform</label><span>Web · Enterprise</span></div>
+      <div class="proj-info-item"><label>Industry</label><span>Financial Intelligence</span></div>
+    </div>
+    <p class="cs-body">Designed the product interface for a financial intelligence platform specializing in due diligence on individuals, companies, and crypto entities. Features include risk distribution dashboards, real-time search tracking, and advanced entity lookup : built as a high-contrast dark UI for analyst power users who live in the tool.</p>
+    <div class="project-tag-row">
+      <span class="ptag ptag-slate">Enterprise</span>
+      <span class="ptag ptag-slate">Data Visualization</span>
+      <span class="ptag ptag-slate">Dark UI</span>
+    </div>
+    <div class="slideshow-block">
+    <div class="img-slideshow" id="irSlider">
+      <div class="img-slideshow-track">
+        <img class="slide-img active" src="mozo/irue/1.png" alt="IRUE Intelligence screen 1" />
+        <img class="slide-img" src="mozo/irue/2.png" alt="IRUE Intelligence screen 2" />
+        <img class="slide-img" src="mozo/irue/3.png" alt="IRUE Intelligence screen 3" />
+        <img class="slide-img" src="mozo/irue/4.png" alt="IRUE Intelligence screen 4" />
+        <img class="slide-img" src="mozo/irue/5.png" alt="IRUE Intelligence screen 5" />
+      </div>
+      <div class="slide-counter" id="irCounter">1 / 5</div>
+    </div>
+    <div class="slide-dots" id="irDots">
+      <button class="slide-dot active" aria-label="Slide 1"></button>
+      <button class="slide-dot" aria-label="Slide 2"></button>
+      <button class="slide-dot" aria-label="Slide 3"></button>
+      <button class="slide-dot" aria-label="Slide 4"></button>
+      <button class="slide-dot" aria-label="Slide 5"></button>
+    </div>
     </div>
   </div>
 
@@ -349,9 +445,10 @@
 
   initSlideshow('esSlider', 'esDots', 'esCounter');
   initSlideshow('sfSlider', 'sfDots', 'sfCounter');
-  initSlideshow('rtSlider', 'rtDots', 'rtCounter');
-  initSlideshow('tvSlider', 'tvDots', 'tvCounter');
-  initSlideshow('sgSlider', 'sgDots', 'sgCounter');
+  initSlideshow('drSlider', 'drDots', 'drCounter');
+  initSlideshow('klSlider', 'klDots', 'klCounter');
+  initSlideshow('lvSlider', 'lvDots', 'lvCounter');
+  initSlideshow('irSlider', 'irDots', 'irCounter');
 </script>
 </body>
 </html>
