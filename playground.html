@@ -23,8 +23,8 @@
       --t: 0.35s cubic-bezier(.4,0,.2,1);
       --radius: 16px;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
     /* NAV */
     nav {
@@ -136,11 +136,19 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
-      nav { padding: 14px 20px; }
+      nav { padding: 14px 20px; flex-wrap: wrap; row-gap: 8px; }
+      .nav-logo { display: none; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.72rem; }
       .case-hero { padding: 120px 24px 60px; }
       .case-meta { flex-wrap: wrap; gap: 24px; }
       .case-content { padding: 48px 24px 80px; }
       .cs-outro { padding: 40px 24px; }
+    }
+    @media (max-width: 420px) {
+      .nav-back-text { display: none; }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 0.68rem; }
     }
   </style>
 </head>
@@ -149,7 +157,7 @@
 <nav>
   <a href="portfolio.html" class="nav-back">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to portfolio
+    <span class="nav-back-text">Back to portfolio</span>
   </a>
   <a href="portfolio.html" class="nav-logo">Or Noga</a>
   <ul class="nav-links">
