@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <script>
-    if (sessionStorage.getItem('portfolioAuth') !== 'true') {
-      window.location.replace('index.html');
-    }
+    (function() {
+      var authTime = parseInt(localStorage.getItem('portfolioAuthTime') || '0', 10);
+      var oneHour = 60 * 60 * 1000;
+      if (!authTime || (Date.now() - authTime) > oneHour) {
+        localStorage.removeItem('portfolioAuthTime');
+        window.location.replace('index.html');
+      }
+    })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mozo Case Study | Or Noga Eylen</title>
