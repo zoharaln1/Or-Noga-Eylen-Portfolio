@@ -4,9 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UI/UX Playground | Or Noga Eylen</title>
+  <meta name="description" content="A curated collection of UI work across multiple products, each with its own visual language, users, and constraints." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta property="og:title" content="UI/UX Playground | Or Noga Eylen" />
+  <meta property="og:description" content="A curated collection of UI work across multiple products, each with its own visual language, users, and constraints." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -34,12 +40,13 @@
       background: rgba(245,247,255,0.92); backdrop-filter: blur(16px);
       border-bottom: 1px solid transparent;
     }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
+    .nav-logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; color: var(--blue); }
     .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--muted); transition: all var(--t); }
     .nav-back:hover { color: var(--blue); transform: translateX(-3px); }
     .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; transition: color var(--t); }
     .nav-links a:hover { color: var(--blue); }
+    .nav-links a.active { color: var(--blue); font-weight: 700; }
 
     /* HERO */
     .case-hero {
@@ -68,7 +75,7 @@
       margin-bottom: 24px; width: fit-content;
     }
     .case-hero h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 1.05;
       letter-spacing: -0.02em; color: #fff; margin-bottom: 20px;
     }
@@ -94,7 +101,7 @@
     .proj-info-item label { display: block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
     .proj-info-item span { font-size: 0.84rem; color: var(--ink); font-weight: 500; white-space: nowrap; }
     h2.cs-heading {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: clamp(1.75rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 20px; color: var(--ink);
     }
     .cs-body { font-size: 0.96rem; color: var(--muted); line-height: 1.92; margin-bottom: 28px; }
@@ -119,9 +126,14 @@
     .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
     .slide-dot.active { background: var(--blue); width: 20px; border-radius: 100px; }
 
+    /* NEXT PROJECT */
+    .next-project { background: var(--card); border: 1.5px solid var(--border); border-radius: 20px; padding: 48px; text-align: center; margin: 40px 0; }
+    .next-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin-bottom: 14px; }
+    .next-title { font-family: 'Montserrat', sans-serif; font-size: 1.9rem; margin-bottom: 18px; }
+
     /* OUTRO */
     .cs-outro { background: var(--card); border: 1.5px solid var(--border); border-radius: 20px; padding: 60px; text-align: center; margin-top: 40px; }
-    .cs-outro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 14px; }
+    .cs-outro h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 14px; }
     .cs-outro p { color: var(--muted); font-size: 0.95rem; max-width: 460px; margin: 0 auto 32px; line-height: 1.8; }
     .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 100px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all var(--t); }
@@ -159,16 +171,18 @@
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span class="nav-back-text">Back to portfolio</span>
   </a>
-  <a href="portfolio.html" class="nav-logo">Or Noga</a>
+  <a href="portfolio.html" class="nav-logo">Or Noga Eylen</a>
   <ul class="nav-links">
     <li><a href="mozo.html">Mozo</a></li>
     <li><a href="lwf.html">LWF</a></li>
+    <li><a href="bulwarx.html">BulwarX</a></li>
+    <li><a href="playground.html" class="active">Playground</a></li>
   </ul>
 </nav>
 
 <div class="case-hero">
   <div class="case-hero-inner">
-    <div class="case-chip">UI Design · PitangoUX 2020–2024</div>
+    <div class="case-chip">UI Design · 2020–2024</div>
     <h1>UI/UX<br/>Playground</h1>
     <p>Selected interface work across four products : each with its own domain, users, and visual language. No full case studies here, just the screens.</p>
   </div>
@@ -257,7 +271,6 @@
   <!-- 03 DataRails -->
   <div class="cs-section fade-up">
     <div class="cs-label">03</div>
-    <div class="cs-label" style="margin-left:8px;background:var(--slate-light);color:var(--slate);margin-bottom:10px;">Home Assignment</div>
     <h2 class="cs-heading">Travel budget tracker</h2>
     <div class="proj-info">
       <div class="proj-info-item"><label>Year</label><span>2024</span></div>
@@ -265,9 +278,8 @@
       <div class="proj-info-item"><label>Platform</label><span>Web · Mobile</span></div>
       <div class="proj-info-item"><label>Industry</label><span>FinTech · Travel</span></div>
     </div>
-    <p class="cs-body">Home assignment for DataRails : designed a travel expense dashboard that gives users full visibility over trip spending across categories like flights, accommodation, food, and transport. The design challenge: make budget health immediately scannable without stripping out financial nuance.</p>
+    <p class="cs-body">Designed a travel expense dashboard for DataRails that gives users full visibility over trip spending across categories like flights, accommodation, food, and transport. The design challenge: make budget health immediately scannable without stripping out financial nuance.</p>
     <div class="project-tag-row">
-      <span class="ptag ptag-slate">Home Assignment</span>
       <span class="ptag ptag-slate">Dashboard Design</span>
       <span class="ptag ptag-slate">FinTech</span>
     </div>
@@ -294,10 +306,9 @@
     </div>
   </div>
 
-  <!-- 04 Kaltura -->
+  <!-- 04 Webinar platform (NDA) -->
   <div class="cs-section fade-up">
     <div class="cs-label">04</div>
-    <div class="cs-label" style="margin-left:8px;background:var(--slate-light);color:var(--slate);margin-bottom:10px;">Home Assignment</div>
     <h2 class="cs-heading">Webinar platform for organizers</h2>
     <div class="proj-info">
       <div class="proj-info-item"><label>Year</label><span>2024</span></div>
@@ -305,19 +316,18 @@
       <div class="proj-info-item"><label>Platform</label><span>Web</span></div>
       <div class="proj-info-item"><label>Industry</label><span>Video · EdTech</span></div>
     </div>
-    <p class="cs-body">Home assignment for Kaltura : redesigned the webinar organizer experience to drive audience engagement and measurable ROI. Covered streamlined event setup, new monetization touchpoints, live interaction tools, and post-event analytics that help organizers understand and improve future events.</p>
+    <p class="cs-body">Redesigned the webinar organizer experience for a video engagement platform to drive audience engagement and measurable ROI. Covered streamlined event setup, new monetization touchpoints, live interaction tools, and post-event analytics that help organizers understand and improve future events.</p>
     <div class="project-tag-row">
-      <span class="ptag ptag-slate">Home Assignment</span>
       <span class="ptag ptag-slate">Video Platform</span>
       <span class="ptag ptag-slate">Analytics</span>
     </div>
     <div class="slideshow-block">
     <div class="img-slideshow" id="klSlider">
       <div class="img-slideshow-track">
-        <img class="slide-img active" src="mozo/kaltura/1.png" alt="Kaltura screen 1" />
-        <img class="slide-img" src="mozo/kaltura/2.png" alt="Kaltura screen 2" />
-        <img class="slide-img" src="mozo/kaltura/3.png" alt="Kaltura screen 3" />
-        <img class="slide-img" src="mozo/kaltura/4.png" alt="Kaltura screen 4" />
+        <img class="slide-img active" src="mozo/kaltura/1.png" alt="Webinar platform screen 1" />
+        <img class="slide-img" src="mozo/kaltura/2.png" alt="Webinar platform screen 2" />
+        <img class="slide-img" src="mozo/kaltura/3.png" alt="Webinar platform screen 3" />
+        <img class="slide-img" src="mozo/kaltura/4.png" alt="Webinar platform screen 4" />
       </div>
       <div class="slide-counter" id="klCounter">1 / 4</div>
     </div>
@@ -410,6 +420,16 @@
       <button class="slide-dot" aria-label="Slide 5"></button>
     </div>
     </div>
+  </div>
+
+  <!-- Next Project -->
+  <div class="next-project fade-up">
+    <div class="next-label">Next case study</div>
+    <div class="next-title">Mozo Credit Fraud Protection</div>
+    <a href="mozo.html" class="btn btn-primary">
+      Read Mozo case study
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 
   <!-- Outro -->
