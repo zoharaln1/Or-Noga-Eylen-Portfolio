@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    if (sessionStorage.getItem('portfolioAuth') !== 'true') {
+      window.location.replace('index.html');
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LWF Corp Case Study | Or Noga Eylen</title>
   <meta name="description" content="Replacing phone-based task coordination with a digital alert tracking system for water utility field operators and technicians." />
@@ -451,11 +456,11 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-back">
+  <a href="home.html" class="nav-back">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span class="nav-back-text">Back to portfolio</span>
   </a>
-  <a href="index.html" class="nav-logo">Or Noga Eylen</a>
+  <a href="home.html" class="nav-logo">Or Noga Eylen</a>
   <ul class="nav-links">
     <li><a href="mozo.html">Mozo</a></li>
     <li><a href="lwf.html" class="active">LWF</a></li>
@@ -1052,7 +1057,7 @@
 </div>
 
 <footer>
-  <p>© 2026 Or Noga · <a href="index.html" style="color:var(--blue);text-decoration:none">Back to portfolio</a></p>
+  <p>© 2026 Or Noga · <a href="home.html" style="color:var(--blue);text-decoration:none">Back to portfolio</a></p>
 </footer>
 
 <script>
