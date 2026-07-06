@@ -237,6 +237,7 @@
       border-radius: 0 12px 12px 0; padding: 15px 20px; margin: 18px 0;
       font-size: 0.87rem; color: var(--ink); line-height: 1.78;
     }
+    .decision + .decision { margin-top: -10px; border-radius: 0 0 12px 12px; }
     .decision strong { color: var(--blue-dark); }
 
     /* Outcomes */
@@ -516,7 +517,7 @@
       <h4>Place a fraud alert: one key piece of copy</h4>
       <p>Step 2 guides users through placing a free one-year fraud alert. The screen shows all three credit bureaus with two contact methods each: apply online or call. A "Get a call script" link supports users who prefer the phone. The most important element on this screen is not the layout. It is a single callout at the top.</p>
       <div class="decision"><strong>Design decision:</strong> The callout reads: "You only need to contact ONE credit bureau. They're required by law to notify the other two on your behalf." Without this, users consistently assumed they had to contact all three separately, tripling the perceived effort and causing drop-off at this step. This regulatory fact is accurate and changes the user's mental model from "three difficult tasks" to "one action." Of all the copy decisions in this flow, this single line had the most measurable impact on completion.</div>
-      <div class="decision"><strong>Stakeholder tension:</strong> The product team initially wanted to show only one bureau — their concern was that displaying all three would confuse users about which one to pick, leading to decision paralysis. My position was the opposite: hiding the other two creates distrust, especially with senior users who are already anxious. I proposed showing all three bureaus but marking one as "Recommended" with a clear visual indicator. This preserved user confidence ("I can see everything, nothing is hidden") while removing the decision burden ("but someone is guiding me"). We tested both versions — single bureau and the recommended approach — and the recommended pattern had significantly lower drop-off and higher trust ratings in post-task interviews.</div>
+      <div class="decision"><strong>Stakeholder tension:</strong> The product team initially wanted to show only one bureau — their concern was that displaying all three would confuse users about which one to pick, leading to decision paralysis. My position was the opposite: hiding the other two creates distrust, especially with senior users who are already anxious. I proposed showing all three bureaus but marking one as "Recommended" with a clear visual indicator. This preserved user confidence ("I can see everything, nothing is hidden") while removing the decision burden ("but someone is guiding me"). We tested both versions and the recommended pattern had significantly lower drop-off and higher trust ratings in post-task interviews.</div>
       <img src="external/mozo-step2-fraud-alert.png" alt="Step 2 - Set a fraud alert, Contact ONE bureau, 3 bureaus with Recommended label" class="full-img" />
     </div>
 
