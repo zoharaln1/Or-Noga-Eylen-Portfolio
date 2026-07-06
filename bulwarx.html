@@ -579,7 +579,7 @@
             <li>More developed visual playbook builder than XSOAR, but still engineer-first</li>
             <li>Interface is dense with a steep learning curve despite drag-and-drop</li>
             <li>The distinction between Apps, Actions, and Playbooks causes onboarding confusion</li>
-            <li>Failure state visibility is limited — failed paths are not surfaced clearly</li>
+            <li>Failure state visibility is limited, failed paths are not surfaced clearly</li>
           </ul>
         </div>
       </div>
@@ -635,7 +635,7 @@
             <li>Cloud-native SIEM with strong Azure ecosystem integration</li>
             <li>Automation through Logic Apps feels bolted on, not purpose-built for security ops</li>
             <li>Monitoring and failure tracing requires switching between multiple Azure interfaces</li>
-            <li>Not a dedicated SOAR tool — and the workflow experience reflects that clearly</li>
+            <li>Not a dedicated SOAR tool, and the workflow experience reflects that clearly</li>
           </ul>
         </div>
       </div>
@@ -733,7 +733,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">The Solution</div>
     <h2 class="cs-heading">Four surfaces, one operational picture</h2>
-    <p class="cs-body">The BulwarX Routines experience follows a single creation journey across five surfaces — from situational awareness, to the Routine library, to creating and building out a Routine, to the completed visual workflow.</p>
+    <p class="cs-body">The BulwarX Routines experience follows a single creation journey across five surfaces, from situational awareness, to the Routine library, to creating and building out a Routine, to the completed visual workflow.</p>
 
     <div class="flow-badge">Surface 01</div>
     <div class="flow-item">
@@ -742,7 +742,7 @@
       <div class="decision">
         <strong>Design decision:</strong> I used card-based layout rather than a table to allow scanning at different levels of urgency. Color was used sparingly, reserved only for failure states, so that red always means "act now." Jobs with no issues are intentionally low-visual-weight so that problems stand out without scanning every row.
       </div>
-      <img class="full-img" src="mozo/bulwarx/07.png" alt="BulwarX Dashboard — running jobs, failed alerts, engine and package status"/>
+      <img class="full-img" src="mozo/bulwarx/07.png" alt="BulwarX Dashboard, running jobs, failed alerts, engine and package status"/>
     </div>
 
     <div class="flow-badge">Surface 02</div>
@@ -759,8 +759,8 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Routines library — card view with status labels"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/02.png" alt="Routines library — filter panel open"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Routines library, card view with status labels"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/02.png" alt="Routines library, filter panel open"/></div>
         </div>
       </div>
     </div>
@@ -768,17 +768,17 @@
     <div class="flow-badge">Surface 03</div>
     <div class="flow-item">
       <h4>Creating a New Routine</h4>
-      <p>From the library, analysts launch a new Routine through a minimal creation panel — name, trigger, dependencies, and labels. Keeping the entry form short was intentional: early testing showed analysts abandoned creation when asked too many questions upfront. Advanced configuration happens inside the Routine, not during creation.</p>
+      <p>From the library, analysts launch a new Routine through a minimal creation panel, name, trigger, dependencies, and labels. Keeping the entry form short was intentional: early testing showed analysts abandoned creation when asked too many questions upfront. Advanced configuration happens inside the Routine, not during creation.</p>
       <div class="decision">
         <strong>Design decision:</strong> Separating "create" from "configure" reduced drop-off and let analysts reach the workflow canvas faster. The creation form is a gate, not a configurator. Everything else is deferred to where the real work happens.
       </div>
-      <img class="full-img" src="mozo/bulwarx/09.png" alt="Add new routine — creation panel with name, trigger, and label fields"/>
+      <img class="full-img" src="mozo/bulwarx/09.png" alt="Add new routine, creation panel with name, trigger, and label fields"/>
     </div>
 
     <div class="flow-badge">Surface 04</div>
     <div class="flow-item">
       <h4>Task Creation Wizard</h4>
-      <p>Once inside a Routine, analysts add Tasks through a structured three-step wizard: Information (name, engine, description), Input (what data this Task needs), Output (what it returns and what each outcome triggers). Each step is a single concern — analysts never have to think about inputs and outputs at the same time.</p>
+      <p>Once inside a Routine, analysts add Tasks through a structured three-step wizard: Information (name, engine, description), Input (what data this Task needs), Output (what it returns and what each outcome triggers). Each step is a single concern, analysts never have to think about inputs and outputs at the same time.</p>
       <div class="decision">
         <strong>Design decision:</strong> I introduced a side panel pattern for editing Tasks inside an open Routine, so analysts could make changes without losing their position in the workflow. In competitor tools, editing a node opens a new full-screen context, breaking the spatial awareness of the canvas. The side panel preserves that context and makes iteration significantly faster.
       </div>
@@ -791,10 +791,10 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Routine detail — empty tasks state, ready to build"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/04.png" alt="Add task — Step 1: Task Info"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/05.png" alt="Add task — Step 2: Input configuration"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/06.png" alt="Add task — Step 3: Output mapping"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Routine detail, empty tasks state, ready to build"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/04.png" alt="Add task, Step 1: Task Info"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/05.png" alt="Add task, Step 2: Input configuration"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/06.png" alt="Add task, Step 3: Output mapping"/></div>
         </div>
       </div>
     </div>
@@ -802,11 +802,11 @@
     <div class="flow-badge">Surface 05</div>
     <div class="flow-item">
       <h4>The Workflow Builder</h4>
-      <p>The completed Routine lives here: a visual canvas where every Task is a node, every connection is a decision, and every failure path is visible at full weight alongside the success path. This is the output of the entire creation journey — a Routine that reads like a flowchart, not a config file. Analysts can audit, modify, and share it without needing the person who built it in the room.</p>
+      <p>The completed Routine lives here: a visual canvas where every Task is a node, every connection is a decision, and every failure path is visible at full weight alongside the success path. This is the output of the entire creation journey, a Routine that reads like a flowchart, not a config file. Analysts can audit, modify, and share it without needing the person who built it in the room.</p>
       <div class="decision">
-        <strong>Design decision:</strong> I rejected the common pattern of collapsing failure branches by default. Every Task node shows both the success path and the failure path simultaneously. Analysts who build Routines also run incident reviews under pressure — they need to read the workflow instantly, not reconstruct it from memory. The builder is the documentation.
+        <strong>Design decision:</strong> I rejected the common pattern of collapsing failure branches by default. Every Task node shows both the success path and the failure path simultaneously. Analysts who build Routines also run incident reviews under pressure, they need to read the workflow instantly, not reconstruct it from memory. The builder is the documentation.
       </div>
-      <img class="full-img" src="mozo/bulwarx/08.png" alt="BulwarX Workflow Builder — visual node canvas with connected task branches and failure paths"/>
+      <img class="full-img" src="mozo/bulwarx/08.png" alt="BulwarX Workflow Builder, visual node canvas with connected task branches and failure paths"/>
     </div>
   </div>
 
@@ -814,7 +814,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Outcomes</div>
     <h2 class="cs-heading">Design decisions that drove impact</h2>
-    <p class="cs-body">Rather than optimizing for a single metric, the goal was to reduce friction at every stage of the analyst workflow — from understanding what a Routine does, to building one, to trusting it in production.</p>
+    <p class="cs-body">Rather than optimizing for a single metric, the goal was to reduce friction at every stage of the analyst workflow, from understanding what a Routine does, to building one, to trusting it in production.</p>
 
     <div class="decision-grid">
       <div class="decision-card">
@@ -823,7 +823,7 @@
         </div>
         <div class="decision-problem">Cognitive load</div>
         <div class="decision-title">Reducing the mental overhead of alert triage</div>
-        <div class="decision-body">Analysts were context-switching between 4–6 tools per incident. Grouping related alerts by severity and shared context onto a single canvas cut the number of decisions per triage session — without removing analyst control.</div>
+        <div class="decision-body">Analysts were context-switching between 4–6 tools per incident. Grouping related alerts by severity and shared context onto a single canvas cut the number of decisions per triage session, without removing analyst control.</div>
       </div>
       <div class="decision-card">
         <div class="decision-icon">
@@ -831,7 +831,7 @@
         </div>
         <div class="decision-problem">Accessibility</div>
         <div class="decision-title">Making automation a tool for everyone on the team</div>
-        <div class="decision-body">Scripted automation (YAML, Python) excluded non-technical analysts entirely. Replacing it with a plain-language Routine builder meant any analyst — not just engineers — could build, read, and modify workflows independently.</div>
+        <div class="decision-body">Scripted automation (YAML, Python) excluded non-technical analysts entirely. Replacing it with a plain-language Routine builder meant any analyst, not just engineers, could build, read, and modify workflows independently.</div>
       </div>
       <div class="decision-card">
         <div class="decision-icon">
@@ -839,7 +839,7 @@
         </div>
         <div class="decision-problem">Trust & compliance</div>
         <div class="decision-title">Building auditability into the flow, not bolted on after</div>
-        <div class="decision-body">Compliance requirements are typically handled post-hoc. Every Routine in BulwarX logs who created it, who approved it, and what it does in plain language — surfaced at the point of action, not buried in a separate audit log.</div>
+        <div class="decision-body">Compliance requirements are typically handled post-hoc. Every Routine in BulwarX logs who created it, who approved it, and what it does in plain language, surfaced at the point of action, not buried in a separate audit log.</div>
       </div>
     </div>
 
