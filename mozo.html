@@ -233,12 +233,23 @@
 
     /* Design decision callout */
     .decision {
-      background: var(--blue-light); border-left: 3px solid var(--blue);
-      border-radius: 0 12px 12px 0; padding: 15px 20px; margin: 18px 0;
+      background: var(--blue-light); border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 18px 0;
       font-size: 0.87rem; color: var(--ink); line-height: 1.78;
     }
-    .decision + .decision { margin-top: -10px; border-radius: 0 0 12px 12px; }
     .decision strong { color: var(--blue-dark); }
+    .decision-tension {
+      background: #FFF8ED; border-left: 4px solid #F59E0B;
+      border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 18px 0;
+      font-size: 0.87rem; color: var(--ink); line-height: 1.78;
+    }
+    .decision-tension strong { color: #B45309; }
+    .decision-failure {
+      background: #FFF1F2; border-left: 4px solid #F43F5E;
+      border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 18px 0;
+      font-size: 0.87rem; color: var(--ink); line-height: 1.78;
+    }
+    .decision-failure strong { color: #BE123C; }
 
     /* Outcomes */
     .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0; }
@@ -516,7 +527,8 @@
       <div class="flow-badge">Step 2 of 3: Fraud Alert</div>
       <h4>Place a fraud alert: one key piece of copy</h4>
       <p>Step 2 guides users through placing a free one-year fraud alert. The screen shows all three credit bureaus with two contact methods each: apply online or call. A "Get a call script" link supports users who prefer the phone. The most important element on this screen is not the layout. It is a single callout at the top.</p>
-      <div class="decision"><strong>Design decision:</strong> The callout reads: "You only need to contact ONE credit bureau. They're required by law to notify the other two on your behalf." Without this, users consistently assumed they had to contact all three separately, tripling the perceived effort and causing drop-off at this step. This regulatory fact is accurate and changes the user's mental model from "three difficult tasks" to "one action." Of all the copy decisions in this flow, this single line had the most measurable impact on completion.<br/><br/><strong>Stakeholder tension:</strong> The product team initially wanted to show only one bureau, their concern was that displaying all three would confuse users about which one to pick, leading to decision paralysis. My position was the opposite: hiding the other two creates distrust, especially with senior users who are already anxious. I proposed showing all three bureaus but marking one as "Recommended" with a clear visual indicator. This preserved user confidence ("I can see everything, nothing is hidden") while removing the decision burden ("but someone is guiding me"). We tested both versions and the recommended pattern had significantly lower drop-off and higher trust ratings in post-task interviews.</div>
+      <div class="decision"><strong>Design decision:</strong> The callout reads: "You only need to contact ONE credit bureau. They're required by law to notify the other two on your behalf." Without this, users consistently assumed they had to contact all three separately, tripling the perceived effort and causing drop-off at this step. This regulatory fact is accurate and changes the user's mental model from "three difficult tasks" to "one action." Of all the copy decisions in this flow, this single line had the most measurable impact on completion.</div>
+      <div class="decision-tension"><strong>Stakeholder tension:</strong> The product team initially wanted to show only one bureau, their concern was that displaying all three would confuse users about which one to pick, leading to decision paralysis. My position was the opposite: hiding the other two creates distrust, especially with senior users who are already anxious. I proposed showing all three bureaus but marking one as "Recommended" with a clear visual indicator. This preserved user confidence ("I can see everything, nothing is hidden") while removing the decision burden ("but someone is guiding me"). We tested both versions and the recommended pattern had significantly lower drop-off and higher trust ratings in post-task interviews.</div>
       <img src="external/mozo-step2-fraud-alert.png" alt="Step 2 - Set a fraud alert, Contact ONE bureau, 3 bureaus with Recommended label" class="full-img" />
     </div>
 
@@ -525,6 +537,7 @@
       <h4>The strongest protection and the most feared step</h4>
       <p>A credit freeze prevents anyone from opening new accounts in the user's name. It is the most effective protection available, and the step most likely to cause abandonment. Users commonly believe it will lock them out of their own finances permanently. The screen leads with two reassurance callouts before presenting any action: "Your existing accounts are not affected" and "You can lift the freeze anytime."</p>
       <div class="decision"><strong>Design decision:</strong> Unlike fraud alert (where one bureau notifies the others), a credit freeze must be applied with all three bureaus separately. The UI makes this clear without making it feel heavier than the previous step. The order of information was carefully considered: reassurance first, then action. This sequence was validated across all three usability testing rounds, users who saw reassurance before the bureau list were significantly more likely to complete the step.</div>
+      <div class="decision-failure"><strong>What didn't work:</strong> My first version of this screen led with the three bureau buttons at the top, with reassurance text below. In usability testing, users panicked before they even read the reassurance — seeing three separate actions immediately triggered "this is too complicated, I'll do it later." I flipped the order: reassurance first, bureaus second. That single change had the biggest impact on completion rate of any iteration in the project.</div>
       <img src="mozo/mozo-step3-freeze.png.png" alt="Step 3 - Freeze my credit: reassurance first, 3 bureaus" class="full-img" />
     </div>
 
