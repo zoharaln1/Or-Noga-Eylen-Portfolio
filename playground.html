@@ -514,5 +514,22 @@
   document.getElementById('lb').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.style.display = 'none'; });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lb').style.display = 'none'; });
 <\/script>
+<!-- Lightbox -->
+<div id="lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:24px;cursor:zoom-out">
+  <img id="lb-img" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,0.5);cursor:default"/>
+  <button onclick="document.getElementById('lb').style.display='none'" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.4rem;width:40px;height:40px;border-radius:50%;cursor:pointer;backdrop-filter:blur(8px)">&times;</button>
+</div>
+<script>
+(function(){
+  function openLb(src){ var lb=document.getElementById('lb'); document.getElementById('lb-img').src=src; lb.style.display='flex'; }
+  document.querySelectorAll('img').forEach(function(img){
+    if(img.id==='lb-img') return;
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',function(){ openLb(img.src); });
+  });
+  document.getElementById('lb').addEventListener('click',function(e){ if(e.target===e.currentTarget) e.currentTarget.style.display='none'; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.getElementById('lb').style.display='none'; });
+})();
+</script>
 </body>
 </html>
