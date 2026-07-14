@@ -305,6 +305,15 @@
       .nav-links { gap: 10px; }
       .nav-links a { font-size: 0.68rem; }
     }
+    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .ps-col { padding: 44px 40px; }
+    .ps-col-left { border-right: 1.5px solid #D8E0F5; }
+    .ps-col-right { background: #F5F7FF; }
+    @media (max-width: 680px) {
+      .ps-grid { grid-template-columns: 1fr; }
+      .ps-col-left { border-right: none; border-bottom: 1.5px solid #D8E0F5; }
+      .ps-col { padding: 32px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -368,6 +377,24 @@
       <div class="info-card">
         <h4>Challenge</h4>
         <p>Design a self-service remediation flow that anxious, non-technical users will actually complete, despite the process being inherently complex</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problem / Solution -->
+  <div class="fade-up" style="border-radius:20px; border:1.5px solid #D8E0F5; overflow:hidden; margin-bottom:48px;">
+    <div class="ps-grid">
+      <div class="ps-col ps-col-left">
+        <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+          <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The challenge
+        </div>
+        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">When Mozo flags active credit fraud, anxious non-technical seniors must complete a multi-step remediation process across three credit bureaus entirely on their own. Under FCRA regulations, Mozo cannot act on their behalf — making completion depend entirely on user confidence and follow-through.</p>
+      </div>
+      <div class="ps-col ps-col-right">
+        <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+          <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The solution
+        </div>
+        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">A guided remediation flow with plain-English instructions, visible progress tracking, and contextual reassurance at every step — designed to reduce anxiety and drive completion through a complex, high-stakes process that users must navigate entirely on their own.</p>
       </div>
     </div>
   </div>
