@@ -132,11 +132,17 @@
 
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.5rem, 5.6vw, 5.4rem);
-      line-height: 0.96; letter-spacing: -0.03em;
-      margin-bottom: 0; color: var(--ink);
+      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+      line-height: 1.06; letter-spacing: -0.025em;
+      margin-bottom: 24px; color: var(--ink);
     }
     h1 em { font-style: italic; color: var(--slate); }
+
+    .hero h1 {
+      font-size: 4.6rem;
+      line-height: 0.96; letter-spacing: -0.03em;
+      margin-bottom: 0;
+    }
 
     .hero-visual {
       position: absolute;
@@ -421,7 +427,8 @@
       .nav-links.open { max-height: 320px; visibility: visible; padding: 10px 20px 18px; }
       .nav-links a { display: block; padding: 12px 14px; }
       .nav-links .btn-nav { display: inline-flex; margin-top: 6px; }
-      .hero { padding: 110px 24px 64px; }
+      .hero { padding: 110px 24px 64px; height: auto; min-height: 100vh; }
+      .hero h1 { font-size: 2.8rem; }
       .hero-visual { position: relative; right: auto; top: auto; transform: none; width: 100%; margin: 32px 0; }
       .hero-bottom { max-width: 100%; }
       .about { grid-template-columns: 1fr; padding: 40px 24px 80px; gap: 48px; }
