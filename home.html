@@ -230,113 +230,55 @@
     }
     .work-header { margin-bottom: 40px; }
 
-    /* Featured card */
-    .card-featured {
-      border-radius: 24px; overflow: hidden;
-      border: 1.5px solid var(--border);
-      background: var(--card);
-      margin-bottom: 20px;
+    /* Project rows */
+    .proj-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+      padding: 56px 0;
+      border-top: 1px solid var(--border);
       text-decoration: none; color: inherit;
-      display: block;
-      transition: all var(--t);
     }
-    .card-featured:hover {
-      border-color: var(--blue);
-      box-shadow: 0 20px 60px rgba(26,79,255,.13);
-      transform: translateY(-4px);
-    }
-    .feat-img {
-      width: 100%; height: 420px;
-      overflow: hidden; position: relative;
-      background: #0C1E4A;
-    }
-    .feat-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top left;
-      display: block;
-      transition: transform 0.5s var(--t);
-    }
-    .card-featured:hover .feat-img img { transform: scale(1.02); }
-
-    .feat-body {
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: center; gap: 24px;
-      padding: 32px 40px;
-    }
-    .feat-type {
+    .proj-row.reverse { direction: rtl; }
+    .proj-row.reverse > * { direction: ltr; }
+    .proj-meta {
       font-size: 0.72rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--slate); margin-bottom: 8px;
+      color: var(--slate); margin-bottom: 12px;
     }
-    .feat-title {
+    .proj-name {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem; line-height: 1.1; margin-bottom: 10px;
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      line-height: 1.1; margin-bottom: 14px; color: var(--ink);
     }
-    .feat-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.75; max-width: 580px; }
-
-    .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .proj-desc { font-size: 0.94rem; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
     .pill {
       font-size: 0.72rem; font-weight: 600;
       padding: 5px 13px; border-radius: 100px;
       background: var(--slate-light); color: var(--slate);
     }
-
-    .arrow-btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--blue); color: #fff; flex-shrink: 0;
-      transition: all var(--t);
+    .proj-link {
+      font-size: 0.88rem; font-weight: 700;
+      color: var(--blue); display: inline-flex; align-items: center; gap: 6px;
+      transition: gap var(--t);
     }
-    .card-featured:hover .arrow-btn { background: var(--blue-dark); transform: translate(3px,-3px); }
-
-    /* Two-col cards */
-    .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .card {
-      border-radius: 24px; overflow: hidden;
+    .proj-row:hover .proj-link { gap: 10px; }
+    .proj-img-wrap {
+      border-radius: 20px; overflow: hidden;
       border: 1.5px solid var(--border);
-      background: var(--card);
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
-      transition: all var(--t);
+      aspect-ratio: 16/10;
+      background: #0C1E4A;
     }
-    .card:hover {
-      border-color: var(--blue);
-      box-shadow: 0 20px 60px rgba(26,79,255,.13);
-      transform: translateY(-4px);
+    .proj-img-inner {
+      width: 100%; height: 100%;
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .card-img {
-      width: 100%; height: 280px;
-      overflow: hidden; background: #0C2540;
-    }
-    .card-img img {
+    .proj-row:hover .proj-img-inner { transform: translateY(-8px) scale(1.04); }
+    .proj-img-inner img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: top left;
       display: block;
-      transition: transform 0.5s var(--t);
     }
-    .card:hover .card-img img { transform: scale(1.03); }
-
-    .card-body { padding: 28px 32px; flex: 1; display: flex; flex-direction: column; }
-    .card-type {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--slate); margin-bottom: 8px;
-    }
-    .card-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.65rem; line-height: 1.1; margin-bottom: 10px;
-    }
-    .card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.75; flex: 1; }
-    .card-footer {
-      display: flex; align-items: center;
-      margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border);
-    }
-    .card-link {
-      font-size: 0.84rem; font-weight: 700;
-      color: var(--blue); display: flex; align-items: center; gap: 6px;
-    }
-    .card-link svg { transition: transform var(--t); }
-    .card:hover .card-link svg { transform: translate(4px,-4px); }
 
     /* ── CONTACT ── */
     .contact { max-width: 1240px; margin: 0 auto; padding: 0 60px 120px; }
@@ -416,10 +358,9 @@
       .hero-visual img { max-width: 340px; }
       .about { grid-template-columns: 1fr; padding: 40px 24px 80px; gap: 48px; }
       .work { padding: 0 24px 80px; }
-      .cards-row { grid-template-columns: 1fr; }
-      .feat-body { grid-template-columns: 1fr; }
-      .feat-img { height: 240px; }
-      .card-img { height: 200px; }
+      .proj-row { grid-template-columns: 1fr; gap: 32px; }
+      .proj-row.reverse { direction: ltr; }
+      .proj-img-wrap { aspect-ratio: 16/9; }
       .contact { padding: 0 24px 80px; }
       .contact-box { padding: 60px 28px; }
       .strength-grid { grid-template-columns: 1fr; }
@@ -521,120 +462,103 @@
     <h2>Case studies</h2>
   </div>
 
-  <!-- Mozo, featured -->
-  <a href="bulwarx.html" class="card-featured fade">
-    <div class="feat-img">
-      <img
-        src="mozo/bulwarx/01.png"
-        alt="BulwarX Routines library"
-      />
-    </div>
-    <div class="feat-body">
-      <div>
-        <div class="feat-type">Enterprise · Cybersecurity · SOAR</div>
-        <div class="feat-title">BulwarX Routines</div>
-        <p class="feat-desc">Designed a visual automation engine that lets security teams build, read, and audit incident-response workflows without writing scripts, cutting manual triage time across pilot deployments.</p>
-        <div class="pills">
-          <span class="pill">B2B Enterprise</span>
-          <span class="pill">Workflow Design</span>
-          <span class="pill">Design System</span>
-        </div>
+  <!-- BulwarX -->
+  <a href="bulwarx.html" class="proj-row fade">
+    <div class="proj-text">
+      <div class="proj-meta">Enterprise · Cybersecurity · SOAR</div>
+      <div class="proj-name">BulwarX Routines</div>
+      <p class="proj-desc">Designed a visual automation engine that lets security teams build, read, and audit incident-response workflows without writing scripts, cutting manual triage time across pilot deployments.</p>
+      <div class="pills">
+        <span class="pill">B2B Enterprise</span>
+        <span class="pill">Workflow Design</span>
+        <span class="pill">Design System</span>
       </div>
-      <div class="arrow-btn">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M4 16L16 4M16 4H8M16 4V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <span class="proj-link">Read case study
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+      </span>
+    </div>
+    <div class="proj-img-wrap">
+      <div class="proj-img-inner">
+        <img src="mozo/bulwarx/01.png" alt="BulwarX Routines" />
       </div>
     </div>
   </a>
 
-  <!-- Two cards -->
-  <div class="cards-row">
+  <!-- Mozo -->
+  <a href="mozo.html" class="proj-row reverse fade">
+    <div class="proj-text">
+      <div class="proj-meta">B2C SaaS · Identity Protection</div>
+      <div class="proj-name">Mozo</div>
+      <p class="proj-desc">Designed the end-to-end credit fraud protection experience for a scam detection product serving older adults in the US, guiding users through high-stakes remediation workflows with clarity and trust.</p>
+      <div class="pills">
+        <span class="pill">UX Research</span>
+        <span class="pill">Trust Design</span>
+        <span class="pill">Accessibility</span>
+        <span class="pill">Design System</span>
+      </div>
+      <span class="proj-link">Read case study
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <div class="proj-img-wrap" style="background:#EEF2FF;">
+      <div class="proj-img-inner">
+        <img src="external/mozo-cover.png" alt="Mozo dashboard" />
+      </div>
+    </div>
+  </a>
 
-    <a href="mozo.html" class="card fade">
-      <div class="card-img">
-        <img
-          src="external/mozo-cover.png"
-          alt="Mozo dashboard"
-        />
+  <!-- LWF -->
+  <a href="lwf.html" class="proj-row fade">
+    <div class="proj-text">
+      <div class="proj-meta">Enterprise · Field Operations · Water Tech</div>
+      <div class="proj-name">LWF Corp</div>
+      <p class="proj-desc">Replaced phone-based task coordination with a digital alert tracking system, giving water utility operators and field technicians real-time visibility across every assignment.</p>
+      <div class="pills">
+        <span class="pill">B2B Enterprise</span>
+        <span class="pill">Workflow Design</span>
+        <span class="pill">Mobile</span>
       </div>
-      <div class="card-body">
-        <div class="card-type">B2C SaaS · Cybersecurity · Identity Protection</div>
-        <div class="card-title">Mozo</div>
-        <p class="card-desc">Designed the end-to-end credit fraud protection experience for a scam detection product serving older adults in the US, guiding users through high-stakes remediation workflows with clarity and trust.</p>
-        <div class="pills" style="margin-top:14px">
-          <span class="pill">UX Research</span>
-          <span class="pill">Trust Design</span>
-          <span class="pill">Accessibility</span>
-          <span class="pill">Design System</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-link">
-            Read case study
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </div>
+      <span class="proj-link">Read case study
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <div class="proj-img-wrap" style="background:#F0F4F0;">
+      <div class="proj-img-inner">
+        <img src="external/lwf-cover.jpg" alt="LWF Corp" />
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a href="lwf.html" class="card fade">
-      <div class="card-img">
-        <img
-          src="external/lwf-cover.jpg"
-          alt="LWF Corp alert map"
-        />
+  <!-- Playground -->
+  <a href="playground.html" class="proj-row reverse fade">
+    <div class="proj-text">
+      <div class="proj-meta">UI Design · 2020–2024</div>
+      <div class="proj-name">UI/UX Playground</div>
+      <p class="proj-desc">A curated collection of interface work across four very different products, each with its own visual language, users, and constraints.</p>
+      <div class="pills">
+        <span class="pill">Visual Design</span>
+        <span class="pill">Interaction</span>
+        <span class="pill">Multi-domain</span>
       </div>
-      <div class="card-body">
-        <div class="card-type">Enterprise · Field Operations · Water Tech</div>
-        <div class="card-title">LWF Corp</div>
-        <p class="card-desc">Replaced phone-based task coordination with a digital alert tracking system, giving water utility operators and field technicians real-time visibility across every assignment.</p>
-        <div class="pills" style="margin-top:14px">
-          <span class="pill">B2B Enterprise</span>
-          <span class="pill">Workflow Design</span>
-          <span class="pill">Mobile</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-link">
-            Read case study
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </div>
+      <span class="proj-link">View collection
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <div class="proj-img-wrap" style="background:#F0F2F8;">
+      <div class="proj-img-inner">
+        <img src="external/playground-cover.png" alt="UI/UX Playground" style="object-position: center center;" />
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a href="playground.html" class="card fade">
-      <div class="card-img" style="background:#F0F2F8">
-        <img
-          src="external/playground-cover.png"
-          alt="UI/UX Playground"
-          style="object-position: center center;"
-        />
-      </div>
-      <div class="card-body">
-        <div class="card-type">UI Design · 2020–2024</div>
-        <div class="card-title">UI/UX Playground</div>
-        <p class="card-desc">A curated collection of interface work across four very different products, each with its own visual language, users, and constraints.</p>
-        <div class="pills" style="margin-top:14px">
-          <span class="pill">Visual Design</span>
-          <span class="pill">Interaction</span>
-          <span class="pill">Multi-domain</span>
-        </div>
-        <div class="card-footer">
-          <span class="card-link">
-            View collection
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="M3 13L13 3M13 3H7M13 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </div>
-      </div>
-    </a>
-
-  </div>
 </section>
 
 <!-- CONTACT -->
