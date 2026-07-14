@@ -259,13 +259,13 @@
     }
     .proj-link {
       font-size: 0.88rem; font-weight: 700;
-      color: var(--blue); display: inline-flex; align-items: center; gap: 8px;
-      border: 1.5px solid var(--blue); border-radius: 100px;
-      padding: 10px 20px;
-      transition: background var(--t), color var(--t), gap var(--t), transform var(--t);
+      color: #fff; background: var(--blue); display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 100px; padding: 10px 20px;
+      transition: background var(--t), gap var(--t), transform var(--t), box-shadow var(--t);
     }
     .proj-row:hover .proj-link {
-      background: var(--blue); color: #fff; gap: 12px; transform: translateY(-1px);
+      background: var(--blue-dark); gap: 12px;
+      transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,79,255,.3);
     }
     .proj-img-wrap {
       border-radius: 20px; overflow: hidden;
