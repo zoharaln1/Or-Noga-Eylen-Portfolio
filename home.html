@@ -424,14 +424,15 @@
       .nav-links {
         position: absolute; top: 64px; left: 0; right: 0;
         flex-direction: column; align-items: stretch; gap: 2px;
-        background: rgba(245,247,255,0.98); backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--border);
+        background: rgba(12,26,53,0.97); backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
         padding: 10px 20px 18px;
         max-height: 0; overflow: hidden; visibility: hidden;
         transition: max-height var(--t), padding var(--t);
       }
       .nav-links.open { max-height: 320px; visibility: visible; padding: 10px 20px 18px; }
-      .nav-links a { display: block; padding: 12px 14px; }
+      .nav-links a { display: block; padding: 12px 14px; color: rgba(255,255,255,0.8) !important; }
+      .nav-links a:hover { color: #fff !important; background: rgba(255,255,255,0.07) !important; }
       .nav-links .btn-nav { display: inline-flex; margin-top: 6px; }
       .hero { padding: 100px 24px 60px; height: auto; min-height: 100vh; grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.4rem; }
