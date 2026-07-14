@@ -362,6 +362,15 @@
       .nav-links { gap: 10px; }
       .nav-links a { font-size: 0.68rem; }
     }
+    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .ps-col { padding: 44px 40px; }
+    .ps-col-left { border-right: 1.5px solid #D8E0F5; }
+    .ps-col-right { background: #F5F7FF; }
+    @media (max-width: 680px) {
+      .ps-grid { grid-template-columns: 1fr; }
+      .ps-col-left { border-right: none; border-bottom: 1.5px solid #D8E0F5; }
+      .ps-col { padding: 32px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -426,14 +435,14 @@
 
   <!-- Problem / Solution -->
   <div class="fade-up" style="border-radius:20px; border:1.5px solid #D8E0F5; overflow:hidden; margin-bottom:48px;">
-    <div style="display:grid; grid-template-columns:1fr 1fr;">
-      <div style="padding:44px 40px; border-right:1.5px solid #D8E0F5;">
+    <div class="ps-grid">
+      <div class="ps-col ps-col-left">
         <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
           <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The challenge
         </div>
         <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">Enterprise SOC teams handle hundreds of alerts per day. Each incident response is the same: download a file, scan it, escalate if suspicious, notify someone, open a ticket. Done manually, each cycle takes an analyst 30 minutes to 2 hours. Done wrong, it creates compliance risk. The bottleneck wasn't detection. It was response, and response was still manual.</p>
       </div>
-      <div style="padding:44px 40px; background:#F5F7FF;">
+      <div class="ps-col ps-col-right">
         <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
           <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The solution
         </div>
