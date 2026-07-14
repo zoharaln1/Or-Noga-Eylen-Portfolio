@@ -106,12 +106,14 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: block;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
       max-width: 1240px;
       margin: 0 auto;
-      padding: 160px 60px 100px;
+      padding: 80px 60px 60px;
     }
 
     .hero-top { position: relative; z-index: 1; }
@@ -130,8 +132,8 @@
 
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3.2rem, 8.5vw, 8rem);
-      line-height: 0.95; letter-spacing: -0.03em;
+      font-size: clamp(2.8rem, 6.8vw, 6.5rem);
+      line-height: 0.96; letter-spacing: -0.03em;
       margin-bottom: 0; color: var(--ink);
     }
     h1 em { font-style: italic; color: var(--slate); }
@@ -150,11 +152,11 @@
 
     .hero-bottom {
       position: relative; z-index: 5;
-      max-width: 44%; margin-top: 48px;
+      max-width: 44%; margin-top: 32px;
     }
     .hero-sub {
-      font-size: 1.05rem; color: var(--muted);
-      line-height: 1.85; margin-bottom: 40px;
+      font-size: 0.97rem; color: var(--muted);
+      line-height: 1.75; margin-bottom: 28px;
     }
 
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
