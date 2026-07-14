@@ -259,10 +259,14 @@
     }
     .proj-link {
       font-size: 0.88rem; font-weight: 700;
-      color: var(--blue); display: inline-flex; align-items: center; gap: 6px;
-      transition: gap var(--t);
+      color: var(--blue); display: inline-flex; align-items: center; gap: 8px;
+      border: 1.5px solid var(--blue); border-radius: 100px;
+      padding: 10px 20px;
+      transition: background var(--t), color var(--t), gap var(--t), transform var(--t);
     }
-    .proj-row:hover .proj-link { gap: 10px; }
+    .proj-row:hover .proj-link {
+      background: var(--blue); color: #fff; gap: 12px; transform: translateY(-1px);
+    }
     .proj-img-wrap {
       border-radius: 20px; overflow: hidden;
       border: 1.5px solid var(--border);
