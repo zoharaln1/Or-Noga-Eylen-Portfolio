@@ -107,19 +107,19 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
+      display: block;
+      position: relative;
       max-width: 1240px;
       margin: 0 auto;
-      padding: 100px 60px 60px;
+      padding: 160px 60px 100px;
     }
+
+    .hero-top { position: relative; z-index: 1; }
 
     .hero-role {
       font-size: 0.78rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 20px;
+      color: var(--blue); margin-bottom: 24px;
       display: flex; align-items: center; gap: 10px;
     }
     .hero-role::before {
@@ -130,16 +130,31 @@
 
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
-      line-height: 1.06; letter-spacing: -0.025em;
-      margin-bottom: 24px; color: var(--ink);
+      font-size: clamp(3.2rem, 8.5vw, 8rem);
+      line-height: 0.95; letter-spacing: -0.03em;
+      margin-bottom: 0; color: var(--ink);
     }
     h1 em { font-style: italic; color: var(--slate); }
 
+    .hero-visual {
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      width: 56%; z-index: 3;
+    }
+    .hero-visual img {
+      width: 100%; height: auto;
+      animation: float 5s ease-in-out infinite;
+      filter: drop-shadow(0 32px 64px rgba(26,79,255,0.22)) drop-shadow(0 8px 24px rgba(0,0,0,0.18));
+    }
+
+    .hero-bottom {
+      position: relative; z-index: 5;
+      max-width: 44%; margin-top: 48px;
+    }
     .hero-sub {
       font-size: 1.05rem; color: var(--muted);
-      max-width: 500px; line-height: 1.85;
-      margin-bottom: 40px;
+      line-height: 1.85; margin-bottom: 40px;
     }
 
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
@@ -154,15 +169,7 @@
     .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
     .btn-ghost:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
-    /* Hero image, floating with realistic grounded shadow */
-    .hero-visual {
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      position: relative;
-    }
     .hero-wrap { background: var(--ink); }
-
-    .hero { position: relative; }
-    .hero > * { position: relative; z-index: 1; }
 
     /* Hero dark overrides */
     .hero-wrap .hero-role { color: #88AAFF; }
@@ -410,9 +417,9 @@
       .nav-links.open { max-height: 320px; visibility: visible; padding: 10px 20px 18px; }
       .nav-links a { display: block; padding: 12px 14px; }
       .nav-links .btn-nav { display: inline-flex; margin-top: 6px; }
-      .hero { grid-template-columns: 1fr; padding: 110px 24px 64px; gap: 40px; }
-      .hero-visual { order: -1; }
-      .hero-visual img { max-width: 340px; }
+      .hero { padding: 110px 24px 64px; }
+      .hero-visual { position: relative; right: auto; top: auto; transform: none; width: 100%; margin: 32px 0; }
+      .hero-bottom { max-width: 100%; }
       .about { grid-template-columns: 1fr; padding: 40px 24px 80px; gap: 48px; }
       .work { padding: 0 24px 80px; }
       .proj-row { grid-template-columns: 1fr; gap: 32px; }
@@ -454,21 +461,19 @@
   <div class="hero-blob hero-blob-1"></div>
   <div class="hero-blob hero-blob-2"></div>
   <div class="hero-blob hero-blob-3"></div>
-  <div class="fade">
+  <div class="hero-top fade">
     <div class="hero-role">Product Designer</div>
     <h1>Turning complex<br/>systems into<br/><em>great experiences.</em></h1>
+  </div>
+  <div class="hero-visual fade">
+    <img src="external/clay-macbook.png" alt="Product design work" />
+  </div>
+  <div class="hero-bottom fade">
     <p class="hero-sub">Senior Product Designer with 6 years of experience leading end-to-end design across B2C, B2B, and enterprise products. Currently a solo product design lead, translating complex technical requirements into experiences people actually trust.</p>
     <div class="btn-row">
       <a href="#work" class="btn btn-primary">View my work</a>
       <a href="#contact" class="btn btn-ghost">Let's talk</a>
     </div>
-  </div>
-  <div class="hero-visual fade">
-    <div class="hero-glow"></div>
-    <img
-      src="external/clay-macbook.png"
-      alt="Mozo product design"
-    />
   </div>
 </section>
 </div><!-- /hero-wrap -->
