@@ -21,10 +21,10 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mozo Case Study | Or Noga Eylen</title>
+  <title>Credit Fraud Protection Case Study | Or Noga Eylen</title>
   <meta name="description" content="How I designed a guided credit fraud remediation flow for senior users, lifting completion rates to 68%, more than double the industry benchmark." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta property="og:title" content="Mozo Case Study | Or Noga Eylen" />
+  <meta property="og:title" content="Credit Fraud Protection Case Study | Or Noga Eylen" />
   <meta property="og:description" content="How I designed a guided credit fraud remediation flow for senior users, lifting completion rates to 68%, more than double the industry benchmark." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
@@ -325,9 +325,9 @@
   </a>
   <a href="home.html" class="nav-logo">Or Noga Eylen</a>
   <ul class="nav-links">
-    <li><a href="mozo.html" class="active">Mozo</a></li>
+    <li><a href="mozo.html" class="active">Fraud Protection</a></li>
     <li><a href="lwf.html">LWF</a></li>
-    <li><a href="bulwarx.html">BulwarX</a></li>
+    <li><a href="bulwarx.html">Workflows</a></li>
     <li><a href="playground.html">Playground</a></li>
   </ul>
 </nav>
@@ -338,7 +338,7 @@
     <div class="case-hero-grid">
       <div>
         <div class="case-chip">B2C SaaS · Cybersecurity · Scam Protection</div>
-        <h1>Mozo<br/>Credit Fraud<br/>Protection</h1>
+        <h1>Credit Fraud<br/>Protection</h1>
         <p>Designing a guided remediation flow for senior US users, navigating regulatory constraints, Equifax API integration, and the challenge of helping anxious, non-technical users complete a multi-step security process entirely on their own.</p>
         <div class="case-meta">
           <div class="case-meta-item"><label>My Role</label><span>Solo Product Designer</span></div>
@@ -358,8 +358,8 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Context</div>
     <h2 class="cs-heading">The product and the problem</h2>
-    <p class="cs-body">Mozo is an AI-powered scam protection app by ReasonLabs. Its core job: catch scam texts, fake emails, and phishing links before seniors act on them, and deliver a plain-English verdict instantly. Within that product, Mozo also monitors the dark web for exposed personal data, so users get early warning when their SSN, credit card, or financial information is in the wrong hands.</p>
-    <p class="cs-body">This case study focuses on what happens <em>after</em> detection. When Mozo flags that a user's data is actively being used for loan and credit fraud, a high-urgency alert surfaces on the dashboard. The user faces a clear choice: act, or ignore it. Getting anxious, non-technical seniors to actually complete the remediation process, through a multi-step flow involving three credit bureaus, is the design problem this case study is about. <strong>Detection is solved. The problem is everything that comes next.</strong></p>
+    <p class="cs-body">This is an AI-powered scam protection app built by a cybersecurity company. Its core job: catch scam texts, fake emails, and phishing links before seniors act on them, and deliver a plain-English verdict instantly. Within that product, it also monitors the dark web for exposed personal data, so users get early warning when their SSN, credit card, or financial information is in the wrong hands.</p>
+    <p class="cs-body">This case study focuses on what happens <em>after</em> detection. When the app flags that a user's data is actively being used for loan and credit fraud, a high-urgency alert surfaces on the dashboard. The user faces a clear choice: act, or ignore it. Getting anxious, non-technical seniors to actually complete the remediation process, through a multi-step flow involving three credit bureaus, is the design problem this case study is about. <strong>Detection is solved. The problem is everything that comes next.</strong></p>
 
     <div class="info-grid">
       <div class="info-card">
@@ -388,7 +388,7 @@
         <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
           <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The challenge
         </div>
-        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">When Mozo flags active credit fraud, anxious non-technical seniors must complete a multi-step remediation process across three credit bureaus entirely on their own. Under FCRA regulations, Mozo cannot act on their behalf, making completion depend entirely on user confidence and follow-through.</p>
+        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">When the app flags active credit fraud, anxious non-technical seniors must complete a multi-step remediation process across three credit bureaus entirely on their own. Under FCRA regulations, the product cannot act on their behalf, making completion depend entirely on user confidence and follow-through.</p>
       </div>
       <div class="ps-col ps-col-right">
         <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
@@ -403,7 +403,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">The Key Constraint</div>
     <h2 class="cs-heading">We couldn't fix it for them</h2>
-    <p class="cs-body">This is the central design challenge in the project, and what makes it genuinely difficult. Under FCRA and related financial regulations, Mozo is legally prohibited from acting on the user's behalf. We cannot place a fraud alert. We cannot freeze credit. We cannot dispute a charge. Everything depends on the user completing these steps themselves, with external parties like Equifax, TransUnion, and Experian.</p>
+    <p class="cs-body">This is the central design challenge in the project, and what makes it genuinely difficult. Under FCRA and related financial regulations, the product is legally prohibited from acting on the user's behalf. We cannot place a fraud alert. We cannot freeze credit. We cannot dispute a charge. Everything depends on the user completing these steps themselves, with external parties like Equifax, TransUnion, and Experian.</p>
     <p class="cs-body">That left us with a design problem that couldn't be solved by automation or clever shortcuts:</p>
 
     <div class="constraint-box">
@@ -425,7 +425,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label slate">User Research</div>
     <h2 class="cs-heading">Who we were designing for</h2>
-    <p class="cs-body">Through research sessions and interviews with Mozo's core user base, I built a detailed picture of what drives action and what causes abandonment. The key finding: <strong>for this audience, the fear of doing something wrong is stronger than the fear of the threat itself.</strong> Users would rather do nothing than risk clicking the wrong button and making their situation worse. This has a direct implication for layout: anxious users need calm, spacious, one-thing-at-a-time screens. Information density that works for a younger, tech-confident audience is actively hostile here.</p>
+    <p class="cs-body">Through research sessions and interviews with the product's core user base, I built a detailed picture of what drives action and what causes abandonment. The key finding: <strong>for this audience, the fear of doing something wrong is stronger than the fear of the threat itself.</strong> Users would rather do nothing than risk clicking the wrong button and making their situation worse. This has a direct implication for layout: anxious users need calm, spacious, one-thing-at-a-time screens. Information density that works for a younger, tech-confident audience is actively hostile here.</p>
 
     <div class="persona-card">
       <img class="persona-img" src="external/persona-man-outdoors.jpg" alt="John Miller persona" />
@@ -452,7 +452,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Competitive Analysis</div>
     <h2 class="cs-heading">Where competitors fall short</h2>
-    <p class="cs-body">Before exploring solutions, I mapped the post-detection experience across the three leading competitors in the credit and identity protection space. The gap I was looking for wasn't detection quality, it was what happens in the moment a user learns they have a problem and needs to act. That's where Mozo had the clearest opportunity to differentiate.</p>
+    <p class="cs-body">Before exploring solutions, I mapped the post-detection experience across the three leading competitors in the credit and identity protection space. The gap I was looking for wasn't detection quality, it was what happens in the moment a user learns they have a problem and needs to act. That's where this product had the clearest opportunity to differentiate.</p>
 
     <div class="comp-grid">
       <div class="comp-card">
@@ -530,7 +530,7 @@
       <div class="flow-badge">Fraud Protection Overview</div>
       <h4>All active risks, categorized by type</h4>
       <p>Before entering the guided flow, users land on a fraud protection overview showing all four active risk types. Each card names the specific exposed data points, SSN, Address, Full Name, Birth Date, that enable that particular fraud type.</p>
-      <div class="decision"><strong>Design decision:</strong> Showing the exact data fields that make each fraud possible makes the risk feel concrete and personal rather than abstract. It closes the gap between "Mozo says there's a risk" and "I understand why I need to act right now." A small copy and IA decision with a measurable effect on motivation to proceed.</div>
+      <div class="decision"><strong>Design decision:</strong> Showing the exact data fields that make each fraud possible makes the risk feel concrete and personal rather than abstract. It closes the gap between "the app says there's a risk" and "I understand why I need to act right now." A small copy and IA decision with a measurable effect on motivation to proceed.</div>
       <img src="mozo/2.png" alt="Fraud Protection Overview - 4 risk type cards" class="full-img" />
     </div>
 
@@ -544,9 +544,9 @@
 
     <div class="flow-item">
       <div class="flow-badge">Step 1 of 3: Review</div>
-      <h4>The Equifax credit report, rendered inside Mozo</h4>
-      <p>The actual report data is pulled via the Equifax API and displayed in a structured layout: credit score, personal details, accounts, and credit inquiries. The information is intentionally detailed, users need to identify unauthorized activity, which means seeing real data clearly. The bottom strip asks "Does everything look familiar?" with two paths: confirm, or contact Mozo for support.</p>
-      <div class="decision"><strong>Design decision:</strong> Integrating the Equifax pull directly into the app was the most technically complex part of this flow, and the most important UX decision. Sending users to AnnualCreditReport.com to fetch their own report would have caused most of this user group to abandon immediately. Keeping everything inside Mozo removes one of the most common drop-off points in comparable financial security products. This required close collaboration with engineering to map the API response into a layout a non-technical user could parse and act on.</div>
+      <h4>The Equifax credit report, rendered inside the app</h4>
+      <p>The actual report data is pulled via the Equifax API and displayed in a structured layout: credit score, personal details, accounts, and credit inquiries. The information is intentionally detailed, users need to identify unauthorized activity, which means seeing real data clearly. The bottom strip asks "Does everything look familiar?" with two paths: confirm, or contact support.</p>
+      <div class="decision"><strong>Design decision:</strong> Integrating the Equifax pull directly into the app was the most technically complex part of this flow, and the most important UX decision. Sending users to AnnualCreditReport.com to fetch their own report would have caused most of this user group to abandon immediately. Keeping everything inside the app removes one of the most common drop-off points in comparable financial security products. This required close collaboration with engineering to map the API response into a layout a non-technical user could parse and act on.</div>
       <img src="mozo/mozo-step1-report.png.png" alt="Step 1 - Equifax credit report: score, accounts, inquiries" class="full-img" />
     </div>
 
@@ -587,7 +587,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Results</div>
     <h2 class="cs-heading">What shipped and what we measured</h2>
-    <p class="cs-body">The flow launched to Mozo's full US subscriber base. We ran three rounds of moderated usability testing with participants aged 58-76, iterating on the reassurance copy, step structure, and information density between each round.</p>
+    <p class="cs-body">The flow launched to the app's full US subscriber base. We ran three rounds of moderated usability testing with participants aged 58-76, iterating on the reassurance copy, step structure, and information density between each round.</p>
 
     <div class="outcomes-grid">
       <div class="outcome-card">
@@ -605,7 +605,7 @@
     </div>
 
     <p class="cs-body" style="margin-top: 24px;">The single highest-impact change across all three testing rounds was the fraud alert copy callout: "You only need to contact ONE bureau." In the version without it, drop-off at Step 2 was more than double. This reinforced something worth noting: copy is UX. A single sentence, grounded in a regulatory fact the user didn't know, had more impact on completion than any layout change.</p>
-    <p class="cs-body" style="margin-top: 16px;">Completion also has a business dimension. Users who finish the full flow have tangibly experienced Mozo doing something hard alongside them. That felt partnership is a stronger retention signal than any onboarding screen. A user who reaches the confetti screen is not the same user they were before they started.</p>
+    <p class="cs-body" style="margin-top: 16px;">Completion also has a business dimension. Users who finish the full flow have tangibly experienced the app doing something hard alongside them. That felt partnership is a stronger retention signal than any onboarding screen. A user who reaches the confetti screen is not the same user they were before they started.</p>
   </div>
 
   <!-- Reflection -->
@@ -617,13 +617,13 @@
     </blockquote>
     <p class="cs-body">Working solo on this gave me full ownership of every decision, and full accountability for the tradeoffs. The Equifax API integration in particular required close collaboration with engineering: mapping raw API data into a format that a 68-year-old finds reassuring and actionable. That translation work, from technical output to human understanding, is where I think the real value of product design lives.</p>
     <p class="cs-body" style="margin-top: 16px;">This project also sharpened how I think about designing under anxiety: every element needs to earn its place by either reducing cognitive load or building confidence. Anything that doesn't do one of those two things is actively working against the user.</p>
-    <p class="cs-body" style="margin-top: 16px;">It also changed how I think about what "protection" means as a product experience. Mozo's core promise is that users should feel safe, not just be safe. In a scam protection product, most of that value is invisible. It shows up in things that didn't happen: the scam text that got caught, the fake link that got blocked, the credit freeze that held. Designing for felt safety, in a product where the real value is absence of harm, is the design problem that runs through everything Mozo builds.</p>
+    <p class="cs-body" style="margin-top: 16px;">It also changed how I think about what "protection" means as a product experience. This product's core promise is that users should feel safe, not just be safe. In a scam protection product, most of that value is invisible. It shows up in things that didn't happen: the scam text that got caught, the fake link that got blocked, the credit freeze that held. Designing for felt safety, in a product where the real value is absence of harm, is the design problem that runs through everything this product builds.</p>
   </div>
 
   <!-- Next Project -->
   <div class="next-project fade-up">
     <div class="next-label">Next case study</div>
-    <div class="next-title">LWF Corp</div>
+    <div class="next-title">Water Infrastructure Management</div>
     <p class="cs-body" style="margin-bottom: 24px;">Digital alert assignment and field operations management for a water utility company</p>
     <a href="lwf.html" class="btn-primary">
       Read LWF case study

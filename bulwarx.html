@@ -21,10 +21,10 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BulwarX Case Study | Or Noga Eylen</title>
+  <title>Security Workflow Automation Case Study | Or Noga Eylen</title>
   <meta name="description" content="Designing a visual automation engine that lets security teams build, read, and audit incident-response workflows without writing scripts." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta property="og:title" content="BulwarX Case Study | Or Noga Eylen" />
+  <meta property="og:title" content="Security Workflow Automation Case Study | Or Noga Eylen" />
   <meta property="og:description" content="Designing a visual automation engine that lets security teams build, read, and audit incident-response workflows without writing scripts." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
@@ -382,9 +382,9 @@
   </a>
   <a href="home.html" class="nav-logo">Or Noga Eylen</a>
   <ul class="nav-links">
-    <li><a href="mozo.html">Mozo</a></li>
+    <li><a href="mozo.html">Fraud Protection</a></li>
     <li><a href="lwf.html">LWF</a></li>
-    <li><a href="bulwarx.html" class="active">BulwarX</a></li>
+    <li><a href="bulwarx.html" class="active">Workflows</a></li>
     <li><a href="playground.html">Playground</a></li>
   </ul>
 </nav>
@@ -393,7 +393,7 @@
 <div class="case-hero">
   <div class="case-hero-inner">
     <div class="case-chip">Enterprise SaaS · Cybersecurity · Security Automation</div>
-    <h1>BulwarX<br/>Routines</h1>
+    <h1>Incident Response<br/>Workflow Builder</h1>
     <p>Designing a visual workflow builder that lets security analysts automate complex incident response, without writing a single line of code.</p>
     <div class="case-meta">
       <div class="case-meta-item"><label>My Role</label><span>Lead Product Designer</span></div>
@@ -411,7 +411,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Context</div>
     <h2 class="cs-heading">The product and the problem</h2>
-    <p class="cs-body">BulwarX is an Israeli cybersecurity integration company headquartered in Ra'anana. Their business is implementing and managing enterprise security stacks for organizations across industries, working with partners including Palo Alto Networks, Microsoft, CyberArk, Broadcom, and Netskope. Routines is an in-house platform BulwarX built for their own operations and for their managed security clients: a visual automation engine that lets security teams respond to threats, run investigations, and manage remediation without manual intervention. A Routine chains together Tasks, each one performing a discrete action like downloading a file, scanning for malware, sending an alert, or quarantining a device, connected through branching logic that handles success, failure, and edge cases.</p>
+    <p class="cs-body">The company behind this product is an Israeli cybersecurity integration business that implements and manages enterprise security stacks for organizations across industries, partnering with major vendors across firewall, identity, endpoint, and cloud security categories. This workflow builder is an in-house platform built for their own operations and for their managed security clients: a visual automation engine that lets security teams respond to threats, run investigations, and manage remediation without manual intervention. A Workflow chains together Tasks, each one performing a discrete action like downloading a file, scanning for malware, sending an alert, or quarantining a device, connected through branching logic that handles success, failure, and edge cases.</p>
 
     <div class="info-grid">
       <div class="info-card">
@@ -446,7 +446,7 @@
         <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#1A4FFF; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
           <span style="display:inline-block; width:20px; height:1.5px; background:#1A4FFF;"></span>The solution
         </div>
-        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">A visual automation engine called Routines that lets security analysts build, read, and audit incident-response workflows without writing scripts or relying on engineering. Each Routine chains discrete Tasks through branching logic that handles success, failure, and edge cases, giving analysts full control and full visibility into what runs during an incident.</p>
+        <p style="font-size:0.95rem; line-height:1.9; color:#3A4E6A;">A visual automation engine that lets security analysts build, read, and audit incident-response workflows without writing scripts or relying on engineering. Each Workflow chains discrete Tasks through branching logic that handles success, failure, and edge cases, giving analysts full control and full visibility into what runs during an incident.</p>
       </div>
     </div>
   </div>
@@ -455,20 +455,20 @@
   <div class="cs-section fade-up">
     <div class="cs-label">The Key Constraint</div>
     <h2 class="cs-heading">Automation that can't be a black box</h2>
-    <p class="cs-body">In security, trust is non-negotiable. An analyst who doesn't understand what a Routine does won't run it. A CISO who can't audit what ran during an incident has a compliance problem. Unlike most SaaS tools where "it just works" is a feature, in security operations, opacity is a liability.</p>
-    <p class="cs-body">That constraint shaped every design decision. Every Routine needed to be readable, not just functional.</p>
+    <p class="cs-body">In security, trust is non-negotiable. An analyst who doesn't understand what a Workflow does won't run it. A CISO who can't audit what ran during an incident has a compliance problem. Unlike most SaaS tools where "it just works" is a feature, in security operations, opacity is a liability.</p>
+    <p class="cs-body">That constraint shaped every design decision. Every Workflow needed to be readable, not just functional.</p>
 
     <div class="constraint-box">
       <div class="constraint-label">What we couldn't compromise on</div>
       <p>
-        <strong>Every Routine had to be fully auditable.</strong> Analysts needed to trace exactly what ran, what the output was, and where a failure occurred, without reading logs.<br/><br/>
+        <strong>Every Workflow had to be fully auditable.</strong> Analysts needed to trace exactly what ran, what the output was, and where a failure occurred, without reading logs.<br/><br/>
         <strong>Failure paths were as important as success paths.</strong> A silent failure in a security workflow is worse than no automation. Every branch, retry, and fallback had to be visible and intentional.<br/><br/>
-        <strong>Non-engineers had to be the primary builders.</strong> If Routine creation required engineering support, adoption would stall. The UI had to be powerful enough for complex logic, simple enough for an analyst who's never written code.<br/><br/>
+        <strong>Non-engineers had to be the primary builders.</strong> If Workflow creation required engineering support, adoption would stall. The UI had to be powerful enough for complex logic, simple enough for an analyst who's never written code.<br/><br/>
         <strong>The system had to handle real-time load.</strong> Running jobs, failed jobs, and scheduled jobs all needed to be visible simultaneously, without overwhelming the person monitoring them.
       </p>
     </div>
 
-    <p class="cs-body">This pushed me away from the standard SOAR approach of script-based configuration and toward a visual-first system where the logic of a Routine could be read at a glance, not decoded from a config file.</p>
+    <p class="cs-body">This pushed me away from the standard SOAR approach of script-based configuration and toward a visual-first system where the logic of a Workflow could be read at a glance, not decoded from a config file.</p>
   </div>
 
   <!-- User Research -->
@@ -476,7 +476,7 @@
     <div class="cs-label">User Research</div>
     <h2 class="cs-heading">Who actually runs the security operations</h2>
     <p class="cs-body">I ran research sessions with security professionals across three roles: CISOs responsible for strategy and compliance, SOC team leads managing daily operations, and frontline security analysts doing the actual triage and response work. The most revealing insight was a split that I didn't expect.</p>
-    <p class="cs-body">CISOs cared about visibility and reporting. Analysts cared about speed and clarity. But the people in between, the SOC team leads, were where the real pain lived. They were the ones context-switching between management dashboards, raw alert feeds, and makeshift scripts. They were the intended primary users of BulwarX, and they were being served poorly by every existing tool.</p>
+    <p class="cs-body">CISOs cared about visibility and reporting. Analysts cared about speed and clarity. But the people in between, the SOC team leads, were where the real pain lived. They were the ones context-switching between management dashboards, raw alert feeds, and makeshift scripts. They were the intended primary users of this product, and they were being served poorly by every existing tool.</p>
 
     <div class="persona-card">
       <img
@@ -514,7 +514,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Competitive Analysis</div>
     <h2 class="cs-heading">Why existing SOAR tools fail analysts</h2>
-    <p class="cs-body">The SOAR market is dominated by tools built by engineers, for engineers. The assumption baked into almost every competitor is that the person creating automations has a technical background. That assumption is wrong for most mid-market security teams, and it's where BulwarX had real room to differentiate.</p>
+    <p class="cs-body">The SOAR market is dominated by tools built by engineers, for engineers. The assumption baked into almost every competitor is that the person creating automations has a technical background. That assumption is wrong for most mid-market security teams, and it's where this product had real room to differentiate.</p>
 
     <div class="comp-grid">
       <div class="comp-card">
@@ -679,7 +679,7 @@
       </div>
     </div>
 
-    <p class="cs-body">The gap across all three: none of them treat the security analyst as the primary workflow builder. BulwarX's opportunity was to own that space.</p>
+    <p class="cs-body">The gap across all three: none of them treat the security analyst as the primary workflow builder. That was this product's opportunity to own that space.</p>
 
     <div class="swot-grid">
       <div class="swot-card green">
@@ -748,7 +748,7 @@
           Script-based configuration
           <span class="badge badge-rejected">Not chosen</span>
         </div>
-        <div class="option-body">Analysts define Routines using structured YAML or a Python SDK. Powerful and precise, but requires technical knowledge to create and maintain. Every change to a Routine requires either engineering time or a technically skilled analyst. Debugging means reading logs. Adopted by XSOAR and Splunk for their core experience. Fast to build for a technical user, inaccessible for everyone else.</div>
+        <div class="option-body">Analysts define Workflows using structured YAML or a Python SDK. Powerful and precise, but requires technical knowledge to create and maintain. Every change to a Workflow requires either engineering time or a technically skilled analyst. Debugging means reading logs. Adopted by XSOAR and Splunk for their core experience. Fast to build for a technical user, inaccessible for everyone else.</div>
       </div>
       <div class="option-card selected">
         <div class="option-img">
@@ -758,12 +758,12 @@
           Visual node-based builder
           <span class="badge badge-selected">Chosen</span>
         </div>
-        <div class="option-body">Analysts build Routines by connecting visual nodes on a canvas. Each node is a Task with clearly labeled inputs, outputs, and branch conditions. Logic is readable at a glance. Failure paths are first-class elements, not afterthoughts. Non-engineers can build, read, and modify complex workflows without help. The builder is the documentation. Chosen because it matches the mental model analysts already use when thinking through a response playbook.</div>
+        <div class="option-body">Analysts build Workflows by connecting visual nodes on a canvas. Each node is a Task with clearly labeled inputs, outputs, and branch conditions. Logic is readable at a glance. Failure paths are first-class elements, not afterthoughts. Non-engineers can build, read, and modify complex workflows without help. The builder is the documentation. Chosen because it matches the mental model analysts already use when thinking through a response playbook.</div>
       </div>
     </div>
 
     <div class="decision">
-      <strong>Design decision:</strong> I made failure paths visually identical in weight to success paths in the workflow builder. In all competitor tools, failure handling is a secondary concern in the UI. In BulwarX, every Task has an explicit Failure branch by default, making error handling a design requirement rather than an afterthought. This directly addressed the biggest operational risk: automations that fail silently.
+      <strong>Design decision:</strong> I made failure paths visually identical in weight to success paths in the workflow builder. In all competitor tools, failure handling is a secondary concern in the UI. In this system, every Task has an explicit Failure branch by default, making error handling a design requirement rather than an afterthought. This directly addressed the biggest operational risk: automations that fail silently.
     </div>
   </div>
 
@@ -771,7 +771,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">The Solution</div>
     <h2 class="cs-heading">Four surfaces, one operational picture</h2>
-    <p class="cs-body">The BulwarX Routines experience follows a single creation journey across five surfaces, from situational awareness, to the Routine library, to creating and building out a Routine, to the completed visual workflow.</p>
+    <p class="cs-body">The workflow automation experience follows a single creation journey across five surfaces, from situational awareness, to the Workflow library, to creating and building out a Workflow, to the completed visual workflow.</p>
 
     <div class="flow-badge">Surface 01</div>
     <div class="flow-item">
@@ -780,15 +780,15 @@
       <div class="decision">
         <strong>Design decision:</strong> I used card-based layout rather than a table to allow scanning at different levels of urgency. Color was used sparingly, reserved only for failure states, so that red always means "act now." Jobs with no issues are intentionally low-visual-weight so that problems stand out without scanning every row.
       </div>
-      <img class="full-img" src="mozo/bulwarx/07.png" alt="BulwarX Dashboard, running jobs, failed alerts, engine and package status"/>
+      <img class="full-img" src="mozo/bulwarx/07.png" alt="Security workflow dashboard, running jobs, failed alerts, engine and package status"/>
     </div>
 
     <div class="flow-badge">Surface 02</div>
     <div class="flow-item">
-      <h4>Routine Management</h4>
-      <p>The central library of all Routines in the organization. Analysts can search, filter by status, engine, or label, and understand the health of each automation at a glance without opening it. Card layout was chosen over a table to support scanning by status, not just by name.</p>
+      <h4>Workflow Management</h4>
+      <p>The central library of all Workflows in the organization. Analysts can search, filter by status, engine, or label, and understand the health of each automation at a glance without opening it. Card layout was chosen over a table to support scanning by status, not just by name.</p>
       <div class="decision">
-        <strong>Design decision:</strong> Labels and status indicators were surfaced directly on each Routine card, not hidden behind a hover or a click. In security operations, context-switching is expensive. An analyst should be able to triage the automation library in under 30 seconds.
+        <strong>Design decision:</strong> Labels and status indicators were surfaced directly on each Workflow card, not hidden behind a hover or a click. In security operations, context-switching is expensive. An analyst should be able to triage the automation library in under 30 seconds.
       </div>
       <div class="img-tabs">
         <div class="img-tab-buttons">
@@ -797,16 +797,16 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Routines library, card view with status labels"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/Filters.png" alt="Routines library, filter panel open"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Workflow library, card view with status labels"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/Filters.png" alt="Workflow library, filter panel open"/></div>
         </div>
       </div>
     </div>
 
     <div class="flow-badge">Surface 03</div>
     <div class="flow-item">
-      <h4>Creating a New Routine</h4>
-      <p>From the library, analysts launch a new Routine through a minimal creation panel, name, trigger, dependencies, and labels. Keeping the entry form short was intentional: early testing showed analysts abandoned creation when asked too many questions upfront. Advanced configuration happens inside the Routine, not during creation.</p>
+      <h4>Creating a New Workflow</h4>
+      <p>From the library, analysts launch a new Workflow through a minimal creation panel, name, trigger, dependencies, and labels. Keeping the entry form short was intentional: early testing showed analysts abandoned creation when asked too many questions upfront. Advanced configuration happens inside the Workflow, not during creation.</p>
       <div class="decision">
         <strong>Design decision:</strong> Separating "create" from "configure" reduced drop-off and let analysts reach the workflow canvas faster. The creation form is a gate, not a configurator. Everything else is deferred to where the real work happens.
       </div>
@@ -816,9 +816,9 @@
     <div class="flow-badge">Surface 04</div>
     <div class="flow-item">
       <h4>Task Creation Wizard</h4>
-      <p>Once inside a Routine, analysts add Tasks through a structured three-step wizard: Information (name, engine, description), Input (what data this Task needs), Output (what it returns and what each outcome triggers). Each step is a single concern, analysts never have to think about inputs and outputs at the same time.</p>
+      <p>Once inside a Workflow, analysts add Tasks through a structured three-step wizard: Information (name, engine, description), Input (what data this Task needs), Output (what it returns and what each outcome triggers). Each step is a single concern, analysts never have to think about inputs and outputs at the same time.</p>
       <div class="decision">
-        <strong>Design decision:</strong> I introduced a side panel pattern for editing Tasks inside an open Routine, so analysts could make changes without losing their position in the workflow. In competitor tools, editing a node opens a new full-screen context, breaking the spatial awareness of the canvas. The side panel preserves that context and makes iteration significantly faster.
+        <strong>Design decision:</strong> I introduced a side panel pattern for editing Tasks inside an open Workflow, so analysts could make changes without losing their position in the workflow. In competitor tools, editing a node opens a new full-screen context, breaking the spatial awareness of the canvas. The side panel preserves that context and makes iteration significantly faster.
       </div>
       <div class="img-tabs">
         <div class="img-tab-buttons">
@@ -829,7 +829,7 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Routine detail, empty tasks state, ready to build"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Workflow detail, empty tasks state, ready to build"/></div>
           <div class="img-tab-pane"><img src="mozo/bulwarx/04.png" alt="Add task, Step 1: Task Info"/></div>
           <div class="img-tab-pane"><img src="mozo/bulwarx/05.png" alt="Add task, Step 2: Input configuration"/></div>
           <div class="img-tab-pane"><img src="mozo/bulwarx/06.png" alt="Add task, Step 3: Output mapping"/></div>
@@ -840,15 +840,15 @@
     <div class="flow-badge">Surface 05</div>
     <div class="flow-item">
       <h4>The Workflow Builder</h4>
-      <p>The completed Routine lives here: a visual canvas where every Task is a node, every connection is a decision, and every failure path is visible at full weight alongside the success path. This is the output of the entire creation journey, a Routine that reads like a flowchart, not a config file. Analysts can audit, modify, and share it without needing the person who built it in the room.</p>
+      <p>The completed Workflow lives here: a visual canvas where every Task is a node, every connection is a decision, and every failure path is visible at full weight alongside the success path. This is the output of the entire creation journey, a Workflow that reads like a flowchart, not a config file. Analysts can audit, modify, and share it without needing the person who built it in the room.</p>
       <div class="decision">
-        <strong>Design decision:</strong> I rejected the common pattern of collapsing failure branches by default. Every Task node shows both the success path and the failure path simultaneously. Analysts who build Routines also run incident reviews under pressure, they need to read the workflow instantly, not reconstruct it from memory. The builder is the documentation.
+        <strong>Design decision:</strong> I rejected the common pattern of collapsing failure branches by default. Every Task node shows both the success path and the failure path simultaneously. Analysts who build Workflows also run incident reviews under pressure, they need to read the workflow instantly, not reconstruct it from memory. The builder is the documentation.
       </div>
       <div class="decision-tension">
-        <strong>Stakeholder tension:</strong> The product team's initial direction was a numbered list view, each Task rendered as a row in sequence with its failure task assigned inline. I pushed back: a linear list forces the analyst to mentally simulate the branching logic rather than see it. In incident response, that extra cognitive load is exactly the kind of friction that causes errors. But the list had a real argument too, it's faster to scan task names and statuses in bulk, especially for long Routines. Rather than choose, we resolved the tension by giving analysts both: a view toggle that switches between the tree and the list. Power users who know their Routine intimately can work in the list; anyone auditing or onboarding reads the tree.
+        <strong>Stakeholder tension:</strong> The product team's initial direction was a numbered list view, each Task rendered as a row in sequence with its failure task assigned inline. I pushed back: a linear list forces the analyst to mentally simulate the branching logic rather than see it. In incident response, that extra cognitive load is exactly the kind of friction that causes errors. But the list had a real argument too, it's faster to scan task names and statuses in bulk, especially for long Workflows. Rather than choose, we resolved the tension by giving analysts both: a view toggle that switches between the tree and the list. Power users who know their Workflow intimately can work in the list; anyone auditing or onboarding reads the tree.
       </div>
-      <img class="full-img" src="mozo/Routine-Logs-hover-more.png" alt="Routine list view with hover actions, showing the numbered task layout"/>
-      <img class="full-img" src="mozo/bulwarx/08.png" alt="BulwarX Workflow Builder, visual node canvas with connected task branches and failure paths"/>
+      <img class="full-img" src="mozo/Routine-Logs-hover-more.png" alt="Workflow list view with hover actions, showing the numbered task layout"/>
+      <img class="full-img" src="mozo/bulwarx/08.png" alt="Workflow builder, visual node canvas with connected task branches and failure paths"/>
     </div>
   </div>
 
@@ -856,7 +856,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Outcomes</div>
     <h2 class="cs-heading">Design decisions that drove impact</h2>
-    <p class="cs-body">Rather than optimizing for a single metric, the goal was to reduce friction at every stage of the analyst workflow, from understanding what a Routine does, to building one, to trusting it in production.</p>
+    <p class="cs-body">Rather than optimizing for a single metric, the goal was to reduce friction at every stage of the analyst workflow, from understanding what a Workflow does, to building one, to trusting it in production.</p>
 
     <div class="decision-grid">
       <div class="decision-card">
@@ -873,7 +873,7 @@
         </div>
         <div class="decision-problem">Accessibility</div>
         <div class="decision-title">Making automation a tool for everyone on the team</div>
-        <div class="decision-body">Scripted automation (YAML, Python) excluded non-technical analysts entirely. Replacing it with a plain-language Routine builder meant any analyst, not just engineers, could build, read, and modify workflows independently.</div>
+        <div class="decision-body">Scripted automation (YAML, Python) excluded non-technical analysts entirely. Replacing it with a plain-language Workflow builder meant any analyst, not just engineers, could build, read, and modify workflows independently.</div>
       </div>
       <div class="decision-card">
         <div class="decision-icon">
@@ -881,12 +881,12 @@
         </div>
         <div class="decision-problem">Trust & compliance</div>
         <div class="decision-title">Building auditability into the flow, not bolted on after</div>
-        <div class="decision-body">Compliance requirements are typically handled post-hoc. Every Routine in BulwarX logs who created it, who approved it, and what it does in plain language, surfaced at the point of action, not buried in a separate audit log.</div>
+        <div class="decision-body">Compliance requirements are typically handled post-hoc. Every Workflow logs who created it, who approved it, and what it does in plain language, surfaced at the point of action, not buried in a separate audit log.</div>
       </div>
     </div>
 
     <blockquote class="highlight">
-      "This is the first automation tool I've used where I can actually read what a Routine does without asking the person who built it."<br/>
+      "This is the first automation tool I've used where I can actually read what a Workflow does without asking the person who built it."<br/>
       <span style="font-size:0.82rem; font-style:normal; color:var(--muted); display:block; margin-top:10px;">SOC Team Lead, pilot organization</span>
     </blockquote>
   </div>
@@ -895,7 +895,7 @@
   <div class="cs-section fade-up">
     <div class="cs-label">Reflection</div>
     <h2 class="cs-heading">What I'd do differently</h2>
-    <p class="cs-body">The hardest design problem on this project wasn't the workflow builder. It was designing for failure states. In most products, the error path is a secondary concern. In security automation, it's co-equal to the happy path. Every Routine we shipped had as much design thinking in its failure branches as in its core flow, and that was a mental shift I had to drive across the entire team.</p>
+    <p class="cs-body">The hardest design problem on this project wasn't the workflow builder. It was designing for failure states. In most products, the error path is a secondary concern. In security automation, it's co-equal to the happy path. Every Workflow we shipped had as much design thinking in its failure branches as in its core flow, and that was a mental shift I had to drive across the entire team.</p>
     <p class="cs-body">If I were starting over, I would have introduced the side panel pattern earlier in the project. We went through two rounds of redesign on the Task editing experience before landing on the side panel, and both earlier versions broke the spatial context of the canvas in ways that analysts noticed immediately in testing. The insight was obvious in hindsight: people who spend hours in a workflow canvas develop a spatial memory for where things are. Breaking that context to edit a single node is a real cost.</p>
     <p class="cs-body">The broader lesson: in tools designed for experts, respecting the user's mental model isn't a UX nicety. It's the product. Security analysts are professionals operating under pressure. Design that fights their instincts is design they'll route around.</p>
   </div>
