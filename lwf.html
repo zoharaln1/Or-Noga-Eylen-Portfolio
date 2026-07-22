@@ -410,6 +410,10 @@
     .tech-step-body p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; opacity: 0; max-height: 0; overflow: hidden; transition: all 0.4s ease; }
     .tech-step.active .tech-step-body p { opacity: 1; max-height: 60px; }
 
+    .stat-bar { display: flex; gap: 0; max-width: 884px; margin: 0 auto 0; padding: 0 40px 40px; }
+    .stat-bar-item { flex: 1; text-align: center; padding: 24px 20px; border-right: 1.5px solid var(--border); }
+    .stat-bar-item:last-child { border-right: none; }
+
     /* Outcomes */
     .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0; }
     .outcome-card {
@@ -517,6 +521,22 @@
   </div>
 </div>
 
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-bar-item">
+    <div class="outcome-num">82%</div>
+    <div class="outcome-label">Reduction in phone calls</div>
+  </div>
+  <div class="stat-bar-item">
+    <div class="outcome-num">3.4x</div>
+    <div class="outcome-label">Faster alert-to-assignment time</div>
+  </div>
+  <div class="stat-bar-item">
+    <div class="outcome-num">4.6/5</div>
+    <div class="outcome-label">Operator satisfaction score</div>
+  </div>
+</div>
+
 <!-- PULL QUOTE -->
 <div class="pull-quote">
   <div class="pull-quote-card">
@@ -527,6 +547,28 @@
 
 <!-- CONTENT -->
 <div class="case-content">
+
+  <!-- Outcomes (surfaced early) -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">Outcomes</div>
+    <h2 class="cs-heading">What the system delivered</h2>
+    <p class="cs-body">Following rollout with the initial operator cohort, the platform showed measurable improvements across the assignment lifecycle. Phone-based coordination dropped significantly, and the shared status model gave both operators and technicians a reliable source of truth for the first time.</p>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">82%</div>
+        <div class="outcome-label">Reduction in phone calls during active alert assignment, replaced by in-system actions</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">3.4x</div>
+        <div class="outcome-label">Faster average time from alert detection to confirmed assignment compared to the phone-based baseline</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">4.6/5</div>
+        <div class="outcome-label">Operator satisfaction score from post-launch surveys, with field technicians rating the mobile experience 4.4/5</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Context -->
   <div class="cs-section fade-up">
@@ -589,7 +631,7 @@
 
   <!-- Company Banner -->
   <div class="cs-section fade-up">
-    <img class="full-img" src="mozo/LWF/Map and alert.png" alt="Water Infrastructure Management product overview" />
+    <img class="full-img" src="mozo/LWF/Map and alert.webp" alt="Water Infrastructure Management product overview"  loading="lazy">
   </div>
 
   <!-- User Research -->
@@ -600,7 +642,7 @@
 
     <!-- Primary Persona -->
     <div class="persona-card">
-      <img class="persona-img" src="external/lwf-persona-1.jpg" alt="Sue Storm" />
+      <img class="persona-img" src="external/lwf-persona-1.jpg" alt="Sue Storm"  loading="lazy">
       <div>
         <div class="persona-name">Sue Storm</div>
         <div class="persona-role">35 · Infrastructure Operator · NYC Water Corp</div>
@@ -624,7 +666,7 @@
 
     <!-- Secondary Persona -->
     <div class="persona-card">
-      <img class="persona-img" src="external/lwf-persona-2.jpg" alt="David Chen" />
+      <img class="persona-img" src="external/lwf-persona-2.jpg" alt="David Chen"  loading="lazy">
       <div>
         <div class="persona-name">David Chen</div>
         <div class="persona-role">29 · Field Technician · NYC Water Corp</div>
@@ -662,7 +704,7 @@
         </div>
       </div>
       <div class="comp-card">
-        <img src="external/lwf-persona-3.jpg" alt="Zendesk assignment interface" />
+        <img src="external/lwf-persona-3.webp" alt="Zendesk assignment interface"  loading="lazy">
         <div class="comp-body">
           <div class="comp-name">Zendesk</div>
           <ul class="comp-bullets">
@@ -674,7 +716,7 @@
         </div>
       </div>
       <div class="comp-card">
-        <img src="external/lwf-persona-4.jpg" alt="Logz.io assignment interface" />
+        <img src="external/lwf-persona-4.webp" alt="Logz.io assignment interface"  loading="lazy">
         <div class="comp-body">
           <div class="comp-name">Logz.IO</div>
           <ul class="comp-bullets">
@@ -727,8 +769,8 @@
       <h4>Map and alert overview</h4>
       <p>Alerts surface on the map the moment the sensors detect an anomaly. Each entry in the alert list shows the alert type, assigned technician, status badge, and timestamp at a glance. Operators can filter by alert type, severity, or status to focus on what matters most without scrolling through noise.</p>
       <div class="decision"><strong>Design decision:</strong> Status and assignee are shown directly in the list row rather than only inside the detail panel. This lets operators triage across many active alerts at once, without clicking into each one to understand the state.</div>
-      <img src="mozo/LWF/Map%20and%20alert.png" alt="Map view with alert list showing status and assignee indicators" />
-      <img src="mozo/LWF/filtered%20alert%20example.png" alt="Map filtered to show Fiber Break alerts only" style="margin-top:14px;" />
+      <img src="mozo/LWF/Map and alert.webp" alt="Map view with alert list showing status and assignee indicators"  loading="lazy">
+      <img src="mozo/LWF/filtered alert example.webp" alt="Map filtered to show Fiber Break alerts only" style="margin-top:14px;"  loading="lazy">
     </div>
 
     <div class="flow-item">
@@ -744,10 +786,10 @@
         </div>
         <div class="img-tab-wrap">
           <div class="img-tab-pane active" id="tab-drill">
-            <img src="mozo/LWF/Drill%20down%20alert.png" alt="Alert detail panel with Assign Alert CTA" />
+            <img src="mozo/LWF/Drill down alert.webp" alt="Alert detail panel with Assign Alert CTA"  loading="lazy">
           </div>
           <div class="img-tab-pane" id="tab-more">
-            <img src="mozo/LWF/More%20details%20alert.png" alt="Expanded detail showing nearby alerts and location history" />
+            <img src="mozo/LWF/More details alert.webp" alt="Expanded detail showing nearby alerts and location history"  loading="lazy">
           </div>
         </div>
       </div>
@@ -767,13 +809,13 @@
         </div>
         <div class="img-tab-wrap">
           <div class="img-tab-pane active">
-            <img src="mozo/LWF/Assign%20flow%20modal%201.png" alt="Empty assignment modal" />
+            <img src="mozo/LWF/Assign flow modal 1.webp" alt="Empty assignment modal"  loading="lazy">
           </div>
           <div class="img-tab-pane">
-            <img src="mozo/LWF/Assign%20flow%20modal%202.png" alt="Modal with one assignee selected and details filled" />
+            <img src="mozo/LWF/Assign flow modal 2.webp" alt="Modal with one assignee selected and details filled"  loading="lazy">
           </div>
           <div class="img-tab-pane">
-            <img src="mozo/LWF/Assign%20flow%20modal%203.png" alt="Modal with 3 assignees confirmed" />
+            <img src="mozo/LWF/Assign flow modal 3.webp" alt="Modal with 3 assignees confirmed"  loading="lazy">
           </div>
         </div>
       </div>
@@ -784,7 +826,7 @@
       <h4>Confirmed: assignment live</h4>
       <p>Once the operator submits, the alert card updates immediately to show all assigned technicians as avatar chips. A toast notification confirms the assignment and offers an undo action for a short window, protecting against accidental submissions without adding a confirmation step to the happy path.</p>
       <div class="decision"><strong>Design decision:</strong> Undo instead of a confirmation dialog. A confirm prompt would add friction to every assignment, including the 99% that are intentional. The undo toast handles the rare mistake without slowing down the common case.</div>
-      <img src="mozo/LWF/undo%20selection.png" alt="Alert card showing 3 assignee avatars with confirmation toast and Undo option" />
+      <img src="mozo/LWF/undo selection.webp" alt="Alert card showing 3 assignee avatars with confirmation toast and Undo option"  loading="lazy">
     </div>
   </div>
 
@@ -1050,7 +1092,7 @@
     <h2 class="cs-heading">Building for consistency across contexts</h2>
     <p class="cs-body">A unified design system kept both the operator web platform and the technician mobile app visually coherent and maintainable. Shared components, consistent status indicators, and a common token set meant the team never had to make the same decision twice, and onboarding new engineers to either surface was significantly faster.</p>
     <div style="aspect-ratio:9/6;overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.08);max-width:680px;margin:28px auto 0;">
-      <img src="mozo/LWF/DSsystem.jpeg" alt="LWF design system overview" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" />
+      <img src="mozo/LWF/DSsystem.webp" alt="LWF design system overview" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"  loading="lazy">
     </div>
   </div>
 
@@ -1059,29 +1101,7 @@
     <div class="cs-label">Process</div>
     <h2 class="cs-heading">Collaboration and whiteboarding</h2>
     <p class="cs-body">Daily syncs with the UX designer and product manager kept the team aligned across the full lifecycle. We mapped user flows together in Miro before any pixels moved in Figma, working through the operator-to-technician handoff repeatedly until the logic was airtight. The whiteboard sessions surfaced edge cases that wireframes alone would have missed, particularly around multi-alert states and assignment conflicts.</p>
-    <img class="full-img" style="max-width:680px;margin:28px auto;display:block;border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.08);" src="mozo/LWF/collab-whiteboard.svg" alt="Team whiteboard session" />
-  </div>
-
-  <!-- Outcomes -->
-  <div class="cs-section fade-up">
-    <div class="cs-label">Outcomes</div>
-    <h2 class="cs-heading">What the system delivered</h2>
-    <p class="cs-body">Following rollout with the initial operator cohort, the platform showed measurable improvements across the assignment lifecycle. Phone-based coordination dropped significantly, and the shared status model gave both operators and technicians a reliable source of truth for the first time.</p>
-
-    <div class="outcomes-grid">
-      <div class="outcome-card">
-        <div class="outcome-num">82%</div>
-        <div class="outcome-label">Reduction in phone calls during active alert assignment, replaced by in-system actions</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num">3.4x</div>
-        <div class="outcome-label">Faster average time from alert detection to confirmed assignment compared to the phone-based baseline</div>
-      </div>
-      <div class="outcome-card">
-        <div class="outcome-num">4.6/5</div>
-        <div class="outcome-label">Operator satisfaction score from post-launch surveys, with field technicians rating the mobile experience 4.4/5</div>
-      </div>
-    </div>
+    <img class="full-img" style="max-width:680px;margin:28px auto;display:block;border-radius:var(--radius);border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.08);" src="mozo/LWF/collab-whiteboard.svg" alt="Team whiteboard session"  loading="lazy">
   </div>
 
   <!-- Reflection -->

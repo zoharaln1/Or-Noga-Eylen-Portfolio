@@ -25,6 +25,9 @@ node_modules/
 *.sketch
 or-portfolio-skill-update.md
 
+# Source image backups (pre-compression originals)
+source-assets/
+
 # Large design files + Desktop clutter
 *.fig
 *.sketch

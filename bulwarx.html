@@ -346,6 +346,10 @@
     }
     .outcome-label { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 
+    .stat-bar { display: flex; gap: 0; max-width: 884px; margin: 0 auto 0; padding: 0 40px 40px; }
+    .stat-bar-item { flex: 1; text-align: center; padding: 24px 20px; border-right: 1.5px solid var(--border); }
+    .stat-bar-item:last-child { border-right: none; }
+
     blockquote.highlight {
       background: linear-gradient(135deg, var(--blue-light), var(--slate-light));
       border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0;
@@ -425,6 +429,22 @@
       <div class="case-meta-item"><label>Tools</label><span>Figma · Miro</span></div>
       <div class="case-meta-item"><label>Year</label><span>2023–2024</span></div>
     </div>
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-bar-item">
+    <div class="outcome-num">4–6</div>
+    <div class="outcome-label">Tools eliminated per incident</div>
+  </div>
+  <div class="stat-bar-item">
+    <div class="outcome-num">0</div>
+    <div class="outcome-label">Lines of code to build workflows</div>
+  </div>
+  <div class="stat-bar-item">
+    <div class="outcome-num">3</div>
+    <div class="outcome-label">Security roles served</div>
   </div>
 </div>
 
@@ -515,7 +535,7 @@
         class="persona-img"
         src="external/persona-man-outdoors.jpg"
         alt="David Chen persona"
-      />
+       loading="lazy">
       <div>
         <div class="persona-name">David Chen</div>
         <div class="persona-role">Head of Security Operations, Fintech company, 2,400 employees</div>
@@ -784,7 +804,7 @@
       </div>
       <div class="option-card selected">
         <div class="option-img">
-          <img src="mozo/bulwarx/08.png" alt="Visual workflow builder canvas"/>
+          <img src="mozo/bulwarx/08.webp" alt="Visual workflow builder canvas" loading="lazy">
         </div>
         <div class="option-header">
           Visual node-based builder
@@ -812,7 +832,7 @@
       <div class="decision">
         <strong>Design decision:</strong> I used card-based layout rather than a table to allow scanning at different levels of urgency. Color was used sparingly, reserved only for failure states, so that red always means "act now." Jobs with no issues are intentionally low-visual-weight so that problems stand out without scanning every row.
       </div>
-      <img class="full-img" src="mozo/bulwarx/07.png" alt="Security workflow dashboard, running jobs, failed alerts, engine and package status"/>
+      <img class="full-img" src="mozo/bulwarx/07.webp" alt="Security workflow dashboard, running jobs, failed alerts, engine and package status" loading="lazy">
     </div>
 
     <div class="flow-badge">Surface 02</div>
@@ -829,8 +849,8 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.png" alt="Workflow library, card view with status labels"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/Filters.png" alt="Workflow library, filter panel open"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/01.webp" alt="Workflow library, card view with status labels"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/Filters.webp" alt="Workflow library, filter panel open"/></div>
         </div>
       </div>
     </div>
@@ -842,7 +862,7 @@
       <div class="decision">
         <strong>Design decision:</strong> Separating "create" from "configure" reduced drop-off and let analysts reach the workflow canvas faster. The creation form is a gate, not a configurator. Everything else is deferred to where the real work happens.
       </div>
-      <img class="full-img" src="mozo/bulwarx/add new routine.png" alt="Add new routine, creation panel with name, trigger, and label fields"/>
+      <img class="full-img" src="mozo/bulwarx/add new routine.webp" alt="Add new routine, creation panel with name, trigger, and label fields"/>
     </div>
 
     <div class="flow-badge">Surface 04</div>
@@ -861,10 +881,10 @@
           <span class="img-tab-cycle-hint">Auto-cycling</span>
         </div>
         <div class="img-tab-wrap">
-          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.png" alt="Workflow detail, empty tasks state, ready to build"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/04.png" alt="Add task, Step 1: Task Info"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/05.png" alt="Add task, Step 2: Input configuration"/></div>
-          <div class="img-tab-pane"><img src="mozo/bulwarx/06.png" alt="Add task, Step 3: Output mapping"/></div>
+          <div class="img-tab-pane active"><img src="mozo/bulwarx/03.webp" alt="Workflow detail, empty tasks state, ready to build"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/04.webp" alt="Add task, Step 1: Task Info"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/05.webp" alt="Add task, Step 2: Input configuration"/></div>
+          <div class="img-tab-pane"><img src="mozo/bulwarx/06.webp" alt="Add task, Step 3: Output mapping"/></div>
         </div>
       </div>
     </div>
@@ -879,8 +899,8 @@
       <div class="decision-tension">
         <strong>Stakeholder tension:</strong> The product team's initial direction was a numbered list view, each Task rendered as a row in sequence with its failure task assigned inline. I pushed back: a linear list forces the analyst to mentally simulate the branching logic rather than see it. In incident response, that extra cognitive load is exactly the kind of friction that causes errors. But the list had a real argument too, it's faster to scan task names and statuses in bulk, especially for long Workflows. Rather than choose, we resolved the tension by giving analysts both: a view toggle that switches between the tree and the list. Power users who know their Workflow intimately can work in the list; anyone auditing or onboarding reads the tree.
       </div>
-      <img class="full-img" src="mozo/Routine-Logs-hover-more.png" alt="Workflow list view with hover actions, showing the numbered task layout"/>
-      <img class="full-img" src="mozo/bulwarx/08.png" alt="Workflow builder, visual node canvas with connected task branches and failure paths"/>
+      <img class="full-img" src="mozo/Routine-Logs-hover-more.webp" alt="Workflow list view with hover actions, showing the numbered task layout"/>
+      <img class="full-img" src="mozo/bulwarx/08.webp" alt="Workflow builder, visual node canvas with connected task branches and failure paths" loading="lazy">
     </div>
   </div>
 
