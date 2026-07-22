@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,500;0,700;0,800;1,700&family=Mitr:wght@300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -107,6 +107,13 @@
     }
     .case-meta-item label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 7px; }
     .case-meta-item span { font-size: 0.87rem; color: rgba(255,255,255,0.78); font-weight: 500; }
+
+    /* Pull quote */
+    .pull-quote { max-width: 884px; margin: 0 auto; padding: 40px 40px; }
+    .pull-quote-card { background: #e6e8f7; border-radius: 18px; padding: 54px 62px; display: flex; gap: 16px; align-items: flex-start; }
+    .pull-quote-mark { font-family: 'Mitr', sans-serif; font-weight: 300; font-size: 142.8px; color: #194fff; line-height: 0.7; flex-shrink: 0; margin-top: 8px; }
+    .pull-quote-text { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 22px; line-height: 1.5; color: #000; }
+    .pull-quote-text strong { font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000; }
 
     /* CONTENT */
     .case-content { max-width: 860px; margin: 0 auto; padding: 88px 40px; }
@@ -507,6 +514,14 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="pull-quote">
+  <div class="pull-quote-card">
+    <div class="pull-quote-mark">"</div>
+    <p class="pull-quote-text">We detect the leak instantly. But then someone has to make a phone call, wait for a technician, and hope they show up. We need a system that <strong>closes the loop</strong> without the phone.</p>
   </div>
 </div>
 
