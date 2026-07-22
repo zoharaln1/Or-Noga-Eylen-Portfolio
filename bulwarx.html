@@ -128,20 +128,22 @@
 
     /* Pull quote */
     .pull-quote {
-      max-width: 860px; margin: 0 auto; padding: 72px 40px;
-      display: flex; gap: 28px; align-items: flex-start;
+      max-width: 860px; margin: 0 auto; padding: 40px 40px;
+    }
+    .pull-quote-card {
+      background: #EEEEF8; border-radius: 20px;
+      padding: 48px 56px;
+      display: flex; gap: 24px; align-items: flex-start;
     }
     .pull-quote-mark {
-      font-family: 'Montserrat', sans-serif; font-size: 4.5rem;
-      font-weight: 800; line-height: 0.8; color: #1A4FFF;
-      flex-shrink: 0; margin-top: 6px;
+      flex-shrink: 0; margin-top: 4px;
     }
+    .pull-quote-mark svg { display: block; }
     .pull-quote-text {
-      font-family: 'Montserrat', sans-serif; font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-      line-height: 1.65; color: #1a2540; font-weight: 400;
+      font-family: 'Inter', sans-serif; font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      line-height: 1.7; color: #1a2540; font-weight: 400;
     }
-    .pull-quote-text strong { font-weight: 700; color: #0d1830; }
-    .pull-quote-text em { font-style: normal; color: #5b7aad; }
+    .pull-quote-text strong { font-weight: 700; color: #1a2540; }
 
     /* Info cards */
     .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
@@ -423,8 +425,17 @@
 
 <!-- PULL QUOTE -->
 <div class="pull-quote">
-  <div class="pull-quote-mark">"</div>
-  <p class="pull-quote-text">Our <strong>SOC team is drowning in alerts.</strong> We need workflows that <strong>respond automatically</strong> so humans can focus on <em>what machines can't do.</em></p>
+  <div class="pull-quote-card">
+    <div class="pull-quote-mark">
+      <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="4" width="7" height="24" rx="2" fill="#1A4FFF"/>
+        <rect x="11" y="4" width="7" height="24" rx="2" fill="#1A4FFF"/>
+        <rect x="0" y="0" width="7" height="6" rx="2" fill="#1A4FFF" opacity="0.3"/>
+        <rect x="11" y="0" width="7" height="6" rx="2" fill="#1A4FFF" opacity="0.3"/>
+      </svg>
+    </div>
+    <p class="pull-quote-text">Our SOC team is drowning in alerts.<br/>We need <strong>workflows</strong> that respond automatically<br/>so humans can <strong>focus</strong> on what machines can't do.</p>
+  </div>
 </div>
 
 <!-- CONTENT -->
