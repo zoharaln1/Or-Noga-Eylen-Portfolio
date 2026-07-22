@@ -69,54 +69,36 @@
 
     /* HERO */
     .case-hero {
-      background: radial-gradient(ellipse at 50% 100%, rgba(74,76,168,0.95) 0%, rgba(51,53,117,1) 35%, rgba(40,42,92,1) 65%, rgba(29,30,66,1) 100%);
-      padding: 80px 40px 0;
+      background: linear-gradient(135deg, #050D1E 0%, #081528 55%, #0D2040 100%);
+      padding: 160px 64px 100px;
       position: relative; overflow: hidden;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center;
     }
-    .hero-glow {
-      position: absolute; top: -276px; left: -444px;
-      width: 824px; height: 706px; pointer-events: none;
-      background: radial-gradient(ellipse at 30% 40%, rgba(110,112,220,0.45) 0%, transparent 65%);
+    .case-hero::before {
+      content: ''; position: absolute; top: -100px; right: -80px;
+      width: 640px; height: 640px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,79,255,0.18) 0%, transparent 68%);
+      pointer-events: none;
     }
-    .hero-inner {
-      display: flex; flex-direction: column; align-items: center;
-      max-width: 1133px; width: 100%; position: relative; z-index: 1;
+    .case-hero::after {
+      content: ''; position: absolute; bottom: -60px; left: 15%;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,98,128,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .hero-tags {
-      display: inline-flex; align-items: center; gap: 0;
-      background: #1d1e42; border-radius: 42px;
-      padding: 10px 24px; margin-bottom: 28px;
-      box-shadow: 0 18px 17.7px rgba(12,13,51,0.61);
+    .case-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .case-chip {
+      display: inline-flex; align-items: center;
+      background: rgba(26,79,255,0.18); color: rgba(255,255,255,0.78);
+      border: 1px solid rgba(26,79,255,0.38); border-radius: 100px;
+      padding: 7px 18px; font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 24px; width: fit-content;
     }
-    .hero-tags span {
-      font-family: 'Montserrat', sans-serif; font-weight: 300;
-      font-size: 14px; color: #fff; padding: 0 8px;
-    }
-    .hero-tags .sep { opacity: 0.2; font-size: 17px; padding: 0; }
     .case-hero h1 {
-      font-family: 'Montserrat', sans-serif; font-weight: 500;
-      font-size: clamp(2.8rem, 7.2vw, 6.4rem);
-      line-height: 1.18; color: #fff; margin-bottom: 0;
-      letter-spacing: -0.01em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 1.05;
+      letter-spacing: -0.02em; color: #fff; margin-bottom: 20px;
     }
-    .hero-mockup {
-      position: relative; width: 100%; max-width: 1133px;
-      aspect-ratio: 1133 / 957; margin-top: 44px;
-    }
-    .hero-mockup-screen {
-      position: absolute;
-      left: 2.7%; top: 2.95%;
-      width: 94.6%;
-      border-radius: 4px; display: block;
-    }
-    .hero-mockup-frame {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      mix-blend-mode: overlay; object-fit: fill;
-      z-index: 2; pointer-events: none; display: block;
-    }
+    .case-hero p { color: rgba(255,255,255,0.58); font-size: 1.03rem; max-width: 580px; line-height: 1.88; }
     .case-meta {
       display: flex; gap: 48px; margin-top: 52px;
       padding-top: 40px;
@@ -409,19 +391,15 @@
 
 <!-- HERO -->
 <div class="case-hero">
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-tags">
-      <span>Enterprise SAAS</span>
-      <span class="sep">|</span>
-      <span>Automation Workflow</span>
-      <span class="sep">|</span>
-      <span>Cybersecurity</span>
-    </div>
+  <div class="case-hero-inner">
+    <div class="case-chip">Enterprise SaaS · Cybersecurity · Security Automation</div>
     <h1>Incident Response<br/>Workflow Builder</h1>
-    <div class="hero-mockup">
-      <img class="hero-mockup-screen" src="external/bulwarx-hero-screen.png" alt="Bulwarx dashboard" />
-      <img class="hero-mockup-frame" src="external/bulwarx-frame.png" alt="" />
+    <p>Designing a visual workflow builder that lets security analysts automate complex incident response, without writing a single line of code.</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><label>My Role</label><span>Lead Product Designer</span></div>
+      <div class="case-meta-item"><label>Team</label><span>1 PM · 4 Engineers</span></div>
+      <div class="case-meta-item"><label>Tools</label><span>Figma · Miro</span></div>
+      <div class="case-meta-item"><label>Year</label><span>2023–2024</span></div>
     </div>
   </div>
 </div>
