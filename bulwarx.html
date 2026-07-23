@@ -228,6 +228,8 @@
     .option-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
     .option-img svg { width: 100%; height: 100%; display: block; }
     .option-img-light { background: #F3F6FC; }
+    .option-img-video { height: auto !important; overflow: visible !important; }
+    .option-img-video video { width: 100%; height: auto; display: block; }
 
     /* Image tab switcher (matches lwf.html pattern) */
     .img-tabs { margin: 28px 0; }
@@ -261,7 +263,7 @@
     .swot-card p { font-size: 0.85rem; line-height: 1.7; color: var(--ink); }
 
     /* Design options */
-    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 32px 0; }
+    .option-grid { display: grid; grid-template-columns: 1fr; gap: 22px; margin: 32px 0; }
     .option-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
     .option-card.selected { border-color: var(--blue); }
     .option-header { padding: 13px 20px; font-weight: 700; font-size: 0.83rem; display: flex; align-items: center; gap: 10px; }
@@ -428,10 +430,7 @@
 
 <!-- HERO -->
 <div class="case-hero">
-  <video class="hero-bg-video" autoplay muted loop playsinline>
-    <source src="external/workflow-demo.mp4" type="video/mp4">
-  </video>
-  <div class="case-hero-inner">
+<div class="case-hero-inner">
     <div class="case-chip">Enterprise SaaS · Cybersecurity · Security Automation</div>
     <h1>Incident Response<br/>Workflow Builder</h1>
     <p>Designing a visual workflow builder that lets security analysts automate complex incident response, without writing a single line of code.</p>
@@ -801,8 +800,10 @@
         <div class="option-body">Analysts define Workflows using structured YAML or a Python SDK. Powerful and precise, but requires technical knowledge to create and maintain. Every change to a Workflow requires either engineering time or a technically skilled analyst. Debugging means reading logs. Adopted by XSOAR and Splunk for their core experience. Fast to build for a technical user, inaccessible for everyone else.</div>
       </div>
       <div class="option-card selected">
-        <div class="option-img">
-          <img src="mozo/bulwarx/08.webp" alt="Visual workflow builder canvas" loading="lazy">
+        <div class="option-img option-img-video">
+          <video autoplay loop muted playsinline>
+            <source src="external/workflow-demo.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="option-header">
           Visual node-based builder
@@ -941,14 +942,6 @@
     </blockquote>
   </div>
 
-  <!-- Video demo -->
-  <div class="cs-section fade-up">
-    <div class="cs-label">See it in action</div>
-    <h2 class="cs-heading">The workflow builder in motion</h2>
-    <video autoplay muted loop playsinline style="width:100%; border-radius:16px; display:block; margin-top:8px;">
-      <source src="external/workflow-demo.mp4" type="video/mp4">
-    </video>
-  </div>
 
   <!-- Reflection -->
   <div class="cs-section fade-up">
