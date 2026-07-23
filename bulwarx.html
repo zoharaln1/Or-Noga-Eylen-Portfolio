@@ -73,6 +73,15 @@
       padding: 160px 64px 100px;
       position: relative; overflow: hidden;
     }
+    .hero-bg-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .case-hero-inner { position: relative; z-index: 1; }
     .case-hero::before {
       content: ''; position: absolute; top: -100px; right: -80px;
       width: 640px; height: 640px; border-radius: 50%;
@@ -419,6 +428,9 @@
 
 <!-- HERO -->
 <div class="case-hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="external/workflow-demo.mp4" type="video/mp4">
+  </video>
   <div class="case-hero-inner">
     <div class="case-chip">Enterprise SaaS · Cybersecurity · Security Automation</div>
     <h1>Incident Response<br/>Workflow Builder</h1>
@@ -927,6 +939,15 @@
       "This is the first automation tool I've used where I can actually read what a Workflow does without asking the person who built it."<br/>
       <span style="font-size:0.82rem; font-style:normal; color:var(--muted); display:block; margin-top:10px;">SOC Team Lead, pilot organization</span>
     </blockquote>
+  </div>
+
+  <!-- Video demo -->
+  <div class="cs-section fade-up">
+    <div class="cs-label">See it in action</div>
+    <h2 class="cs-heading">The workflow builder in motion</h2>
+    <video autoplay muted loop playsinline style="width:100%; border-radius:16px; display:block; margin-top:8px;">
+      <source src="external/workflow-demo.mp4" type="video/mp4">
+    </video>
   </div>
 
   <!-- Reflection -->
