@@ -218,6 +218,11 @@
     .comp-bullets { list-style: none; padding: 0; margin: 0; }
     .comp-bullets li { font-size: 0.86rem; color: var(--muted); line-height: 1.75; padding: 4px 0 4px 18px; position: relative; }
     .comp-bullets li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); opacity: 0.5; }
+    .comp-bullets li.comp-pro::before { background: #16a34a; opacity: 0.85; }
+    .comp-bullets li.comp-con::before { background: #dc2626; opacity: 0.75; }
+    .comp-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin: 10px 0 2px; }
+    .comp-section-label.label-pro { color: #16a34a; }
+    .comp-section-label.label-con { color: #dc2626; }
 
     /* Competitor card image */
     .comp-img { width: 100%; height: 210px; overflow: hidden; background: #0D1117; border-bottom: 1px solid var(--border); }
@@ -614,9 +619,15 @@
         </div>
         <div class="comp-body">
           <div class="comp-name">Palo Alto XSOAR</div>
+          <div class="comp-section-label label-pro">Strengths</div>
           <ul class="comp-bullets">
-            <li>Extremely powerful and deeply integrated across the security stack</li>
-            <li>Playbook creation is primarily Python-based, requiring engineering involvement</li>
+            <li class="comp-pro">950+ content packs covering EDR, SIEM, cloud, and ITSM — the broadest integration library in the SOAR market</li>
+            <li class="comp-pro">Enterprise-grade incident management with multi-tenancy, RBAC, and full audit trail built for large SOC teams</li>
+          </ul>
+          <div class="comp-section-label label-con">Weaknesses</div>
+          <ul class="comp-bullets">
+            <li class="comp-con">Even visual playbooks require Python scripting for conditions and data manipulation, excluding non-technical analysts</li>
+            <li class="comp-con">Licensing starts at ~$200K/year; high engineering overhead for integration maintenance adds to total cost</li>
           </ul>
         </div>
       </div>
@@ -666,9 +677,15 @@
         </div>
         <div class="comp-body">
           <div class="comp-name">Splunk SOAR</div>
+          <div class="comp-section-label label-pro">Strengths</div>
           <ul class="comp-bullets">
-            <li>More developed visual playbook builder than XSOAR, but still engineer-first</li>
-            <li>Failure state visibility is limited, failed paths are not surfaced clearly</li>
+            <li class="comp-pro">Visual drag-and-drop playbook canvas is more accessible than XSOAR for analysts with limited coding experience</li>
+            <li class="comp-pro">Native bidirectional integration with Splunk SIEM creates a unified detection-to-response pipeline for existing Splunk customers</li>
+          </ul>
+          <div class="comp-section-label label-con">Weaknesses</div>
+          <ul class="comp-bullets">
+            <li class="comp-con">Failure paths are collapsed by default and require explicit configuration — silent automation failures are a real production risk</li>
+            <li class="comp-con">Splunk's ingest-based licensing ties automation cost to data volume, making SOC budget unpredictable as alert loads grow</li>
           </ul>
         </div>
       </div>
@@ -720,9 +737,15 @@
         </div>
         <div class="comp-body">
           <div class="comp-name">Microsoft Sentinel</div>
+          <div class="comp-section-label label-pro">Strengths</div>
           <ul class="comp-bullets">
-            <li>Cloud-native SIEM with strong Azure ecosystem integration</li>
-            <li>Automation through Logic Apps feels bolted on, not purpose-built for security ops</li>
+            <li class="comp-pro">Cloud-native SIEM with zero infrastructure overhead; native connectors to Entra ID, Defender, and Azure services are included out of the box</li>
+            <li class="comp-pro">Organizations on Microsoft E5 or Defender for Cloud licenses get Sentinel at a fraction of standalone SOAR pricing, lowering the barrier significantly</li>
+          </ul>
+          <div class="comp-section-label label-con">Weaknesses</div>
+          <ul class="comp-bullets">
+            <li class="comp-con">SOAR runs through Azure Logic Apps, a general-purpose workflow tool with no SOC-specific concepts — no runbooks, no analyst assignments, no SLA tracking</li>
+            <li class="comp-con">Debugging failed automations requires cross-referencing Azure Monitor, Logic Apps run history, and Sentinel incident timelines across separate portals</li>
           </ul>
         </div>
       </div>
@@ -900,6 +923,13 @@
       </div>
       <img class="full-img" src="mozo/Routine-Logs-hover-more.webp" alt="Workflow list view with hover actions, showing the numbered task layout"/>
       <img class="full-img" src="mozo/bulwarx/08.webp" alt="Workflow builder, visual node canvas with connected task branches and failure paths" loading="lazy">
+
+      <h4 style="margin-top: 2.5rem;">Code Editing Option</h4>
+      <p>For power users and engineers who prefer working directly in code, the system also exposes a code editor view for every Workflow. The same logic that's represented visually in the canvas can be read and edited as structured code, giving technical analysts a fast path to modify routines without leaving the platform. The two views stay in sync: any change in the code editor is reflected in the visual builder, and vice versa.</p>
+      <div class="decision">
+        <strong>Design decision:</strong> Rather than forcing a single interaction model, I designed the visual builder and the code editor as two entry points into the same underlying representation. Most analysts will never open the code view. But the analysts who build automation tooling, or who joined from engineering backgrounds, were blocked without it. Giving power users an escape hatch removed the organizational resistance to adopting the visual-first system.
+      </div>
+      <img class="full-img" src="mozo/bulwarx/workflow_code_editor.png" alt="Workflow code editor view, showing routine logic as editable code alongside the visual builder" loading="lazy">
     </div>
   </div>
 
