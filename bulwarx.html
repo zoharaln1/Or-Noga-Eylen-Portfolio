@@ -634,45 +634,70 @@
       <div class="comp-card">
         <div class="comp-img">
           <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="grid" x="0" y="36" width="24" height="24" patternUnits="userSpaceOnUse">
-                <circle cx="12" cy="12" r="0.9" fill="rgba(255,255,255,0.07)"/>
-              </pattern>
-            </defs>
-            <rect width="800" height="210" fill="#1C1C2A"/>
-            <rect width="800" height="36" fill="#141420"/>
-            <text x="16" y="23" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.65)" font-weight="600">Phantom Playbook Editor</text>
-            <text x="640" y="23" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,140,0,0.8)" font-weight="600">malware_triage · Draft</text>
-            <rect x="0" y="36" width="800" height="174" fill="url(#grid)"/>
-            <!-- connections -->
-            <path d="M 198 115 C 230 115 210 120 242 120" stroke="rgba(255,140,0,0.55)" stroke-width="2" fill="none"/>
-            <path d="M 390 120 C 422 120 402 115 434 115" stroke="rgba(255,140,0,0.55)" stroke-width="2" fill="none"/>
-            <path d="M 566 115 C 598 115 578 115 610 115" stroke="rgba(80,200,120,0.55)" stroke-width="2" fill="none"/>
-            <path d="M 316 140 Q 316 172 316 175" stroke="rgba(220,70,70,0.4)" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
-            <path d="M 500 135 Q 500 172 500 175" stroke="rgba(220,70,70,0.4)" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
-            <!-- Node 1: Start -->
-            <rect x="90" y="94" width="108" height="42" rx="7" fill="#252540" stroke="rgba(255,140,0,0.7)" stroke-width="1.5"/>
-            <text x="144" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">Start</text>
-            <text x="144" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,140,0,0.8)" text-anchor="middle">Trigger: new_alert</text>
-            <!-- Node 2 -->
-            <rect x="242" y="100" width="148" height="42" rx="7" fill="#252540" stroke="rgba(100,150,255,0.5)" stroke-width="1.5"/>
-            <text x="316" y="118" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">getsysteminfoV2</text>
-            <text x="316" y="133" font-family="Inter,sans-serif" font-size="8" fill="rgba(150,180,255,0.65)" text-anchor="middle">phantom.act()</text>
-            <!-- Node 3 -->
-            <rect x="434" y="94" width="132" height="42" rx="7" fill="#252540" stroke="rgba(100,150,255,0.5)" stroke-width="1.5"/>
-            <text x="500" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">file_reputation</text>
-            <text x="500" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(150,180,255,0.65)" text-anchor="middle">phantom.act()</text>
-            <!-- Node 4: End -->
-            <rect x="610" y="94" width="110" height="42" rx="7" fill="#252540" stroke="rgba(80,200,120,0.55)" stroke-width="1.5"/>
-            <text x="665" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-weight="700">send_email</text>
-            <text x="665" y="127" font-family="Inter,sans-serif" font-size="8" fill="rgba(80,200,120,0.7)" text-anchor="middle">phantom.act()</text>
-            <!-- Failure nodes (dashed) -->
-            <rect x="262" y="175" width="108" height="36" rx="6" fill="#1A1A2C" stroke="rgba(220,70,70,0.45)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <text x="316" y="191" font-family="Inter,sans-serif" font-size="8" fill="rgba(220,100,100,0.85)" text-anchor="middle">failure_handler</text>
-            <text x="316" y="204" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle">configure manually</text>
-            <rect x="447" y="172" width="106" height="36" rx="6" fill="#1A1A2C" stroke="rgba(220,70,70,0.45)" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <text x="500" y="188" font-family="Inter,sans-serif" font-size="8" fill="rgba(220,100,100,0.85)" text-anchor="middle">failure_handler</text>
-            <text x="500" y="201" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" text-anchor="middle">configure manually</text>
+            <rect width="800" height="210" fill="#1E1E2E"/>
+            <!-- title bar -->
+            <rect width="800" height="34" fill="#13131F"/>
+            <circle cx="16" cy="17" r="5" fill="#FF5F57"/>
+            <circle cx="32" cy="17" r="5" fill="#FFBD2E"/>
+            <circle cx="48" cy="17" r="5" fill="#28C840"/>
+            <text x="200" y="22" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" text-anchor="middle">malware_triage.py</text>
+            <!-- line numbers bg -->
+            <rect x="0" y="34" width="38" height="176" fill="#17172A"/>
+            <!-- code lines -->
+            <!-- line 1 -->
+            <text x="10" y="52" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">1</text>
+            <text x="48" y="52" font-family="monospace" font-size="9.5" fill="#C678DD">import</text>
+            <text x="96" y="52" font-family="monospace" font-size="9.5" fill="#ABB2BF"> phantom</text>
+            <!-- line 2 -->
+            <text x="10" y="68" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">2</text>
+            <text x="48" y="68" font-family="monospace" font-size="9.5" fill="#C678DD">import</text>
+            <text x="96" y="68" font-family="monospace" font-size="9.5" fill="#ABB2BF"> json</text>
+            <!-- line 3 blank -->
+            <text x="10" y="84" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">3</text>
+            <!-- line 4 -->
+            <text x="10" y="100" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">4</text>
+            <text x="48" y="100" font-family="monospace" font-size="9.5" fill="#C678DD">def</text>
+            <text x="72" y="100" font-family="monospace" font-size="9.5" fill="#61AFEF"> malware_triage</text>
+            <text x="216" y="100" font-family="monospace" font-size="9.5" fill="#ABB2BF">(handle):</text>
+            <!-- line 5 -->
+            <text x="10" y="116" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">5</text>
+            <text x="66" y="116" font-family="monospace" font-size="9.5" fill="#ABB2BF">results </text>
+            <text x="114" y="116" font-family="monospace" font-size="9.5" fill="#56B6C2">=</text>
+            <text x="124" y="116" font-family="monospace" font-size="9.5" fill="#ABB2BF"> phantom.act(</text>
+            <text x="224" y="116" font-family="monospace" font-size="9.5" fill="#98C379">"get system info"</text>
+            <text x="360" y="116" font-family="monospace" font-size="9.5" fill="#ABB2BF">,</text>
+            <!-- line 6 -->
+            <text x="10" y="132" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">6</text>
+            <text x="66" y="132" font-family="monospace" font-size="9.5" fill="#ABB2BF">                assets</text>
+            <text x="154" y="132" font-family="monospace" font-size="9.5" fill="#56B6C2">=</text>
+            <text x="164" y="132" font-family="monospace" font-size="9.5" fill="#ABB2BF">[</text>
+            <text x="172" y="132" font-family="monospace" font-size="9.5" fill="#98C379">"endpoint"</text>
+            <text x="242" y="132" font-family="monospace" font-size="9.5" fill="#ABB2BF">])</text>
+            <!-- line 7 blank -->
+            <text x="10" y="148" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">7</text>
+            <!-- line 8 - highlighted -->
+            <rect x="38" y="153" width="762" height="14" fill="rgba(220,70,70,0.08)"/>
+            <text x="10" y="164" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">8</text>
+            <text x="66" y="164" font-family="monospace" font-size="9.5" fill="#C678DD">if not</text>
+            <text x="108" y="164" font-family="monospace" font-size="9.5" fill="#ABB2BF"> results</text>
+            <text x="150" y="164" font-family="monospace" font-size="9.5" fill="#ABB2BF">:</text>
+            <text x="162" y="164" font-family="monospace" font-size="9.5" fill="#6A9955">  # no built-in failure path</text>
+            <!-- line 9 - highlighted -->
+            <rect x="38" y="169" width="762" height="14" fill="rgba(220,70,70,0.08)"/>
+            <text x="10" y="180" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">9</text>
+            <text x="84" y="180" font-family="monospace" font-size="9.5" fill="#ABB2BF">phantom.error(</text>
+            <text x="192" y="180" font-family="monospace" font-size="9.5" fill="#98C379">"triage failed"</text>
+            <text x="302" y="180" font-family="monospace" font-size="9.5" fill="#ABB2BF">)</text>
+            <text x="318" y="180" font-family="monospace" font-size="9.5" fill="#6A9955">  # manually coded</text>
+            <!-- line 10 -->
+            <text x="10" y="196" font-family="monospace" font-size="9.5" fill="rgba(255,255,255,0.2)">10</text>
+            <text x="66" y="196" font-family="monospace" font-size="9.5" fill="#ABB2BF">        phantom.act(</text>
+            <text x="192" y="196" font-family="monospace" font-size="9.5" fill="#98C379">"file reputation"</text>
+            <text x="318" y="196" font-family="monospace" font-size="9.5" fill="#ABB2BF">, assets</text>
+            <text x="370" y="196" font-family="monospace" font-size="9.5" fill="#56B6C2">=</text>
+            <text x="378" y="196" font-family="monospace" font-size="9.5" fill="#ABB2BF">[</text>
+            <text x="384" y="196" font-family="monospace" font-size="9.5" fill="#98C379">"vt"</text>
+            <text x="408" y="196" font-family="monospace" font-size="9.5" fill="#ABB2BF">])</text>
           </svg>
         </div>
         <div class="comp-body">
